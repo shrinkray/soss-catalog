@@ -56,7 +56,7 @@
     "font-awesome": "^4.7.0",
     "glyphicons": "^0.2.0",
     "gsap": "^2.1.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0", 
     "micromodal": "^0.3.2",
     "popper.js": "^1.15.0",
     "tether": "^1.4.5",

@@ -1,33 +1,33 @@
 Arguments: 
-  /usr/local/Cellar/node/11.13.0/bin/node /usr/local/Cellar/yarn/1.15.2/libexec/bin/yarn.js dev
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js install
 
 PATH: 
-  /usr/local/sbin:/Users/gmiller/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+  /usr/local/opt/php@7.1/sbin:/usr/local/opt/php@7.1/bin:/usr/local/opt/ruby/bin:/usr/local/sbin:/Applications/flutter/bin:/Users/gmiller/.gem/ruby/X.X.0/bin:/usr/local/opt/ruby/bin:/Users/gmiller/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/php@7.1/sbin:/usr/local/opt/php@7.1/bin:/usr/local/opt/ruby/bin:/usr/local/sbin:/Applications/flutter/bin:/Users/gmiller/.gem/ruby/X.X.0/bin:/usr/local/opt/ruby/bin:/Users/gmiller/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public/:/usr/local/MacGPG2/bin:/usr/local/share/dotnet:/opt/X11/bin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
 
 Yarn version: 
-  1.15.2
+  1.22.4
 
 Node version: 
-  11.13.0
+  10.16.3
 
 Platform: 
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/gmiller/Sites/Flywheel/soss-catalog/app/public/wp-content/themes/soss-catalog-theme/package.json: Unexpected token _ in JSON at position 1007
+  SyntaxError: /Users/gmiller/Local Sites/soss-catalog/app/public/wp-content/themes/soss-catalog-theme/package.json: Unexpected token / in JSON at position 1852
       at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:1625:59
+      at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:1625:59
       at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:304:30)
-      at /usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:315:13
+      at step (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:321:13
 
 npm manifest: 
   {
     "name": "soss-catalog-theme",
     "version": "1.0.0",
-    "main": "assets/index.js",
+    "main": "index.php",
     "repository": "https://github.com/shrinkray/soss-catalog-theme.git",
-    "author": "Greg <info@shrinkray.net>",
+    "author": "Greg <hello@gregmiller.io>",
     "license": "MIT",
     "scripts": {
       "dev": "webpack --mode development --watch",
@@ -52,7 +52,7 @@ npm manifest:
       "imagemin-jpegtran": "^6.0.0",
       "imagemin-mozjpeg": "^8.0.0",
       "imagemin-optipng": "^6.0.0",
-      "imagemin-pngquant": "^7.0.0",_carousel.scss
+      "imagemin-pngquant": "^7.0.0",
       "imagemin-svgo": "^7.0.0",
       "imagemin-webpack": "^4.1.0",
       "imagemin-webpack-plugin": "^2.4.2",
@@ -74,11 +74,13 @@ npm manifest:
     },
     "dependencies": {
       "@babel/core": "^7.3.3",
+      "@types/gsap": "^1.20.2",
       "bootstrap": "^4.3.1",
       "browser-sync": "^2.26.3",
       "font-awesome": "^4.7.0",
+      "glyphicons": "^0.2.0",
       "gsap": "^2.1.2",
-      "jquery": "^3.3.1",
+      "jquery": "^3.5.0", //"^3.3.1", updated per github 7/17/2020
       "micromodal": "^0.3.2",
       "popper.js": "^1.15.0",
       "tether": "^1.4.5",
@@ -766,6 +768,11 @@ Lockfile:
     version "1.3.1"
     resolved "https://registry.yarnpkg.com/@types/anymatch/-/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
     integrity sha512-/+CRPXpBDpo2RK9C68N3b2cOvO0Cf5B9aPijHsoDQTHivnGSObdOF2BRQOYjojWTDy6nQvMjmqRXIxH55VjxxA==
+  
+  "@types/gsap@^1.20.2":
+    version "1.20.2"
+    resolved "https://registry.yarnpkg.com/@types/gsap/-/gsap-1.20.2.tgz#038d0e81a8dd50b9b6894f34f3cd4045f71c62b8"
+    integrity sha512-i9nUsnS32+VTgoX5IlaCYukJpCoB3c6h3bZvO67aIRdb3z8NFTWgeUDpQutLyb1ujowp6nw37qLQNvEowqq8yw==
   
   "@types/imagemin-gifsicle@^5.2.0":
     version "5.2.0"
@@ -4532,6 +4539,11 @@ Lockfile:
       glob "~7.1.1"
       lodash "~4.17.10"
       minimatch "~3.0.2"
+  
+  glyphicons@^0.2.0:
+    version "0.2.0"
+    resolved "https://registry.yarnpkg.com/glyphicons/-/glyphicons-0.2.0.tgz#291d8ec974993a9fc88a72b58d540daf550da399"
+    integrity sha1-KR2OyXSZOp/IinK1jVQNr1UNo5k=
   
   got@^7.0.0:
     version "7.1.0"
