@@ -1,0 +1,160 @@
+.content-info {
+  color: $black;
+  padding: 2rem 0 0;
+
+  .footer-brand {
+    .brand-logo {
+      margin: 0;
+    }
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    a {
+      padding: .5em 0;
+      display: block;
+    }
+  }
+
+  .clean-list { // this is top 5 category list that is not a widget.
+    list-style: none;
+  }
+  .cat-item {
+    font-size: 0.9rem;
+    color: $gray-light; // sets color of text other than a link
+    margin: 0.5em 0;
+  }
+  .address-list {
+    margin-left: 6px;
+
+    &::before {
+      position: relative;
+      top: 14px;
+      left: -9px;
+    }
+    li {
+      font-family: $font-family-sans-serif;
+      margin: 0.5rem;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  font-size: 0.9rem;
+
+  .lower-footer {
+    background-color: lighten($gray-dark, 30%);
+    margin-top: 2rem;
+    color: white;
+    .legal {
+      padding: 1rem 0;
+    }
+  }
+}
+// Newsletter banner
+.cta-news {
+  border: 4px solid $gray-light;
+  border-left: 0;
+  border-right: 0;
+  background: linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0.3)), url('/wp-content/themes/soss-catalog-theme/dist/symphony.png') repeat center center;
+
+  .deals {
+    padding: 1rem;
+    padding: 1rem;
+    margin: -35px 6px 0;
+    max-width: 100%;
+    background: $gray;
+    border: 1px solid $gray-light;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.1);
+    background: rgb(170,170,170);
+    background: -moz-linear-gradient(top, rgb(170,170,170) 0%, rgb(254,254,254) 100%);
+    background: -webkit-linear-gradient(top, rgb(170,170,170) 0%, rgb(254,254,254) 100%);
+    background: -o-linear-gradient(top, rgb(170,170,170) 0%, rgb(254,254,254) 100%);
+    //background: -ms-linear-gradient(top, rgb(170,170,170) 0%, rgb(254,254,254) 100%);
+    background: linear-gradient(to bottom, rgb(170,170,170) 0%, rgb(254,254,254) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaaaaa', endColorstr='#fefefe', GradientType=0 );
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      right: 13px;
+      width: 0;
+      height: 0;
+      border-bottom: 10px solid rgb(93,93,93);
+      border-right: 8px solid rgba(255,255,255, 0);
+    }
+
+
+  }
+    .subheading {
+      font-style: italic;
+    }
+    .promotion-link {
+      font-weight: 700;
+      font-style: italic;
+    }
+  }
+  .targeted-message {
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    height: 100%;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .gform_footer {
+    .gform_button { // should not need to force the color change, but it wouldn't work otherwise.
+      background-color: $brand-primary !important;
+      border: 0;
+      color: white !important;
+      font-weight: 300 !important;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      //-ms-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s;
+      &:hover {
+        background-color: darken($brand-primary, 10%) !important;
+      }
+    }
+  }
+
+ @media (max-width: 991px ) {
+   .form-group {
+     margin-top: 2rem;
+     .gform_wrapper {
+       margin: 0 auto;
+       .top_label .gfield_label {
+         //display: none;
+       }
+     }
+   }
+   .targeted-message {
+
+   }
+ }
+  @media (max-width: 575px ) {
+    .targeted-message {
+      margin-top: 2rem;
+      justify-content: center;
+    }
+    .gf_simple_horizontal {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+
+    }
+  }
+
+.mt-35 {
+  margin-top: 1rem;
+}

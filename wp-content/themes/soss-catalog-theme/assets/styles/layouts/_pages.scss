@@ -1,0 +1,563 @@
+.justify-content-center {
+  overflow: hidden;
+}
+
+
+@include media-breakpoint-up(sm) {
+
+}
+
+.col-12 {
+ // flex: 0 0 auto;
+}
+
+.hotspot  {
+  padding: .2rem .5rem;
+  background: white;
+  color: $brand-primary !important;
+  border: 1px solid $brand-primary !important;
+  margin-left: 0.5rem;
+  text-align: center;
+  font-size: 0.7rem;
+  position: relative;
+  top: 3px;
+  transition: opacity 0.5s ease-in-out;
+
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+    color: white !important;
+    background: $brand-primary;
+  }
+}
+
+.gallery-message {
+  background: $gray-lighter;
+  border: 4px dashed $gray-light;
+  border-radius: 10px;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+
+  .help-message {
+    width: 200px;
+
+    .look-like-btn {
+      background: rgb(255, 255, 255);
+      border: 1px dotted $brand-primary;
+      border-radius: 0.25rem;
+      color: $brand-primary;
+      line-height: 1.5;
+      padding: .2rem .5rem;
+    }
+  }
+}
+
+
+// hide the SVG animation
+
+//.weightSvg, .heightSvg, .widthSvg, .depthSvg,
+
+.hideSvg {
+  display: none !important;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+
+}
+
+
+// JUMBOTRON
+// moved to jumbotrons.scss
+
+.home {
+  .main {
+    margin-top: 4rem;
+  }
+}
+
+.row-break {
+  margin: 0;
+}
+@include media-breakpoint-up(md) {
+  .row-break {
+    margin-top: 4rem;
+  }
+}
+
+.callout {
+  //background-color: rgba(223,223,223,0.22);
+  padding: 2rem 0;
+}
+
+.max-height {
+  height: 100%;
+}
+
+
+.d-flex .fa-check {
+  font-size: 2rem;
+}
+
+h4.light {
+  font-weight: 300 !important;
+}
+
+// ROUTER
+.router-container {
+  border: 1px solid $gray-light;
+  padding: 1rem 1.2rem;
+  background: $gray-lighter;
+  width: 100%;
+
+  .image {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .label {
+    margin: 1rem 0 0;
+  }
+  .overflow {
+    overflow: hidden;
+  }
+
+  .overlay {
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      .middle {
+        opacity: 1;
+      }
+    }
+
+    .middle {
+      transition: 0.5s ease;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: .5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.25);
+
+      .text {
+        color: white;
+        padding: 0.5rem 1rem;
+        background-color: $brand-primary;
+        border-radius: 5rem;
+
+      }
+    }
+  }
+  .grow { transition: all .2s ease-in-out; }
+  .grow:hover { transform: scale(1.1); }
+}
+
+#right_middle ~ .grow {
+
+  transition: all .2s ease-in-out;
+}
+#right_middle:hover ~ .grow {
+  transform: scale(1.1);
+}
+
+@media (max-width: 576px) {
+  .router-container {
+    .overlay {
+      .middle {
+
+        .text {
+          border-radius: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+// TESTIMONIALS
+
+.testimonial {
+  //background: $gray-light;
+  overflow: hidden;
+ // background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(237, 237, 237, 1) 20%, rgba(237, 237, 237, 1) 100%);
+
+}
+
+.blkquote {
+  padding: 4rem 1rem;
+  margin: 0;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: $font-family-sans-serif;
+
+  .credit {
+    align-self: flex-end;
+    margin-right: 4rem;
+    margin-top: 1rem;
+  }
+
+  &.quote__Text {
+
+    margin-right: -15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .blkquote {
+    &.quote__Text {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(237, 237, 237, 0.3) 20%, rgba(237, 237, 237, 0.8) 100%);
+      padding-left: 6rem;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .blkquote {
+    &.quote__Text {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(237, 237, 237, 1) 20%, rgba(237, 237, 237, 1) 100%);
+      padding-left: 15px;
+      margin-left: -15px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .blkquote {
+    &.quote__Text {
+      background: rgba(237, 237, 237, 1);
+    }
+  }
+}
+
+
+.block__Image {
+  margin-left: -15px;
+  background: rgb(247,247,247);
+}
+
+@media (max-width: 575px) {
+  .block__Image {
+ //   background-position: center -10% !important;
+  }
+  .blkquote__Btn {
+    padding-top: 4rem;
+  }
+}
+
+.blkquote__Btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+
+  .blkquote__Link {
+    color: white;
+    padding: 0.5rem 1rem;
+    background-color: $brand-primary;
+    border-radius: 5rem;
+    flex-wrap: nowrap;
+    opacity: 0.5;
+    transition: 0.5s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+
+  }
+}
+
+@media (max-width: 575px) {
+  .testimonial {
+    background-size: cover !important;
+
+    & > .no-col {
+      display: none;
+    }
+
+    .col-sm-7 {
+      padding: 0;
+    }
+
+    blockquote {
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 1rem;
+    }
+  }
+}
+
+// CTA Right and CTA Left were removed from this theme.
+
+
+.main {
+ // margin-bottom: 4rem;
+}
+
+
+// All Pages & Secondary Template Mods
+
+a {
+  &:hover, &:focus {
+    text-decoration: none;
+    color: darken($brand-primary, 10%);
+    transition: color 0.5s;
+  }
+}
+
+.block {
+  margin-bottom: $block;
+}
+
+.half-block {
+  margin-bottom: ($block / 2);
+}
+
+.block-title {
+  margin: 0 0 2rem 0;
+}
+
+.cta-block {
+  background: $gray-lighter;
+  padding-bottom: 1rem;
+}
+
+.card-group {
+  flex: 1;
+}
+
+.card {
+  border: 0;
+  flex-wrap: wrap;
+  flex: 1;
+  margin-bottom: 1rem;
+
+
+  .image-block {
+    position: relative;
+
+
+    a {
+      display: inline-block;
+    }
+
+    img {
+      opacity: 1;
+      display: inline-block;
+
+      &:hover {
+        transition: opacity .25s ease-in-out;
+        opacity: 0.2;
+      }
+    }
+  }
+
+  .over-image {
+    position: absolute;
+    bottom: 0%;
+    left: 5%;
+    color: $white;
+    font-weight: 700;
+    padding-right: 10px;
+
+  }
+}
+
+.eq-cols {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// max-height used with checkScrollHeightOverflow() in main.js
+article {
+  margin-bottom: 2rem;
+  .card-title {
+    max-height: 2.2em;
+  }
+
+  footer {
+
+  }
+}
+
+.card-block {
+  padding: 0;
+  flex-wrap: wrap;
+
+  // max-height: 4em; // needed for checkScrollHeightOverflow()
+  // it's not doing what we need it to right now.
+  //border-bottom: 1px solid $gray-light;
+  //border-top: 3px solid $gray-lighter;
+
+
+  .cat { // set this margin if appearing stacked meta
+    //margin-bottom: 1.2rem;
+    align-content: center;
+  }
+}
+
+.card-title {
+  font-size: 1.3rem;
+  line-height: 1.1em;
+  max-height: 2.2em;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+// adds Font Awesome icon to Blog post meta
+.flex-meta {
+  display: flex;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  font-size: .6rem;
+  color: darken($gray, 30%);
+
+  .time {
+    margin-right: 1rem;
+  }
+
+  .byline {
+    margin-bottom: 0;
+
+    .fn {
+      font-size: 0.6rem;
+      color: darken($gray, 30%);
+
+      &:hover {
+        color: darken($gray, 40%);
+      }
+    }
+  }
+}
+
+.sticky {
+  padding: 1rem;
+  background: $gray-lightest;
+}
+
+.cat {
+  // see .card-block for .cat : margin-bottom: 1.2rem;
+  //&:before {
+  //  font-family: $font-family-icon;
+  //  content: "\f0c1"; // link
+  //  color: $gray-light;
+  //  margin-right: .4em;
+  //  font-size: .7rem;
+  //}
+}
+
+.fa-tag { // tag
+  text-transform: lowercase;
+  color: $gray-light;
+  margin-right: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.post-btn {
+  text-transform: uppercase;
+  font-size: .8rem;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:after {
+    font-family: $font-family-icon;
+    content: "\f105"; // angle-right
+    text-transform: lowercase;
+    color: lighten($brand-primary, 30%);
+    margin-left: .5em;
+    font-size: .8rem;
+  }
+}
+
+// MEDIA & BREAK BOX
+.rounded {
+  border-radius: $border-radius-sm;
+}
+
+.break-block {
+  padding: 40px;
+  //border-top: 1px solid $gray-light;
+  //border-bottom: 1px solid $gray-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+
+  &:before {
+    content: '\f10d';
+    font-family: $font-family-icon;
+    font-size: 4rem;
+    align-self: flex-start;
+    color: rgba(227, 227, 227, 0.5);
+    line-height: 0;
+  }
+
+  // Disable right side of quotation marks
+  //&:after {
+  //  content: '\f10e';
+  //  font-family: $font-family-icon;
+  //  align-self: flex-end;
+  //  font-size: 4rem;
+  //  color: rgba(227, 227, 227, 0.5);
+  //  line-height: 0;
+  //}
+
+  blockquote {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    width: 100%;
+  }
+
+  .credit {
+    align-self: flex-end;
+    margin-right: 4rem;
+  }
+}
+
+.standard-block {
+  .block {
+    img {
+      margin-top: 0.5rem;
+    }
+    .img img { // fix bug on image rotator added via shortcode. TODO: find out why earlier style needed
+      margin-top: 0;
+    }
+  }
+}
+
+
+// A standard return to top customization
+.go-top {
+  margin: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: rgba($brand-primary, 0.3);
+  display: none;
+  z-index: 10000;
+
+  &:hover {
+    color: rgba($brand-primary, 0.9);
+  }
+
+  .fixed-btn {
+    font-size: 60px;
+    padding: 0 10px;
+  }
+}
+
+

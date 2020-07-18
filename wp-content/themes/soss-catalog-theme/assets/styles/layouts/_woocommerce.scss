@@ -1,0 +1,539 @@
+
+.woocommerce,
+.woocommerce-page {
+  .products { //section
+    &> .products { // ul
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    &> .product { // li
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      .button { // text button
+        max-height: 2.3rem;
+        margin: 0 auto; //2rem auto 0 !important;
+      }
+    }
+  }
+}
+
+/* My Account  page styling
+ *   Bug fix -- Login button is mispositioned
+ */
+
+.woocommerce {
+  .woocommerce-form-login {
+    .woocommerce-form-login__submit {
+
+    }
+    .woocommerce-form-login__rememberme {
+      display: block;
+    }
+    .woocommerce-form-login__submit {
+      margin-right: 0.1rem;
+    }
+  }
+  form {
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      &:before,
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
+
+/* Cart widget */
+.woocommerce-mini-cart__total {
+  display: none;
+}
+
+/* Cart */
+.product-price, .product-subtotal {
+  display: none !important;
+}
+
+/* Checkout */
+.product-total *, th.product-total {
+  display: none;
+}
+
+.woocommerce { // TODO: find alternate namespace for theme styles on buttons
+
+  // Fix account layout bug due to Bootstrap 4
+
+  .u-columns.col2-set {
+    display: flex;
+    flex-wrap: wrap;
+    .u-column1.col-1,
+    .u-column2.col-2 {
+
+      max-width: 50% ;
+      flex: 0 0 50% ;
+    }
+  }
+  .u-column1.col-1,
+  .u-column2.col-2 {
+
+    max-width: 50% ;
+    flex: 0 0 50% ;
+  }
+.product-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-inline-start: 0;
+  .tab-list {
+    margin-right: 0.1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .btn {
+    background: $brand-primary;
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 0;
+    cursor: pointer;
+
+    &:hover,
+    .active-btn {
+      background: $brand-primary-hover;
+    }
+  }
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+.variations tbody tr .label {
+  display: none;
+}
+
+
+  @media (max-width: 575px ) {
+    .u-columns.col2-set {
+      display: flex;
+      flex-wrap: wrap;
+      .u-column1.col-1,
+      .u-column2.col-2 {
+
+        max-width: 100% ;
+        flex: 1 100% ;
+      }
+    }
+    .yith-ywraq-mail-form-wrapper {
+
+      #yith-ywraq-mail-form {
+        width: 100%;
+        min-width: 100%;
+
+      }
+    }
+  }
+
+  .products { // section
+    display: flex;
+    flex-wrap: wrap;
+
+    .products { // ul
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 4rem;
+      &> .product { // li
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: center;
+        .button { // select options button
+          max-height: 2.3rem;
+          margin: 0 auto; // 2rem auto 0 !important;
+        }
+        a img {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .yith-ywraq-mail-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    #yith-ywraq-mail-form {
+      width: 100%;
+      min-width: 50%;
+
+    }
+  }
+
+  .product {
+    .woocommerce-tabs {
+      .panel {
+        padding-bottom: 3em !important;
+        margin-bottom: 4em !important;
+        border-bottom:1px dashed rgb(211, 206, 210);
+      }
+    }
+    .product_meta { // Affects single product page. Forces the category to appear on a new line.
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      .sku_wrapper {
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  .woocommerce-variation-add-to-cart {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+
+  table {
+    &.shop_attributes {
+      td {
+        padding: 8px;
+      }
+    }
+  }
+  .attract {
+    background-color: $gray-lightest;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  button, input {
+    &.button {
+      &.alt {
+        background-color: $brand-primary;
+        border-radius: 0;
+        &:hover {
+          background-color: darken($brand-primary, 5%);
+
+        }
+        &.disabled {
+          background-color: rgba($brand-primary, 0.5);
+          &:hover {
+            background-color: darken(rgba($brand-primary, 0.5), 5%);
+          }
+        }
+      }
+    }
+  }
+  .button {
+    &.large-order-button {
+      background-color: white;
+      border: 1px solid $brand-primary;
+      &:hover {
+        background-color: $brand-primary;
+        color: $white;
+        transition: color 0s, background-color 0.5s;
+      }
+    }
+  }
+  div.product {
+    p.price { // Starting from ...
+      color: darken($brand-info, 10%);
+    }
+    span.price {
+      color: darken($brand-info, 10%);
+    }
+    .images img {
+      width: auto !important;
+      float: left;
+    }
+  }
+  .sku_wrapper {
+    color: darken($brand-info, 10%);
+  }
+  .woocommerce-message {
+    border-top-color: darken($brand-info, 10%);
+    &:before {
+      color: darken($brand-info, 10%);
+    }
+  }
+  ul.products li.product .price {
+    //color: darken($brand-info, 10%);
+    //display: none;
+  }
+  input {
+    &.button { // apply coupon button
+      border-radius: 0;
+      width: 204px;
+    }
+  }
+  a.button {
+    border-radius: 0;
+    background-color: white;
+    border: 1px solid $brand-primary;
+    &:hover {
+      background-color: $brand-primary;
+      color: $white;
+      transition: color 0s, background-color 0.5s;
+    }
+    &.alt { // proceed to checkout button
+      background-color: $brand-primary;
+      border-radius: 0;
+      &:hover {
+        background-color: darken($brand-primary, 5%);
+        transition: color 0s, background-color 0.5s;
+      }
+    }
+  }
+  #respond input#submit,
+  .woocommerce a.button,
+  .woocommerce button.button,
+  .woocommerce input.button {
+    border-radius: 0;
+  }
+  .table-wraper {
+    padding-left: 20px;
+  }
+
+  // hides this tab
+  .reviews_tab {
+    display: none !important;
+  }
+  .wc-tab h2 {
+    text-transform: capitalize;
+  }
+
+  .modal-body iframe {
+    width: 100%;
+    height: 100%;
+  }
+  // my Account
+  .woocommerce-MyAccount-navigation {
+    ul {
+      list-style: none;
+      margin: 0 0 4rem;
+      padding: 0.8rem 0;
+      background-color: lighten($gray, 2%);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      border-top: 1px solid $grayer;
+      border-bottom: 1px solid $grayer;
+        a {
+          padding: 0 1rem;
+          transition: background ease-in 1s;
+          &:hover {
+            //background: linear-gradient(180deg, darken($gray, 15%) 2%, darken($gray, 2%) 6%, darken($gray, 1%) 94%, darken($gray, 15%) 100%);
+
+          }
+        }
+      }
+
+  }
+  .woocommerce-MyAccount-content {
+    .ywraq_my_account_quotes_title {
+      margin-top: 1.5em;
+    }
+  }
+
+  .add-request-quote-button.button,
+  .add-request-quote-button-addons.button {
+    background-color: white !important;
+    color: $brand-primary !important;
+    border: 1px solid $brand-primary !important;
+    &:hover {
+      background-color: rgb(162, 40, 31) !important;
+    }
+  }
+}
+.drawing-grid,
+.grid-layout {
+  margin-bottom: 2rem;
+  font-family: sans-serif;
+  .row {
+    border-bottom: 1px dashed $gray-light;
+    padding: 0.4rem 0;
+    margin: 0;
+
+    &.docs_paginate { // Add new pagination styles to content-page-documents template
+      border: 0;
+      font-size: 0.9rem !important;
+      margin-top: 0.5rem;
+
+      a {
+        background-color: white;
+        border: rgb(205, 51, 39) 1px solid;
+        border-radius: 0.25rem;
+        margin-right: 0.2rem;
+        padding: 0.4rem 1rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        &:hover {
+          background-color: rgb(205, 51, 39);
+          color: white;
+        }
+      }
+      span {
+        background-color: $gray !important;
+        border: 1px solid $gray !important;
+        border-radius: 0.25rem;
+        margin-right: 0.2rem;
+        padding: 0.4rem 1rem;
+
+        &:hover {
+
+        }
+      }
+    }
+  }
+
+  .btn {
+    padding: 0.2rem 1rem;
+    background-color: white;
+    color: $gray-dark;
+    font-size: 0.9rem;
+    transition: all 0.5s;
+    &:hover {
+      color: white;
+      background-color: $brand-primary;
+      cursor: pointer;
+    }
+  }
+  .caption {
+    font-style: italic;
+    font-size: 12px;
+  }
+
+  .file-actions {
+    display: flex;
+    align-self: center;
+  }
+  .linkified { // setting a button to appear as a link
+    color: $brand-primary;
+    background: transparent;
+    font-size: 16px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+  .download {
+    margin-left: 0.5rem;
+  }
+  .data-display {
+    &:nth-child(odd) {
+      background-color: $gray-lighter;
+    }
+  }
+  .th { // table header cells
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+  .cookie-group {
+    margin-top: 2rem;
+  }
+}
+.file-listing { // applies in product tabs and newsroom page
+  display: flex;
+  align-items: center;
+  .dxf, .dwg, .pdf {
+    color: white;
+    font-size: 0.6rem;
+    background-color: #777;
+    padding: 0.1rem 0.4rem 0.05rem;
+    border-radius: 1rem;
+    align-self: center;
+  }
+  .dxf {
+    background-color: #515151; // dark gray
+  }
+  .dwg {
+    background-color: #233051; // dark blue
+  }
+  .pdf {
+    background-color: #512323; // dark maroon
+  }
+  .filesize, .dist-text {
+    color: $grayer;
+    font-size: 14px;
+    align-self: center;
+    margin-right: 0.5rem;
+  }
+  // Category class for documents template
+.cat {
+  font-size: 0.8rem;
+  align-self: center;
+  color: $grayer;
+  margin-left: 0.5rem;
+}
+
+  ul {
+    list-style-type: none;
+  }
+}
+ // woocommerce
+
+// Vertically align SVG pdf icon on documents
+.pdfdoc {
+  display: inline-block;
+  vertical-align: -2px;
+}
+  .woocommerce form fieldset {
+  margin-top: 2rem;
+}
+
+.woo-nav-wrap {
+  padding: 1rem 0 !important;
+}
+input#coupon_code { // width of field
+  //width: 166px;
+}
+.woocommerce-cart table.cart img { // larger thumbnail image in cart
+  width: 150px;
+}
+// Checkout
+
+// This addresses image size of SVG creditcards showing in Stripe
+.payment_methods {
+  li {
+    img[src$=".svg"] {
+      //width: 40px;
+    }
+  }
+}
+
+// Addresses position of inline checkbox in checkout
+.woocommerce {
+  h3 {
+    input[type=checkbox] {
+      position: relative;
+      top: -5px;
+    }
+  }
+  .form-row {
+    .required {
+      text-decoration: none;
+    }
+  }
+}
+
+// #product-attribute-specs-table
+.data-table {
+  td {
+    padding-left: 1rem;
+  }
+}
+
+// Category Swatch Manager Plugin
+
+.swatch-wrapper {
+  padding: 1px;
+  &:hover {
+    border-color: $brand-primary;
+  }
+  &.selected {
+    border: 1px solid darken($brand-primary, 10%) !important;
+  }
+}

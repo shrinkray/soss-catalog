@@ -1,0 +1,72 @@
+.modal-large {
+  max-width: 80%;
+  margin: auto 0.5rem;
+}
+
+.modal-header {
+  border-bottom: none 0;
+  background-color: $gray;
+  .close {
+    &:before {
+      content: 'close';
+      font-size: 19.2px;
+
+    }
+  }
+}
+.modal-footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: $gray;
+  .close {
+    font-size: larger;
+  }
+}
+
+
+//@media ( minx-width: 992px )
+@include media-breakpoint-down(md) {
+  .modal-dialog {
+    min-width: 100%;
+    margin: 0;
+  }
+}
+.soss-model {
+  font-weight: 600;
+}
+
+
+#scale_play {
+  position: absolute;
+  bottom: 50%;
+  left: 24%;
+}
+
+/* Form */
+
+legend {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  margin-bottom: 2rem;
+}
+.legend {
+  line-height: 0.7rem;
+
+}
+.measures {
+  font-size: .7rem;
+  padding: .3rem;
+  border-radius: 2px;
+  background-color: #e5efff;
+}
+label {
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 766px) {
+  legend {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+}

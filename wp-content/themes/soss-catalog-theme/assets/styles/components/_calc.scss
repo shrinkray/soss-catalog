@@ -1,0 +1,268 @@
+/**
+*  Calculator tables
+*
+ */
+
+@media screen and ( min-width: 350px ) {
+  #formRow {
+    .container {
+      max-width: 100%;
+    }
+  }
+}
+
+// Input units row with Flexbox
+// Wraps Hint (Status area) < 991px
+.table-on-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.units-row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: auto;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  legend {
+
+  }
+}
+.flex-label {
+}
+
+@media screen and (min-width: 991px) {
+  .flex-label {
+    min-width: 160px;
+  }
+  .flex-status {
+    max-width: 400px;
+  }
+}
+
+.hide {
+  z-index: 0;
+  display: none;
+}
+.show {
+  z-index: 20;
+  display: block;
+}
+.hide-gallery {
+  display: none;
+}
+.calc-fieldset {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+// even odd styling for calculator results table
+#status_msg {
+  background: lightgoldenrodyellow;
+  font-weight: 500;
+  margin: 0;
+  padding: 1rem;
+}
+
+@keyframes floating {
+  0%{transform:translateY(0px)}
+  50%{transform:translateY(20px)}
+  100%{transform:translateY(0px)}
+}
+.no-match {
+  background-color: rgb(233, 233, 233);
+  padding: 1rem;
+}
+
+.gallery-message {
+  position: relative;
+  //max-width: 425px;
+  z-index: 10;
+}
+.highlight-results {
+  border: 4px solid $grayer;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: none;
+  background-color: $gray;
+
+}
+.btn-refresh {
+  color: $grayer;
+  &:hover .fa-spin-hover {
+    animation: fa-spin 2s infinite linear;
+    color: $brand-primary;
+  }
+}
+/**
+ This dimmer section is a page background and size added to a div before .wrap element
+ It covers form, elements, disables actions to the form and draws focus to the results panel
+ */
+.dim-page {
+  background-color: rgba(0,0,0,0.3);
+  position: absolute;
+  z-index:15;
+  width: 100vw;
+  height: calc(100vh * 2.7);
+
+// fade in animation for #dimmer background
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+#results_display {
+  background-color: white;
+  position: relative;
+  z-index: 99;
+
+  .recommended,
+  .secondary {
+    background: white;
+    border-bottom: 3px solid $gray-light;
+  }
+}
+.dim_page {
+
+}
+.form-results {
+  display: grid;
+  //grid: 100px / 100px repeat(3, auto);
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-columns: 100px repeat(3, 1fr);
+  align-items: center;
+  grid-gap: .5rem;
+  overflow: hidden;
+  padding: 1rem;
+
+  .results-info {
+    font-size: 1.2rem;
+    font-weight: 100;
+    grid-column: 2 / -1;
+
+    .description {
+      font-size: 1rem;
+    }
+  }
+
+  .family {
+    display: grid;
+    grid-column: 1 / 3;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product {
+    display: grid;
+    grid-column: 3 / -1;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-brand {
+    $brandShadow: darken($brand-primary, 10%);
+    background-color: $brand-primary;
+    border: 1px solid $brand-primary;
+    border-color: $brand-primary;
+    border-radius: 2px;
+    font-weight: 300;
+    margin: unset;
+    padding: .5em 1em;
+    transition: all 0.5s;
+
+    span {
+      color: $gray-lightest;
+      text-align: center;
+    }
+
+    .big {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    &:hover {
+      background-color: darken($brand-primary, 10%);
+      border-color: $brand-primary;
+      color: $white;
+    }
+  }
+  .cta-disabled {
+    span {
+      color: $gray-dark;
+      text-align: center;
+    }
+
+    .big {
+      font-size: 1.2rem;
+      font-weight: 500;
+
+    }
+  }
+}
+@media screen and (min-width: 991px) {
+  .form-results {
+    &> .big {
+      white-space: nowrap;
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  .form-results {
+    grid-auto-rows: minmax(min-content, max-content);
+    grid-template-columns: none;
+    .results-image {
+      display: flex;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+  .highlight-results {
+    left: 0;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .form-results {
+    grid-auto-rows: minmax(min-content, max-content);
+    grid-template-columns: none;
+    .results-image {
+      display: flex;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+}

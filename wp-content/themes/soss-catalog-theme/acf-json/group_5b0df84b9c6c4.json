@@ -1,0 +1,539 @@
+{
+    "key": "group_5b0df84b9c6c4",
+    "title": "Privacy Page Content & Cookies Table",
+    "fields": [
+        {
+            "key": "field_5b0e0194f2d64",
+            "label": "Open\/Collapse Intro Paragraph",
+            "name": "",
+            "type": "accordion",
+            "instructions": "Dump it all in here or use the Privacy Section grouping below.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 1,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5b0eef1b9ed7d",
+            "label": "Show the intro?",
+            "name": "show_intro",
+            "type": "true_false",
+            "instructions": "This is an option to disable displaying content we have added in the Intro verbiage section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Uncheck to hide this section.",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5b0dfeb47e61a",
+            "label": "Introductory verbiage",
+            "name": "introduction",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5b0e01b8f2d65",
+            "label": "Endpoint",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 1
+        },
+        {
+            "key": "field_5b0df9720648c",
+            "label": "Build a privacy page",
+            "name": "build_privacy_info",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "5b0e02c52b4fe": {
+                    "key": "5b0e02c52b4fe",
+                    "name": "privacy_section",
+                    "label": "Privacy Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b0e02f62b4ff",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "H2",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b0ee9b1ffcf6",
+                            "label": "Privacy description",
+                            "name": "privacy_description",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "66",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_5b0e03752b502",
+                            "label": "Add Subsection",
+                            "name": "add_subsection",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "+ Add Text Block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5b0ee5beda669",
+                                    "label": "Open\/Collapse Content Group",
+                                    "name": "",
+                                    "type": "accordion",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "open": 1,
+                                    "multi_expand": 1,
+                                    "endpoint": 0
+                                },
+                                {
+                                    "key": "field_5b0e03abbe88e",
+                                    "label": "Paragraph Section",
+                                    "name": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
+                                    "key": "field_5b0e031c2b500",
+                                    "label": "Subheading",
+                                    "name": "subheading",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "H3",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5b0e03372b501",
+                                    "label": "Info Editor",
+                                    "name": "info_editor",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5b0df9836ab8e": {
+                    "key": "5b0df9836ab8e",
+                    "name": "cookie_group",
+                    "label": "Cookie Group",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b0ee4c21d962",
+                            "label": "Open\/Collapse Group",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5b0df9b9d5887",
+                            "label": "Heading",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5b0df9020648a",
+                            "label": "Category",
+                            "name": "category",
+                            "type": "text",
+                            "instructions": "Select from: Marketing, Statistics, Data",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "H2",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b0df9290648b",
+                            "label": "Description",
+                            "name": "description",
+                            "type": "textarea",
+                            "instructions": "What is this cookie about?",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "75",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_5b0dfcf47e616",
+                            "label": "Prior consent enabled",
+                            "name": "data_consent",
+                            "type": "true_false",
+                            "instructions": "With the Cookie Policy plugin, this may well be true, always.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Consent is given through use of Cookie Compliance plugin.",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5b0df9ff6aed8",
+                            "label": "Add a new cookie",
+                            "name": "add_a_cookie",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "+ Add a Cookie",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5b0dfd797e617",
+                                    "label": "Name, Domain & Consent",
+                                    "name": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
+                                    "key": "field_5b0dfa5b6aed9",
+                                    "label": "Cookie name",
+                                    "name": "cookie_name",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "33",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5b0dfa946aeda",
+                                    "label": "Domain",
+                                    "name": "domain",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "33",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "third party": "Third Party"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 1,
+                                    "save_other_choice": 1,
+                                    "default_value": "",
+                                    "layout": "vertical",
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_5b0e943c5a702",
+                                    "label": "Description, Type & Expiry",
+                                    "name": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
+                                    "key": "field_5b0dfad76aedb",
+                                    "label": "Description (purpose)",
+                                    "name": "description_purpose",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "33",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "unclassified",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5b0dfbc57e612",
+                                    "label": "Cookie Type",
+                                    "name": "cookie_type",
+                                    "type": "radio",
+                                    "instructions": "could be HTML or HTTP",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "33",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "HTML": "HTML",
+                                        "HTTP": "HTTP"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 1,
+                                    "save_other_choice": 1,
+                                    "default_value": "",
+                                    "layout": "vertical",
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_5b0dfc417e613",
+                                    "label": "Expiry",
+                                    "name": "expiry",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "66",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "current session": "current session",
+                                        "1 day": "1 day",
+                                        "1 year": "1 year",
+                                        "6 months": "6 months",
+                                        "8 months": "8 months",
+                                        "4 hours": "4 hours",
+                                        "3 weeks": "3 weeks",
+                                        "10 years": "10 years",
+                                        "5 minutes": "5 minutes",
+                                        "11 days": "11 days"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 1,
+                                    "save_other_choice": 1,
+                                    "default_value": "current session",
+                                    "layout": "horizontal",
+                                    "return_format": "value"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "+ Add a Privacy Policy Section",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-privacy.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "Not used",
+    "modified": 1554072723
+}

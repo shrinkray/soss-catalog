@@ -1,0 +1,201 @@
+
+
+.focalRow__link {
+  background: linear-gradient(to bottom, #cecece 0%, #ffffff 50%, #cecece 100%);
+  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgb(173, 173, 173);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  &:hover {
+    background: $brand-primary;
+    box-shadow: 0 1px 4px rgb(250, 250, 250);
+    color: #cecece;
+    transition: background-color 0.5s ease;
+  }
+}
+
+
+
+  // Red and Blue CTA buttons
+.cta-brand,
+.button { // using overrides because Woocommerce caused problems
+          // .button is the wooCommerce style for input
+          // TODO: look for a non-force way to namespace theme settings
+  $brandShadow : darken($brand-primary, 10%);
+  background-color: $brand-primary !important;
+  border-color: $brand-primary !important;
+  border: 1px solid $brand-primary;
+  transition: all 0.5s;
+  border-radius: 5px !important;
+  color: $gray-lightest !important;
+  font-weight: 300 !important;
+  padding: .5em 1em;
+  margin: 0 auto; // inherit is 2rem auto 0;  this was to compensate for WooCommerce, now testing new settings.
+  &:hover {
+    background-color: darken($brand-primary, 10%) !important;
+    border-color: $brand-primary !important;
+    color: $white !important;
+  }
+  &.btn {
+   // width: 80%; this is causing probs now, WooCommerce may work better
+  }
+  &.add_to_cart_button {
+    background-color: white !important;
+    color: $brand-primary !important;
+    &:hover {
+      background-color: darken($brand-primary, 10%) !important;
+      border-color: $brand-primary !important;
+      color: $white !important;
+    }
+  }
+}
+// Refactor for 404 page button styles
+.btn-outline-success {
+  color: $brand-primary;
+  border-color: $brand-primary;
+  &:hover {
+    color: white;
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+  &:focus, &:active {
+    box-shadow: none;
+  }
+}
+.form-control:focus {
+  border-color: $brand-primary;
+}
+.cta-explore {
+  $exploreShadow : darken($brand-info, 10%);
+  background-color: $brand-info;
+  border-color: $brand-info;
+  transition: all 0.5s;
+  border-radius: 5px;
+  font-weight: 300;
+  padding: .5em 1em;
+  color: $gray-lightest;
+  &:hover {
+    background-color: darken($brand-info, 10%);
+    border-color: $brand-info;
+    box-shadow: 0 5px 0px 0 darken(darken($brand-info, 10%), 10%);
+    color: $white;
+    text-shadow: 3px 3px 3px rgba($exploreShadow, 0.9);
+  }
+}
+.cta-simple {
+  color: $brand-primary;
+  padding: .4rem 1.5rem .3rem;
+  &:after {
+    content: '\f105';
+    font-family: $font-family-icon;
+    padding-left: .5rem;
+  }
+}
+.brand-cta-dealer {
+  border-radius: 5px;
+  border: 2px solid $gray;
+  background-color: $gray;
+  box-shadow: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: $brand-primary !important;
+  padding: .4rem 1.6rem;
+  transition: all 0.5s ease;
+  &:before {
+    content: '\f278';
+    font-family: 'FontAwesome';
+    font-size: 1rem;
+    margin-right: .5rem;
+    overflow: hidden;
+    position: relative;
+  }
+  &:hover {
+    border: 2px solid $brand-primary;
+    background-color: $brand-primary-hover;
+    color: white !important;
+  }
+}
+.brand-cta-white {
+   border-radius: 5px;
+   border: 2px solid $brand-primary;
+   background-color: white !important;
+   box-shadow: none;
+   font-size: 1.2rem;
+   font-weight: 500;
+   color: $brand-primary !important;
+   padding: .4rem 1.6rem .4rem 1.5rem;
+   &:after {
+     margin-left: .5rem;
+     font-family: 'FontAwesome';
+     font-size: 1rem;
+     content: '\f054';
+   }
+
+   &:hover {
+     transition: background-color 0.5s ease;
+     background-color: darken($brand-primary, 15%) !important;
+     color: white !important;
+   }
+ }
+.brand-cta-red {
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: $brand-primary !important;
+  box-shadow: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white !important;
+  padding: .4rem 1.6rem .4rem 1.5rem;
+  &:after {
+    margin-left: .5rem;
+    font-family: 'FontAwesome';
+    font-size: 1rem;
+    content: '\f054';
+  }
+
+  &:hover {
+    transition: background-color 0.5s ease;
+    background-color: darken($brand-primary, 15%) !important;
+    color: white !important;
+  }
+}
+.cta-submit {
+  max-width: max-content;
+}
+.cta-disabled {
+  background: rgb(191,191,191);
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3)), url("/wp-content/themes/soss-catalog-theme/dist/symphony.png") repeat center center;
+  border: 1px solid $grayer;
+  border-radius: 5px;
+  color: $gray-dark;
+  font-weight: 300;
+  padding: .5em 1em;
+  margin: unset;
+}
+// Jumbotron Lead Button - Pill Style
+.lead {
+  .btn-pill {
+    border-radius: 50px;
+    border: 2px solid $brand-primary;
+    background-color: white !important;
+    box-shadow: none;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: $brand-primary !important;
+    text-transform: uppercase;
+    padding: .4rem 1.5rem;
+    &:hover {
+      transition: background-color 0.5s ease;
+      background-color: darken($brand-primary, 15%) !important;
+      color: white !important;
+    }
+  }
+  .btn-box {
+    // same as standard button
+  }
+}

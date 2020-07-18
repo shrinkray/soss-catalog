@@ -1,0 +1,124 @@
+.single-video {
+  .video-post {
+    display: block;
+  }
+}
+.featured {
+  margin-bottom: 4rem;
+}
+.regular {
+  margin-bottom: 6rem;
+}
+.no-gutter,
+.no-gutters {
+  padding: 0;
+}
+.card-block {
+  header {
+    z-index: 0 !important;
+  }
+  .entry-content {
+    margin-bottom: 1.5rem;
+  }
+  .btn-link {
+    color: $brand-primary;
+    &:hover {
+      color: darken($brand-primary, 10%);
+      background: transparent;
+      text-decoration: none;
+    }
+  }
+
+}
+.meta {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight:400;
+  color: green;
+  flex-wrap: wrap;
+
+  .tag {
+    padding: 0 0.5rem;
+  }
+}
+.social-dots {
+  font-size: small;
+}
+.learn-link {
+  color: $brand-primary;
+  background: white;
+  border: 1px solid $brand-primary;
+   &:hover {
+
+   }
+}
+.btn-outline-success {
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: white;
+    background-color: #cd3327 !important;
+    border-color: #cd3327 !important;
+    box-shadow: none !important;
+  }
+}
+.btn-outline-success:not(:disabled):not(.disabled):active { // trying to correct for something bootstrap is doing
+  color: white;
+  background-color: #cd3327 !important;
+  border-color: #cd3327 !important;
+  box-shadow: none !important;
+}
+
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+h2 {
+  &.video-title {
+    margin-top: 1rem;
+  }
+}
+h3 {
+  &.video-title {
+    margin-top: 0;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .video-title {
+    //margin-top: 2rem;
+  }
+  .learn-link {
+    .btn {
+      padding: 6px 16px;
+      margin-bottom: -1.3rem;
+    }
+  }
+  .social-dots {
+    justify-content: flex-end;
+  }
+  .entry-content {
+    margin: 1rem 0;
+  }
+}
+.tag-cloud-link {
+  padding: 0.3rem;
+}

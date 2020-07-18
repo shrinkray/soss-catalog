@@ -1,0 +1,514 @@
+{
+    "key": "group_598348c653d34",
+    "title": "Footer Invitation Form",
+    "fields": [
+        {
+            "key": "field_5d7a5c39b7b48",
+            "label": "New functionality disabled",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "!=",
+                        "value": "2"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Any new functionality here is not built in to the template right now until other work is complete. Please refer to card #260 to request anything. <strong>Items to address<\/strong>. \r\n\r\n1. Adjust Height of the footer bar\r\n2. Require card info if card enabled\r\n3. Other styling",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_598348ea03540",
+            "label": "Invitation",
+            "name": "invitation",
+            "type": "select",
+            "instructions": "This is the original design. If you keep the layout, please review the fields. If unchecked, We will keep the patterned span, just no form part.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "Show the form",
+                "2": "Only the footer bar",
+                "3": "Remove the footer bar"
+            },
+            "default_value": [
+                2
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5a8b70334cdbd",
+            "label": "Include the Promo Card?",
+            "name": "promo_card",
+            "type": "true_false",
+            "instructions": "This is a bent card rested to the left and on top of the footer bar.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "2"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5d7a57f9f2588",
+            "label": "Adjust height of the Footer Bar?",
+            "name": "bar_height",
+            "type": "range",
+            "instructions": "As you move the slider to the right, this gap padding is added to the bar.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "2"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 1,
+            "max": 5,
+            "step": "",
+            "prepend": "",
+            "append": "REM"
+        },
+        {
+            "key": "field_5d7a59c5471a2",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "!=",
+                        "value": "2"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5a8b19958ea66",
+            "label": "Add a short heading",
+            "name": "short_heading",
+            "type": "text",
+            "instructions": "Teaser heading.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a8b70334cdbd",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Latest Deals",
+            "prepend": "h5",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a8b312d056f0",
+            "label": "Link name",
+            "name": "link_name",
+            "type": "text",
+            "instructions": "Give the link words to surround. Space is limited.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a8b70334cdbd",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Get the deal »",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a8b1a0a8ea67",
+            "label": "Add a link",
+            "name": "add_link",
+            "type": "link",
+            "instructions": "Point to the promoted page.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a8b70334cdbd",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url"
+        },
+        {
+            "key": "field_5a8b1ab18ea68",
+            "label": "Form Teaser",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5983498603543",
+            "label": "Welcome Message",
+            "name": "welcome_message",
+            "type": "textarea",
+            "instructions": "Twenty or fewer words should be enough to stir interest.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Sign up for a technical paper",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_598349b703544",
+            "label": "Form Elements",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_598349e103545",
+            "label": "Form Label",
+            "name": "form_label",
+            "type": "text",
+            "instructions": "This could be simple or write it as a hint, \"Your email address is requested.\"",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59834a0e03546",
+            "label": "Placeholder",
+            "name": "placeholder",
+            "type": "text",
+            "instructions": "Often this is an example email address or leave blank.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59834b0c0354c",
+            "label": "Email Help Message",
+            "name": "email_help_message",
+            "type": "text",
+            "instructions": "Give a reassurance about how their emails will be used. Leave it blank to skip.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "We'll never share your email with anyone else.",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59834a3503547",
+            "label": "Button",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59834a5c03548",
+            "label": "Button Name",
+            "name": "button_name",
+            "type": "text",
+            "instructions": "No one clicks on \"Submit,\" be specific or creative.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Join Now",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b0700260ba66",
+            "label": "WYSIWYG Field",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5b0700730ba67",
+            "label": "Footer Message",
+            "name": "footer_message",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_598348ea03540",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "60",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "media_upload": 0,
+            "toolbar": "full",
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "Form appears in the footer section. This has not received any use and should be removed.",
+    "modified": 1568300419
+}

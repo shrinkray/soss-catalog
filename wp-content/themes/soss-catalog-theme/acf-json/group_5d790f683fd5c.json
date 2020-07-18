@@ -1,0 +1,144 @@
+{
+    "key": "group_5d790f683fd5c",
+    "title": "Soss Docs Options",
+    "fields": [
+        {
+            "key": "field_5d797139e6af5",
+            "label": "Add Quick Links",
+            "name": "add_quick_links",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Add Quick Links",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5d7971e96a299",
+            "label": "Button Builder",
+            "name": "button_builder",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d797139e6af5",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5d79100150918",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "+ ADD A QUICK LINK",
+            "sub_fields": [
+                {
+                    "key": "field_5d79100150918",
+                    "label": "Quick Links",
+                    "name": "quick_links",
+                    "type": "text",
+                    "instructions": "Paste desired search. For multi-word search join them with a plus: `<code>hinge+size<\/code>`.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "instructions",
+                    "prepend": "\/?s=",
+                    "append": "&post_type=docs",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5d7911252e522",
+                    "label": "Link Name",
+                    "name": "link_name",
+                    "type": "text",
+                    "instructions": "Word appears on the button. Please keep it brief, like 'Instructions'.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Link Name",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5d7910b050919",
+                    "label": "Button Name",
+                    "name": "button_name",
+                    "type": "text",
+                    "instructions": "Accessibility:  Provide a long, clear message.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Shows on hover",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "Add Quick Links to the Soss Docs area to return a search.",
+    "modified": 1568316166
+}

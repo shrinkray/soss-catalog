@@ -1,0 +1,31 @@
+body {
+  font-family: $font-family-sans-serif;
+}
+a {
+  color: $brand-primary;
+  text-decoration: none;
+  &:hover {
+    color: (darken($brand-primary, 5%));
+    transition: all ease 0.3s;
+  }
+}
+.wrap {
+  padding-top: 2rem;
+}
+
+
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// resolve bug where outside padding seems excessive on secondary template
+@media ( max-width: 767px) and ( min-width: 576px ) {
+  .container {
+    width: 737px;
+  }
+}

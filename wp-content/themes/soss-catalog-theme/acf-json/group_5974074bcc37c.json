@@ -1,0 +1,1686 @@
+{
+    "key": "group_5974074bcc37c",
+    "title": "Flexible Page Layouts",
+    "fields": [
+        {
+            "key": "field_5974074bd3ed0",
+            "label": "Content Sections",
+            "name": "content_sections",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "5a871230dc4aa": {
+                    "key": "5a871230dc4aa",
+                    "name": "card_builder",
+                    "label": "Card Builder",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a871230dc4ab",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "type": "text",
+                            "instructions": "Give a title for this section. This is optional if the row does not need one.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "H2",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a871230dc4ac",
+                            "label": "Remove gutters?",
+                            "name": "remove_gutters",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Gutters between columns will be removed if checked.",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a871230dc4ad",
+                            "label": "Assemble Card",
+                            "name": "assemble_card",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 4,
+                            "layout": "block",
+                            "button_label": "+ Add a new card",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5a871230dc4ae",
+                                    "label": "Heading",
+                                    "name": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
+                                    "key": "field_5a871230dc4af",
+                                    "label": "Card Title",
+                                    "name": "card_title",
+                                    "type": "text",
+                                    "instructions": "Not too much fanfare; a title is the first pitch.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5a871230dc4b0",
+                                    "label": "Move card title to hover over image?",
+                                    "name": "over_image",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Uncheck if card title should appear below image instead of on top.",
+                                    "default_value": 1,
+                                    "ui": 0,
+                                    "ui_on_text": "Yes",
+                                    "ui_off_text": "No"
+                                },
+                                {
+                                    "key": "field_5a871230dc4b1",
+                                    "label": "Select a text color",
+                                    "name": "text_color",
+                                    "type": "color_picker",
+                                    "instructions": "Broad control over text color based on image background. The default is white.",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5a871230dc4b0",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                },
+                                {
+                                    "key": "field_5a871230dc4b2",
+                                    "label": "Card Block",
+                                    "name": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
+                                    "key": "field_5a871230dc4b3",
+                                    "label": "Card Text",
+                                    "name": "card_text",
+                                    "type": "textarea",
+                                    "instructions": "Similar to an excerpt, we are looking for a teasing line to grab one's attention.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "25",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": 4,
+                                    "new_lines": ""
+                                },
+                                {
+                                    "key": "field_5a871230dc4b4",
+                                    "label": "Card Image",
+                                    "name": "card_image",
+                                    "type": "image_aspect_ratio_crop",
+                                    "instructions": "Like other images in this site, they are boxy. Looking for curves? Let's explore it.",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "aspect_ratio_width": 500,
+                                    "aspect_ratio_height": 500,
+                                    "return_format": "id",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_5aff17f4ea735",
+                                    "label": "Card Image Links",
+                                    "name": "",
+                                    "type": "group",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "40",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "block",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5afeff6fe13f6",
+                                            "label": "Add an image link?",
+                                            "name": "img_link",
+                                            "type": "true_false",
+                                            "instructions": "The image link must be set in addition to the deluxe button.",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "If you don't want the image linked Uncheck.",
+                                            "default_value": 1,
+                                            "ui": 0,
+                                            "ui_on_text": "",
+                                            "ui_off_text": ""
+                                        },
+                                        {
+                                            "key": "field_5afefe0077b89",
+                                            "label": "Linking to an internal page or external page?",
+                                            "name": "img_link_internal",
+                                            "type": "radio",
+                                            "instructions": "Internal gives options for the types of pages to open on the site. Custom offers the opportunity to link off-site to perhaps a Lead page or other resource. Default is to Browse page.",
+                                            "required": 1,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_5afeff6fe13f6",
+                                                        "operator": "==",
+                                                        "value": "1"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "internal": "Internal",
+                                                "custom": "Custom"
+                                            },
+                                            "allow_null": 0,
+                                            "other_choice": 0,
+                                            "default_value": "internal",
+                                            "layout": "horizontal",
+                                            "return_format": "value",
+                                            "save_other_choice": 0
+                                        },
+                                        {
+                                            "key": "field_5afefe0a77b8a",
+                                            "label": "Select your internal page",
+                                            "name": "img_internal_link",
+                                            "type": "page_link",
+                                            "instructions": "Choose from the selection provided for the page you'd like.",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_5afeff6fe13f6",
+                                                        "operator": "==",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "field": "field_5afefe0077b89",
+                                                        "operator": "==",
+                                                        "value": "internal"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "post_type": [
+                                                "post",
+                                                "page",
+                                                "product"
+                                            ],
+                                            "taxonomy": "",
+                                            "allow_null": 0,
+                                            "allow_archives": 0,
+                                            "multiple": 0
+                                        },
+                                        {
+                                            "key": "field_5afefe0e77b8b",
+                                            "label": "Add your external page",
+                                            "name": "img_custom_link",
+                                            "type": "url",
+                                            "instructions": "Only a full URL will work here.",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_5afeff6fe13f6",
+                                                        "operator": "==",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "field": "field_5afefe0077b89",
+                                                        "operator": "==",
+                                                        "value": "custom"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": ""
+                                        },
+                                        {
+                                            "key": "field_5aff245d6071d",
+                                            "label": "Launch in this tab?",
+                                            "name": "img_link_target",
+                                            "type": "radio",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_5afeff6fe13f6",
+                                                        "operator": "==",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "field": "field_5afefe0077b89",
+                                                        "operator": "==",
+                                                        "value": "custom"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "_self": "Open in this tab",
+                                                "_blank": "Open in new tab"
+                                            },
+                                            "allow_null": 0,
+                                            "other_choice": 0,
+                                            "save_other_choice": 0,
+                                            "default_value": "_self",
+                                            "layout": "horizontal",
+                                            "return_format": "value"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_5a871230dc4b5",
+                                    "label": "Pretty Button",
+                                    "name": "",
+                                    "type": "tab",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "placement": "top",
+                                    "endpoint": 0
+                                },
+                                {
+                                    "key": "field_5a871230dc4b6",
+                                    "label": "Add a pretty button?",
+                                    "name": "button_toggle",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "Check here to enable your new button.",
+                                    "default_value": 0,
+                                    "ui": 1,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
+                                },
+                                {
+                                    "key": "field_5a871230dc4b7",
+                                    "label": "Button Name",
+                                    "name": "button_name",
+                                    "type": "text",
+                                    "instructions": "Wording is very important. Uses love slightly directive buttons.",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5a871230dc4b6",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "Click This",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5a871230dc4b8",
+                                    "label": "Style",
+                                    "name": "style",
+                                    "type": "radio",
+                                    "instructions": "We're offering two brand colors. What other colors are you looking for? Let's explore this.",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5a871230dc4b6",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "btn btn-primary cta-explore": "Blue",
+                                        "btn btn-primary cta-brand": "Red",
+                                        "cta-simple": "Linked Text"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "save_other_choice": 0,
+                                    "default_value": "cta-brand : Red",
+                                    "layout": "horizontal",
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_5a871230dc4b9",
+                                    "label": "Target",
+                                    "name": "target",
+                                    "type": "radio",
+                                    "instructions": "Will the link open a new tab or render a new page.",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5a871230dc4b6",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "_self": "Self",
+                                        "_blank": "New Tab"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "save_other_choice": 0,
+                                    "default_value": "_self : Self",
+                                    "layout": "horizontal",
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_5a871230dc4ba",
+                                    "label": "Type",
+                                    "name": "type",
+                                    "type": "radio",
+                                    "instructions": "Internal gives options for the types of pages to open on the site. Custom offers the opportunity to link off-site to perhaps a Lead page or other resource.",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5a871230dc4b6",
+                                                "operator": "==",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "internal": "Internal",
+                                        "custom": "Custom"
+                                    },
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "save_other_choice": 0,
+                                    "default_value": "internal",
+                                    "layout": "horizontal",
+                                    "return_format": "value"
+                                },
+                                {
+                                    "key": "field_5a871230dc4bb",
+                                    "label": "Internal Link",
+                                    "name": "internal_link",
+                                    "type": "page_link",
+                                    "instructions": "Choose from the selection provided for the page you'd like.",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5a871230dc4b6",
+                                                "operator": "==",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "field": "field_5a871230dc4ba",
+                                                "operator": "==",
+                                                "value": "internal"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "post",
+                                        "page",
+                                        "product"
+                                    ],
+                                    "taxonomy": [],
+                                    "allow_null": 0,
+                                    "allow_archives": 1,
+                                    "multiple": 0
+                                },
+                                {
+                                    "key": "field_5a871230dc4bc",
+                                    "label": "Custom Link",
+                                    "name": "custom_link",
+                                    "type": "url",
+                                    "instructions": "Only a full URL will work here.",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_5a871230dc4b6",
+                                                "operator": "==",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "field": "field_5a871230dc4ba",
+                                                "operator": "==",
+                                                "value": "custom"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "30",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5a87238a0320e": {
+                    "key": "5a87238a0320e",
+                    "name": "product_router",
+                    "label": "Product Landing Router -- Hinges and Latches",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a87316c765fe",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "type": "text",
+                            "instructions": "Give a title for this section. This is optional if the row does not need one.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "H2",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a8729a403223",
+                            "label": "Route A",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5a8728ff03221",
+                            "label": "Channel Title",
+                            "name": "left_channel_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "H2",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a872b3503227",
+                            "label": "Add a link",
+                            "name": "left_channel_link",
+                            "type": "link",
+                            "instructions": "Select an overview landing page.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url"
+                        },
+                        {
+                            "key": "field_5a872f2fd0a55",
+                            "label": "Label appearing with link",
+                            "name": "left_button_name",
+                            "type": "text",
+                            "instructions": "appears on hover of image.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a872a8703225",
+                            "label": "Add a channel image",
+                            "name": "left_channel_image",
+                            "type": "image_aspect_ratio_crop",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "aspect_ratio_width": 570,
+                            "aspect_ratio_height": 570,
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5a8729d303224",
+                            "label": "Route B",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5a87296503222",
+                            "label": "Channel Title",
+                            "name": "right_channel_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "H2",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a872bc303228",
+                            "label": "Add a link",
+                            "name": "right_channel_link",
+                            "type": "link",
+                            "instructions": "Select an overview landing page.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url"
+                        },
+                        {
+                            "key": "field_5a872f6ed0a56",
+                            "label": "Label appearing with link",
+                            "name": "right_button_name",
+                            "type": "text",
+                            "instructions": "appears on hover of image.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a872af803226",
+                            "label": "Add a channel image",
+                            "name": "right_channel_image",
+                            "type": "image_aspect_ratio_crop",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "aspect_ratio_width": 570,
+                            "aspect_ratio_height": 570,
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "596ed03353250": {
+                    "key": "596ed03353250",
+                    "name": "post_builder",
+                    "label": "Product & Posts Builder",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5974074bd69d4",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "type": "text",
+                            "instructions": "Add a title for this section. If you add no title, there will be no title.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5974074bd6a07",
+                            "label": "The Post",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_5974074bd6a93",
+                            "label": "Post Type",
+                            "name": "post_type",
+                            "type": "select",
+                            "instructions": "Choose from the types of posts to display in a row.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "product": "Feature SOSS Products",
+                                "post": "Feature Blog Posts"
+                            },
+                            "default_value": [
+                                "product"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5a677c5732e47",
+                            "label": "Select the products",
+                            "name": "select_taxonomy",
+                            "type": "relationship",
+                            "instructions": "Each item selected will become a column.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974074bd6a93",
+                                        "operator": "==",
+                                        "value": "product"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "60",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "product"
+                            ],
+                            "taxonomy": [
+                                "product_cat:accessories",
+                                "product_cat:door-stop",
+                                "product_cat:ultra-latch-2",
+                                "product_cat:barrel-hinge",
+                                "product_cat:quadrant-hinge",
+                                "product_cat:soss-invisible-hinge"
+                            ],
+                            "filters": [
+                                "search",
+                                "post_type",
+                                "taxonomy"
+                            ],
+                            "elements": [
+                                "featured_image"
+                            ],
+                            "min": "",
+                            "max": "",
+                            "return_format": "object"
+                        },
+                        {
+                            "key": "field_5afcca8d399d5",
+                            "label": "Select the posts",
+                            "name": "select_post_tax",
+                            "type": "relationship",
+                            "instructions": "Each item selected will become a column.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974074bd6a93",
+                                        "operator": "==",
+                                        "value": "post"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "60",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "post"
+                            ],
+                            "taxonomy": [],
+                            "filters": [
+                                "search",
+                                "post_type"
+                            ],
+                            "elements": [
+                                "featured_image"
+                            ],
+                            "min": "",
+                            "max": "",
+                            "return_format": "object"
+                        },
+                        {
+                            "key": "field_5a67793fa45e8",
+                            "label": "Show Options Button",
+                            "name": "show_options",
+                            "type": "radio",
+                            "instructions": "Enabled, you will customize a button. When clicked the button will take the visitor to the product page.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "options": "Show options button",
+                                "no-options": "Discard button"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "",
+                            "layout": "vertical",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
+                            "key": "field_5a677a63a45e9",
+                            "label": "Button Text",
+                            "name": "button_text",
+                            "type": "text",
+                            "instructions": "Short wording or just use the default.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974074bd6a93",
+                                        "operator": "==",
+                                        "value": "product"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_5974074bd6a93",
+                                        "operator": "==",
+                                        "value": "post"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Options",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_597f3d8b96249",
+                            "label": "Featured Image",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_597e6f5e98c41",
+                            "label": "Display the featured image?",
+                            "name": "display_featured_image",
+                            "type": "true_false",
+                            "instructions": "This is the product image. If you wish to build the row with no images, uncheck below.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974074bd6a93",
+                                        "operator": "==",
+                                        "value": "product"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Show the default product image (featured image).",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5afd9cadb9831",
+                            "label": "Display the featured image?",
+                            "name": "display_featured_image",
+                            "type": "true_false",
+                            "instructions": "On blog posts, the default is to call the post featured image. If the default value below is checked but your row does not show images, go to the post in question and add its image to the featured image field in the admin area right of the text area.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974074bd6a93",
+                                        "operator": "==",
+                                        "value": "post"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Selected, posts will include a heading image.",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_597f3c3e2913a",
+                            "label": "The Excerpt",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_597e6edd98c40",
+                            "label": "Show the excerpt?",
+                            "name": "show_excerpt",
+                            "type": "true_false",
+                            "instructions": "This builder includes a method to show or hide the excerpt added for your convenience.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Selected, the post will include an excerpt description, if included with the post.",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_597f385e17146",
+                            "label": "Set excerpt length?",
+                            "name": "set_excerpt_length",
+                            "type": "true_false",
+                            "instructions": "This enables you to reign in excerpt length so the article shape can be consistent across posts. This enables a visual consistency but you can adjust by number of words set by a variable. This is applied to all posts in a section as specified.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_597e6edd98c40",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Check to set a limit on the number of words in an excerpt.",
+                            "default_value": 1,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_597f390b17148",
+                            "label": "Number of words",
+                            "name": "excerpt_limit",
+                            "type": "number",
+                            "instructions": "Provide a whole number value. This value is applied to all instances.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_597f385e17146",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 12,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "words",
+                            "min": "",
+                            "max": "",
+                            "step": 1
+                        },
+                        {
+                            "key": "field_597e74e698c44",
+                            "label": "Meta",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974074bd6a93",
+                                        "operator": "==",
+                                        "value": "post"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_597e72e198c42",
+                            "label": "Display meta content?",
+                            "name": "display_meta_content",
+                            "type": "true_false",
+                            "instructions": "Meta content can be useful or it can be overkill. Select which combination meets your needs.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974074bd6a93",
+                                        "operator": "==",
+                                        "value": "post"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Check here if you wish to include any meta content on this post.",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_597e73a098c43",
+                            "label": "Which meta to include?",
+                            "name": "which_meta",
+                            "type": "radio",
+                            "instructions": "Select which combo suits your needs according to the current layout. Please inform the designer if you wish a different configuration.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_597e72e198c42",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "all": "Full complement of meta",
+                                "date": "Date displayed left justified",
+                                "date_author": "Date & Author",
+                                "date_cat": "Date & Category"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5a87127cdc4be": {
+                    "key": "5a87127cdc4be",
+                    "name": "focal_row",
+                    "label": "Focal Row",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5be5e2979eda8",
+                            "label": "Number of Buttons",
+                            "name": "number_buttons",
+                            "type": "range",
+                            "instructions": "Set the number of buttons to display on the focal row.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": 2,
+                            "max": 4,
+                            "step": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5cdcb4822c724",
+                            "label": "Tool tip",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Just move the knob left or right on the slot, like a toggle switch. You will see the number on the right tick up, that's the maximum number of boxes you add on one line. This selector adjusts the classes for responsive pages.",
+                            "new_lines": "",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_5a8712ae49d6f",
+                            "label": "Button Builder",
+                            "name": "button_builder",
+                            "type": "repeater",
+                            "instructions": "Create a new button for the focal row. Drag to change the order. Three buttons will not overwhelm visitor yet allow two lines of text evenly.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 1,
+                            "max": 4,
+                            "layout": "table",
+                            "button_label": "Add a button",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5a87138549d70",
+                                    "label": "Button title",
+                                    "name": "add_a_button",
+                                    "type": "text",
+                                    "instructions": "This text will appear centered on the button.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "My Button",
+                                    "placeholder": "",
+                                    "prepend": "H3",
+                                    "append": "",
+                                    "maxlength": 50
+                                },
+                                {
+                                    "key": "field_5a87141949d71",
+                                    "label": "button link",
+                                    "name": "button_link",
+                                    "type": "link",
+                                    "instructions": "This link should point to a page in the site.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "url"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "595aaa818d9e2": {
+                    "key": "595aaa818d9e2",
+                    "name": "standard_block",
+                    "label": "Standard Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5974c54d1aa74",
+                            "label": "Full Row Block",
+                            "name": "full_row_block",
+                            "type": "radio",
+                            "instructions": "This block style gives you the flexibility of a full-width text column. Or add an image to break up the space. Select Blockquote if you want to make a statement or quote. Attribute the quote to give credit.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "media": "WYSIWYG",
+                                "break": "Blockquote"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        },
+                        {
+                            "key": "field_5974c7861aa76",
+                            "label": "Block Type",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_597e5028390d6",
+                            "label": "Section Title",
+                            "name": "section_title",
+                            "type": "text",
+                            "instructions": "Add an optional section title; of course try it without if you'd rather.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974c54d1aa74",
+                                        "operator": "==",
+                                        "value": "media"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Section title goes here",
+                            "prepend": "H2",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5974074bd7e3b",
+                            "label": "Text Block",
+                            "name": "text_block",
+                            "type": "wysiwyg",
+                            "instructions": "This gives you carte-blanche control over this row. Let's explore this to see what you need.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974c54d1aa74",
+                                        "operator": "==",
+                                        "value": "media"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_5974c6fd1aa75",
+                            "label": "Break Block",
+                            "name": "break_block",
+                            "type": "textarea",
+                            "instructions": "This blockquote will be centered with heavy padding surrounding the words. Quote marks are included in the start and end corners. Select a background option to add a bit of interest.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974c54d1aa74",
+                                        "operator": "==",
+                                        "value": "break"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 2,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_597e32a0238fe",
+                            "label": "Credits",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974c54d1aa74",
+                                        "operator": "==",
+                                        "value": "break"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_597e13286d7d1",
+                            "label": "Credited to",
+                            "name": "credited_to",
+                            "type": "text",
+                            "instructions": "Give a name to give credit to the quote above. This is not necessary, but it is here if you need it.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974c54d1aa74",
+                                        "operator": "==",
+                                        "value": "break"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "William Shakespeare",
+                            "prepend": "— ",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_597e32b0238ff",
+                            "label": "Pattern",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974c54d1aa74",
+                                        "operator": "==",
+                                        "value": "break"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_597e1de4bf98f",
+                            "label": "Background Pattern",
+                            "name": "background_pattern",
+                            "type": "radio",
+                            "instructions": "Select from the provided background art options to display in the background of your quotations box. I've taken the liberty to add a few I like. I can add others if you prefer.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_5974c54d1aa74",
+                                        "operator": "==",
+                                        "value": "break"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "symphony": "swirls and gentle humor",
+                                "transparent": "blank"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "+ Add Section",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-secondary.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-secondary-full.php"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "1235"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "Layouts for the Home and Sidebar pages",
+    "modified": 1571074112
+}

@@ -1,0 +1,228 @@
+// Custom styles for AWS Search Plugin
+.aws-container, .aws-search-field {
+  font-family: $font-family-sans-serif;
+  font-size: 1rem !important;
+  width: 100% !important;
+}
+
+
+
+// Search form
+
+.soss-search-wrapper {
+  background-color: $gray-lighter;
+  display: flex;
+  padding: 1rem 0;
+  width: 100%;
+}
+.break-out {
+  left: calc( -1  * ( 100vw - 100% ) / 2 );
+  position: relative;
+  width: 100vw;
+}
+
+.feature-description {
+  background-color: $grayer;
+  color: white;
+  padding: 0.3rem 1rem 0.25rem ;
+  border-radius: 0.2rem .2rem 0 0;
+}
+
+
+.search-form label {
+  font-weight: normal;
+  @extend .form-group;
+}
+.search-form .search-field {
+  @extend .form-control;
+}
+ .search-form .search-submit {
+  @extend .btn;
+ // @extend .btn-secondary; // per webpack
+}
+.btn > svg > .search {
+  fill: $brand-primary;
+}
+.btn:hover > svg > .search {
+  fill: white;
+}
+
+.btn-outline-success {
+  background-color: white;
+  &:hover {
+    background-color: $brand-primary;
+  }
+}
+.hide-searchbar {
+  display: none;
+}
+.show-searchbar {
+  display: flex;
+}
+.btn-outline-success.doc-search {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+.form-control.doc-search {
+  border: 1px solid $brand-primary;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+  height: 2.45rem;
+
+}
+
+
+// Search Widget`
+.sidebar {
+  @include media-breakpoint-down(lg) {
+    .widget_search .btn {
+      border: 0;
+      //padding: 5px;
+    }
+    .widget_search input {
+      margin-bottom: 15px;
+    }
+  }
+}
+// Gravity Forms
+
+// Email
+.gform_wrapper {
+  label {
+    &.gfield_label {
+      color: darken($gray-light, 10%) !important;
+      font-size: 1rem;
+    }
+  }
+}
+.cta-newsletter {
+
+  .gform_wrapper {
+    display: flex !important;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    .gform_body {
+      //width: 50% !important;
+      .large {
+        padding: .5rem !important;
+      }
+    }
+    .gform_footer {
+      width: initial ;
+    }
+  }
+
+    @media only screen and ( max-width: 641px ) {
+    .gform_wrapper {
+      form {
+        width: 100%;
+        &> .gform_footer {
+          display: flex;
+          justify-content: center;
+          &> input.button {
+            width: auto !important;
+          }
+        }
+      }
+      //display: flex !important;
+      flex-flow: column wrap;
+      align-items: center;
+      .gform_footer {
+        margin: 0 !important;
+        //padding: 0 !important;
+      }
+    }
+      .gform_body {
+        width: 100% !important;
+      }
+
+  }
+}
+
+// Gravity Forms on YITH Request information page
+.ywraq-wrapper {
+
+  @media only screen and (min-width: 641px) {
+    .gform_wrapper .ginput_complex.ginput_container_address .ginput_right {
+      margin-right: -8px;
+      padding-right: 20px;
+    }
+  }
+
+  .ginput_container_checkbox {
+
+    label {
+      margin-left: 2.2rem !important;
+
+    }
+
+    // checkbox
+    .gfield_checkbox {
+      li {
+        position: relative;
+        padding-left: 40px;
+        label {
+          &:after {
+            content: "";
+            background: $brand-primary;
+            width: 20px;
+            height: 20px;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 0;
+            z-index: 0;
+          }
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 6px;
+            height: 15px;
+            border: solid #fff;
+            border-width: 0 3px 3px 0;
+            left: 8px;
+            top: 4px;
+            transform: rotate(45deg);
+            opacity: 0;
+            z-index: 1;
+            transition: all 100ms;
+          }
+        }
+      }
+
+    }
+
+    input[type="checkbox"] {
+      opacity: 1;
+      outline: $brand-inverse;
+      z-index: 100;
+      width: 20px;
+      height: 20px;
+      top: 0;
+      left: 0;
+      position: absolute;
+      appearance: none;
+      cursor: pointer;
+      + label {
+        cursor: pointer;
+      }
+      &:checked + label {
+        &:before {
+          opacity: 1;
+          top: 3px;
+        }
+      }
+    }
+  }
+
+}

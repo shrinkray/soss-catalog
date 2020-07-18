@@ -1,0 +1,78 @@
+// modifying items on templates/content.php
+
+
+// Post type : soss_doc
+// adds comma formatting between category items
+
+.cat-list {
+  margin: 0;
+
+  .list-inline-item {
+    &:after {
+      content: ",";
+    }
+    &:last-child:after {
+      content: "";
+    }
+  }
+}
+
+
+
+// DOCUMENTS
+.close-comments {
+  color: $grayer;
+  font-size: 80%;
+  line-height: 2;
+}
+// add left space to excerpt description for docs posts
+.page-template-template-documents, .search-results {
+  .entry-summary {
+    &> p {
+      margin-left: 1.4rem;
+      margin-bottom: 0;
+    }
+  }
+}
+.search-results .docs {
+  .entry-summary {
+    &> p {
+      margin-left: 1.4rem;
+    }
+  }
+}
+
+.terms {
+  font-size: small;
+  font-style: italic;
+  color: $grayer;
+}
+
+
+.card-block {
+  overflow: hidden;
+}
+.single-post {
+  .attachment-thumbnail {
+    float: left;
+    padding: 0.5rem 1rem 0 0;
+
+  }
+}
+@media (max-width: 575px ) { // TODO remove btn-primary from this link
+  .file-listing {
+    flex-wrap: wrap;
+  }
+  .file-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    .btn-primary {
+      border: $brand-primary;
+      background: white;
+      color: $brand-primary;
+      font-size: 1rem;
+      padding: 0 1rem;
+      margin: 0;
+    }
+  }
+}

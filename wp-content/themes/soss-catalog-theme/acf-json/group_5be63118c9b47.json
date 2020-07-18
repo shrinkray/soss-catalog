@@ -1,0 +1,147 @@
+{
+    "key": "group_5be63118c9b47",
+    "title": "Add a Soss Docs Post",
+    "fields": [
+        {
+            "key": "field_5ca01f74ac399",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "display-3",
+                "id": ""
+            },
+            "message": "☝ PLEASE add a title to the post! ;)",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5c89717901a88",
+            "label": "Select file type",
+            "name": "file_type",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "pdf_file": "PDF"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "pdf_file",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5c901875429ac",
+            "label": "Excerpt",
+            "name": "docs_excerpt",
+            "type": "textarea",
+            "instructions": "Add a brief description.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5c89720101a8a",
+            "label": "Attach PDF",
+            "name": "pdf_type",
+            "type": "file",
+            "instructions": "Add the corresponding PDF",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c89717901a88",
+                        "operator": "==",
+                        "value": "pdf_file"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "pdf"
+        },
+        {
+            "key": "field_5ca0e710717b0",
+            "label": "Category",
+            "name": "category",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "field_type": "select",
+            "allow_null": 1,
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "docs"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "+ Add Soss Docs Post",
+    "modified": 1568214668
+}
