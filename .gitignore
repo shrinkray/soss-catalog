@@ -13,7 +13,6 @@ Thumbs.db
 #wp-config.php
 temp-write-test-*
 wp-content/uploads/
-!wp-content/uploads/3d_embed/
 wp-content/plugins/
 wp-content/mu-plugins/
 wp-content/revslider/
