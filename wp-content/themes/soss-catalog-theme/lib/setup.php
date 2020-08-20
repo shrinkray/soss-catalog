@@ -195,17 +195,17 @@ function assets() {
       $fullName = basename($file);
       $name = substr(basename($fullName), 0, strpos(basename($fullName), '.'));
 
-      switch( $name ) {
-        case 'index':
-          $deps = "['jquery']";
-          break;
+//      switch( $name ) {
+//        case 'index':
+//          $deps = "['jquery']";
+//          break;
+//
+//        default:
+//          $deps = null;
+//          break;
+//      }
 
-        default:
-          $deps = null;
-          break;
-      }
-
-      wp_enqueue_script( 'sage/js', Assets\asset_path( 'js/' . $fullName ), $deps, null, true );
+      wp_enqueue_script( 'sage/js', Assets\asset_path( 'js/' . $fullName ), array('jquery'), 1.1, true );
 
     }
 
