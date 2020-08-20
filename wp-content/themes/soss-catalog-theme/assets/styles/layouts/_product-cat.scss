@@ -47,8 +47,8 @@
 }
 .video-cat {
   max-width: 765px;
-  .embed-container {
-    padding: 0;
+  &> .embed-container {
+   display: flex;
   }
 }
 .iframe-embed {
