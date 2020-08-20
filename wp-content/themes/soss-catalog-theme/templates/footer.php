@@ -59,8 +59,11 @@ $pattern = get_field('background_pattern', 'option');
 
             <div class="col-6 col-sm-12 col-md-6">
               <h4 class="mb-4">Top Categories</h4>
-              <?php // shows top five categories in args list
-              wp_list_categories('number=5&show_count=1&orderby=count&order=DESC&title_li=') ?></div>
+              <ul>
+                <?php // shows top five categories in args list
+                  wp_list_categories('number=5&show_count=1&orderby=count&order=DESC&title_li=') ?>
+              </ul>
+            </div>
             </div>
           </div>
 
