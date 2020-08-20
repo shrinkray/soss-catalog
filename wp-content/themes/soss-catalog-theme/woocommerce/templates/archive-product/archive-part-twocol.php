@@ -23,11 +23,11 @@
   }
 ?>
 <div class="row mbs-<?php echo $spacer; ?>">
-  <div class="col <?php echo $column_left_class; ?> pitch">
+  <div class="<?php echo $column_left_class; ?> pitch">
     <?php echo $left; ?>
   </div>
 
-  <div class="col <?php echo $column_right_class; ?> pitch">
+  <div class="<?php echo $column_right_class; ?> pitch">
     <?php echo $right; ?>
   </div>
 </div>

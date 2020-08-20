@@ -4,24 +4,14 @@
   $spacer = get_sub_field( 'add_spacer' );      // Set spacing between rows
 
   // Set value if spacer returns empty or zero otherwise use returned value
-  $spacer = ( $spacer == '' || $spacer == 0 ) ? $spacer = '1' : $spacer;
+  $spacer = ( $spacer == '' || $spacer == 0 ) ? $spacer = '6' : $spacer;
 
-  // Use preg_match to find iframe src.
-  preg_match('/src="(.+?)"/', $iframe, $matches);
-  $src = $matches[1];
+  /**
+   *  Removed string replace code which complicated the embed
+   *  Changed padding value for embed-container class in _product-cat.scss 
+   * 2020-08-19 GM
+   */
 
-  // Add extra parameters to src and replcae HTML.
-  $params = array(
-    'controls' => 0,
-    'hd'       => 1,
-    'autohide' => 1
-  );
-  $new_src = add_query_arg($params, $src);
-  $iframe = str_replace($src, $new_src, $iframe);
-
-  // Add extra attributes to iframe HTML.
-  $attributes = 'frameborder="0"';
-  $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
 ?>
 
 <div class="video-cat mx-auto">
