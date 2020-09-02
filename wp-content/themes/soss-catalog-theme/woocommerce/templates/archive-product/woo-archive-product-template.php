@@ -27,6 +27,13 @@
 
        <?php include( 'archive-part-embed.php' ); ?>
 
+       <?php
+
+     // 518 EMBED (New!)
+   elseif ( get_row_layout() == 'embed_518_model' ) :   ?>
+
+     <?php include( 'archive-part-518.php' ); ?>
+
 
        <?php
 // FULL  WYSIWYG
