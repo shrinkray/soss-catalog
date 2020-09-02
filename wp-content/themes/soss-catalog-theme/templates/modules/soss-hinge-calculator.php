@@ -804,20 +804,23 @@
 
   // Form utility functions
 
-  function initialize() {
-    if(test) {
-      document.door_data.style.display = "none";
-    }
-    else {
-      document.getElementById("test_button").style.display = "none";
-      measurement_system = "english";
-    }
-    set_units();
-    clear_input();
-  }
+  // function initialize() {
+  //   if(test) {
+  //     document.door_data.style.display = "none";
+  //   }
+  //   else {
+  //     document.getElementById("test_button").style.display = "none";
+  //     measurement_system = "english";
+  //     alert('initialize');
+  //   }
+  //   set_units();
+  //   clear_input();
+  // }
 
-  function units_changed() {
-    if(document.getElementsByName("units")[0].checked) {
+
+
+  var units_changed = function () {
+    if(document.getElementsByName("units")[0].checked) === true {
       measurement_system = "english";
     }
     else {
@@ -826,6 +829,7 @@
     clear_input();
     set_units();
   }
+
 
   function set_units() {
     if(units_value() === "english") {
@@ -1066,7 +1070,6 @@
       <?php
      //   get_template_part( 'soss-calc-svg-gallery' );
     include( 'soss-calc-svg-gallery.php' ); ?>
-
       </div>  <!-- /END Svg Gallery -->
 
 
