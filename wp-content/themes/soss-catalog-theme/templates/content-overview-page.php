@@ -1,32 +1,15 @@
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script>
-  var test,
-      set_units,
-      clear_input;
-
-  function initialize() {
-    if(test) {
-      document.door_data.style.display = "none";
-    }
-    else {
-      document.getElementById("test_button").style.display = "none";
-      measurement_system = "english";
-    }
-    set_units();
-    clear_input();
-  }
-</script>
 
 <?php
+ // include("modules/calculator.php");
 
-/**
+  /**
  * Product Overview Template
  */
 
  $video =  get_field('add_a_video');
 
 ?>
-
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <?php if ( $video )  : ?>
 <div class="row row-break justify-content-center no-gutter">
   <div class="col-12 col-md-8 px-0">

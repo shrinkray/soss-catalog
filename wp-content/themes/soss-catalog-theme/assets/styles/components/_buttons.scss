@@ -22,6 +22,13 @@
 
 
   // Red and Blue CTA buttons
+.btn-refresh {
+  color: $grayer;
+  &:hover .fa-spin-hover {
+    animation: fa-spin 2s infinite linear;
+    color: $brand-primary;
+  }
+}
 .cta-brand,
 .button { // using overrides because Woocommerce caused problems
           // .button is the wooCommerce style for input
@@ -135,11 +142,14 @@
      font-size: 1rem;
      content: '\f054';
    }
-
    &:hover {
      transition: background-color 0.5s ease;
      background-color: darken($brand-primary, 15%) !important;
      color: white !important;
+    > .fa-spin-hover {
+       animation: fa-spin 2s infinite linear;
+       color: white;
+     }
    }
  }
 .brand-cta-red {
@@ -162,6 +172,22 @@
     transition: background-color 0.5s ease;
     background-color: darken($brand-primary, 15%) !important;
     color: white !important;
+  }
+}
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.9s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .cta-submit {

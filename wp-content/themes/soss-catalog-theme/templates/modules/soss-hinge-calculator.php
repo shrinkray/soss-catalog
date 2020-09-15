@@ -1,9 +1,5 @@
 
-
-
-
 <script>
-
 
 
   let measurement_system = "english";
@@ -42,7 +38,6 @@
     [400, 47],
     [500, 49.9]
   ];
-
   let door_width_factor = [
     [ 4, 55.5],
     [ 5, 53.1],
@@ -81,8 +76,6 @@
     [65, 1.9],
     [70, 0],
   ];
-
-
   let solutions = [
     {model: "220" , material:  "both", min_thickness: "32/16", top_range: 100.4, bot_range:  74.5, hinges: 4 },
     {model: "220" , material:  "both", min_thickness: "32/16", top_range:  74.5, bot_range:  58.1, hinges: 3 },
@@ -131,7 +124,6 @@
     {model: "100" , material:  "both", min_thickness:  "8/16", top_range:  11.5, bot_range: -16.0, hinges: 4 },
     {model: "100" , material:  "both", min_thickness:  "8/16", top_range: -16.0, bot_range:  -112, hinges: 3 },
   ];
-
   let min_thickness = [
     { eng_display: '--',    eng_value: '0',      metric_display: '--',    models: [] },
     { eng_display: '1/2',   eng_value: '8/16',   metric_display: '12.70', models: ['100', '101'] },
@@ -145,8 +137,6 @@
     { eng_display: '1 3/4', eng_value: '28/16',  metric_display: '44.45', models: ['218', '216'] },
     { eng_display: '2',     eng_value: '32/16',  metric_display: '50.80', models: ['220', '218'] },
   ];
-
-
   let test_cases = [
     { height: "50", width: "50", thickness: "32/16", weight: "500", material: "wood", units: "english", matches: []},
     // A''
@@ -229,7 +219,45 @@
   ];
   let test_num = 0;
 
+
   // Input data validators
+  let tryButton;
+  function try_again() {
+    tryButton = document.querySelector('#try-now');
+    tryButton.classList.toggle('hide');
+  }
+
+  function validate_dimension(element, display, lower, upper, units, error_id) {
+    let dimension = element.value;
+    msg = "";
+
+    if (is_empty(dimension)) {
+      msg = display + " must be added."
+    } else if (isNaN(dimension)) {
+      msg = display + " must be a number."
+    } else {
+      let num = parseFloat(dimension);
+      if ((num < lower) || (num > upper)) {
+        msg = display + " must be between " + lower.toString() + " and " + upper.toString() + " " + units + ".";
+      }
+    }
+    document.getElementById(error_id).innerHTML = msg;
+    if(msg !== "") {
+      invalid_input_field(element);
+      return false;
+    }
+    valid_input_field(element);
+    return true;
+  }
+
+  function units_value() {
+    if(test) {
+      return test_cases[test_num].units
+    }
+    else {
+      return measurement_system;
+    }
+  }
 
   function validate_height() {
     if (units_value() === "english") {
@@ -253,6 +281,14 @@
       upper = 1750;
     }
     return validate_dimension(document.door_data.width, "Width", lower, upper, length_unit, 'width-error');
+  }
+
+  function invalid_input_field(element) {
+    element.style.color = "red";
+  }
+
+  function valid_input_field(element) {
+    element.style.color = "black";
   }
 
   function validate_thickness() {
@@ -279,40 +315,23 @@
     return validate_dimension(document.door_data.weight, "Weight", lower, upper, weight_unit, 'weight-error');
   }
 
-  function validate_dimension(element, display, lower, upper, units, error_id) {
-    let dimension = element.value;
-    msg = "";
-
-    if(is_empty(dimension)) {
-      msg =  display + " must be added."
+  function get_weight() {
+    let w = weight_value();
+    if(units_value() === "metric") {
+      w *= 2.2046;
     }
-    else if(isNaN(dimension)) {
-      msg = display + " must be a number."
-    }
-    else {
-      let num = parseFloat(dimension);
-      if((num < lower) || (num > upper)) {
-        msg = display + " must be between " + lower.toString() + " and " + upper.toString() + " " + units + ".";
-      }
-    }
-    document.getElementById(error_id).innerHTML = msg;
-    if(msg !== "") {
-      invalid_input_field(element);
-      return false;
-    }
-    valid_input_field(element);
-    return true;
+    return w;
   }
 
   function calculate(table) {
-    // Run all validations first
-    // valid = validate_height();
-    // valid &= validate_width();
-    // valid &= validate_thickness();
-    // valid &= validate_weight();
-    // if(!valid) {
-    //   return;
-    // }
+   // Run all validations first
+    valid = validate_height();
+    valid &= validate_width();
+    valid &= validate_thickness();
+    valid &= validate_weight();
+    if(!valid) {
+      return;
+    }
 
     // Lookup width coordinate
     let y1 = calculate_width_coordinate();
@@ -328,19 +347,22 @@
       check_possible_solution( solutions[i], y3 );
     }
 
-    if(debug) {
-      let row;
-      let cell;
-      row = table.insertRow();
-      cell = row.insertCell();
-      cell.innerHTML = "Width Y: " + y1.toFixed(2)
-      cell = row.insertCell();
-      cell.innerHTML = "Weight Y: " + y2.toFixed(2)
-      cell = row.insertCell();
-      cell.innerHTML = "A Line Y: " + y3.toFixed(2)
-    }
+    // if(debug) {
+    //   let row;
+    //   let cell;
+    //   row = table.insertRow();
+    //   cell = row.insertCell();
+    //   cell.innerHTML = "Width Y: " + y1.toFixed(2)
+    //   cell = row.insertCell();
+    //   cell.innerHTML = "Weight Y: " + y2.toFixed(2)
+    //   cell = row.insertCell();
+    //   cell.innerHTML = "A Line Y: " + y3.toFixed(2)
+    // }
   }
 
+  function get_width() {
+    return convert_length_if_metric( width_value() );
+  }
 
   function calculate_width_coordinate() {
     return table_interpolate(get_width(), door_width_factor);
@@ -351,8 +373,6 @@
   }
 
   function table_interpolate(value, table) {
-    let i;
-
     // Find index of high values; index of low values always one less.
     for(i = 1; (i < table.length) && (value > table[i][0]); i++);
 
@@ -388,6 +408,22 @@
 
     return (((y2 - y1)/(33.9)) * (91.1)) + y1;
   }
+  // Functions to access selection parameters, adjusted to English units.
+
+  function get_height() {
+    return convert_length_if_metric( height_value() );
+  }
+
+  function clear_solution_matches() {
+    solution_matches = [];
+    clear_results_display();
+    if(test) {
+      set_status("Click button to run test suite.");
+    }
+    else {
+      set_status(`<?php the_field( 'welcome_status' ); ?>`);
+    }
+  }
 
   function check_possible_solution( solution, intercept ) {
     // Check if within range
@@ -396,9 +432,39 @@
       return;
     }
 
+    function material_value() {
+      if(test) {
+        return test_cases[test_num].material
+      }
+      else {
+        return document.door_data.material.value;
+      }
+    }
+
     // Check if material is appropriate
     if((material_value() === "wood") && (solution.material !== "both")) {
       return;
+    }
+    function check_for_thickness( solution, specified ) {
+      for(let i=0; i<min_thickness.length; i++) {
+        if(min_thickness[i].eng_value === specified) {
+          if(in_array(solution.model, min_thickness[i].models)) {
+            return true;
+          }
+        }
+      }
+      return false;
+    }
+    function thickness_value() {
+      if(test) {
+        return test_cases[test_num].thickness
+      }
+      else {
+        return document.door_data.thickness.value;
+      }
+    }
+    function get_thickness() {
+      return thickness_value();
     }
 
     // Solution must have same or next size down minimum door thickess
@@ -412,30 +478,10 @@
 
     solution_matches.push( solution_match = {model: solution.model, hinge_count: needed} );
 
-    console.log(solution_match);
+    console.log(`solution match: ` + solution_match);
   }
 
-  // Functions to access selection parameters, adjusted to English units.
-
-  function get_height() {
-    return convert_length_if_metric( height_value() );
-  }
-
-  function get_width() {
-    return convert_length_if_metric( width_value() );
-  }
-
-  function get_thickness() {
-    return thickness_value();
-  }
-
-  function get_weight() {
-    let w = weight_value();
-    if(units_value() === "metric") {
-      w *= 2.2046;
-    }
-    return w;
-  }
+ // moved function definition above where it is called  function get_thickness()
 
   function convert_length_if_metric( length ) {
     if(units_value() === "metric") {
@@ -448,11 +494,12 @@
   //   Note these are not used to get values for validation
 
   function height_value() {
-    if(test) {
-      return test_cases[test_num].height
-    }
-    else {
+    if(!test) {
       return document.door_data.height.value;
+    }
+
+    else {
+      return test_cases[test_num].height
     }
   }
 
@@ -465,14 +512,7 @@
     }
   }
 
-  function thickness_value() {
-    if(test) {
-      return test_cases[test_num].thickness
-    }
-    else {
-      return document.door_data.thickness.value;
-    }
-  }
+// move function thickness_value above to where it is called
 
   function weight_value() {
     if(test) {
@@ -483,21 +523,12 @@
     }
   }
 
-  function material_value() {
-    if(test) {
-      return test_cases[test_num].material
-    }
-    else {
-      return document.door_data.material.value;
-    }
-  }
 
-  function units_value() {
-    if(test) {
-      return test_cases[test_num].units
-    }
-    else {
-      return measurement_system;
+
+  function clear_results_display() {
+    table = document.getElementById("results_display");
+    while(table.childNodes[0]) {
+      table.removeChild(table.childNodes[0]);
     }
   }
 
@@ -517,31 +548,28 @@
 
     // create dimmer div for this page. This appears when a result is returned
     // It disappears on page refresh.
-    let wrap_container = document.querySelector('.wrap.container');
-    let dimmer = document.createElement('div');
-    dimmer.setAttribute('id', 'dimmer');
-
-    wrap_container.before(dimmer);
-    dimmer.classList.add('dim-page');
-
-    clear_solution_matches();
+    if ( all_valid ){
+      let wrap_container = document.querySelector('.wrap.container');
+      let dimmer = document.createElement('div');
+      dimmer.setAttribute('id', 'dimmer');
+      wrap_container.before(dimmer);
+      dimmer.classList.add('dim-page');
+    }
 
     /* Status returns message if there any values in the form are missing
     * */
-
     if( !all_valid ) {
       set_status("Sorry, please provide a measurement within range to receive a hinge recommendation. Please set values for each field.");
+      try_again();
       return;
     }
 
+    clear_solution_matches();
     set_status(`<?php the_field( 'success_match_status' ); ?>`);
-
     calculate(table);
-
     display_solution_matches();
 
     // hides gallery and shows search solutions
-
     show_table.classList.remove("hide");
     show_table.classList.add("show");
     show_refresh.classList.remove("hide");
@@ -550,16 +578,7 @@
     hide_gallery.classList.add('hide-gallery');
   }
 
-  function check_for_thickness( solution, specified ) {
-    for(let i=0; i<min_thickness.length; i++) {
-      if(min_thickness[i].eng_value === specified) {
-        if(in_array(solution.model, min_thickness[i].models)) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
+
 
   function in_array(value, list) {
     return (list.indexOf(value) > -1);
@@ -613,28 +632,11 @@
     clear_solution_matches();
   }
 
-  function clear_solution_matches() {
-    solution_matches = [];
-    clear_results_display();
-    if(test) {
-      set_status("Click button to run test suite.");
-    }
-    else {
-      set_status(`<?php the_field( 'welcome_status' ); ?>`);
-    }
-  }
-
   function refresh_page(){
-
     window.location.reload();
   }
 
-  function clear_results_display() {
-    table = document.getElementById("results_display");
-    while(table.childNodes[0]) {
-      table.removeChild(table.childNodes[0]);
-    }
-  }
+
 
   function display_solution_matches(matches) {
     if(solution_matches.length === 0) {
@@ -645,11 +647,11 @@
       <div class="no-match ">
 
       <?php the_field( 'no_match_message' );
-       if ( have_rows( 'link_button' ) ) :
-       while ( have_rows( 'link_button' ) ) : the_row();
-         $label = get_sub_field( 'contact_us_link' );
-         $url = get_sub_field( 'link_url' );
-         $desc = get_sub_field( 'link_description' ); ?>
+      if ( have_rows( 'link_button' ) ) :
+      while ( have_rows( 'link_button' ) ) : the_row();
+      $label = get_sub_field( 'contact_us_link' );
+      $url = get_sub_field( 'link_url' );
+      $desc = get_sub_field( 'link_description' ); ?>
           <a type="button" href="<?= $url; ?>" title="<?= $desc ?>" class="btn btn-primary cta-brand" >
             <?php echo $label; ?>
           </a>
@@ -667,11 +669,11 @@
         if( !matches ) {
           if( i === 0 ) {
             cell.className = 'recommended';
-           // msg = '<b>We recommend installing</b>  ';
+            // msg = '<b>We recommend installing</b>  ';
           }
           else {
             cell.className = 'secondary';
-           // msg = ' ' + 'You may also use ';
+            // msg = ' ' + 'You may also use ';
           }
         }
 
@@ -705,7 +707,7 @@
          * @var product_url is path to product for quick ordering
          */
 
-        // This value is set in the Overview Page template in a developer tab
+          // This value is set in the Overview Page template in a developer tab
         const model_path = "<?php the_field( 'path_to_cat_pages' ); ?>"
 
         const solution_value = solution_matches[i].model;
@@ -731,17 +733,14 @@
         const file_exists = doesFileExist(image_url);
 
         if (file_exists == true) {
-           use_url = image_url;
+          use_url = image_url;
         } else {
-           use_url = dummy_url;
+          use_url = dummy_url;
         }
 
         // Results information based on search printed to screen
 
         cell.innerHTML = `
-
-
-
 <div class="form-results">
 <div class="results-image">
 <img src="${use_url}" alt="See our ${solution_value} model Invisible Hinge Series">
@@ -803,36 +802,20 @@
   }
 
   // Form utility functions
-
-  // function initialize() {
-  //   if(test) {
-  //     document.door_data.style.display = "none";
-  //   }
-  //   else {
-  //     document.getElementById("test_button").style.display = "none";
-  //     measurement_system = "english";
-  //     alert('initialize');
-  //   }
-  //   set_units();
-  //   clear_input();
-  // }
-
-
-
-  var units_changed = function () {
-    if(document.getElementsByName("units")[0].checked) === true {
-      measurement_system = "english";
+  function remove_options(selectbox) {
+    for(let i = selectbox.options.length - 1 ; i >= 0 ; i--) {
+      selectbox.remove(i);
     }
-    else {
-      measurement_system = "metric";
-    }
-    clear_input();
-    set_units();
   }
 
 
+
+  function is_empty(str) {
+    return str.replace(/^\s+|\s+$/gm,'').length = 0;
+  }
+
   function set_units() {
-    if(units_value() === "english") {
+    if( units_value() === "english" ) {
       length_unit = "inches";
       weight_unit = "pounds";
     }
@@ -845,9 +828,7 @@
     document.getElementById('width-unit').innerHTML = length_unit;
     document.getElementById('thickness-unit').innerHTML = length_unit;
     document.getElementById('weight-unit').innerHTML = weight_unit;
-
     select = document.getElementById('thickness-select');
-
     remove_options(select);
 
     for(let i=0; i<min_thickness.length; i++) {
@@ -857,12 +838,7 @@
       option.innerHTML = display;
       select.appendChild(option);
     }
-  }
-
-  function remove_options(selectbox) {
-    for(let i = selectbox.options.length - 1 ; i >= 0 ; i--) {
-      selectbox.remove(i);
-    }
+    console.log(`setting units to: ` + measurement_system);
   }
 
   function clear_input() {
@@ -881,22 +857,41 @@
     clear_solution_matches();
   }
 
-  function invalid_input_field(element) {
-    element.style.color = "red";
+
+
+  function units_changed() {
+    let radio_english = document.getElementById("english_units");
+    let radio_metric = document.getElementById("metric_units");
+    console.log('my units are: ' + units_value());
+    if ( radio_english.checked  ) {
+      measurement_system = "english";
+      radio_english.checked;
+    }
+    else {
+      measurement_system = "metric";
+      radio_metric.checked;
+    }
+    clear_input();
+    set_units();
   }
 
-  function valid_input_field(element) {
-    element.style.color = "black";
+  function initialize() {
+    measurement_system = "english";
+    document.getElementById("test_button").style.display = "none";
+    //  if(!test) {
+    //    document.door_data.style.display = "visible";
+    //    document.getElementById("test_button").style.display = "none";
+    //   }
+    // else {
+    //    document.getElementById("test_button").style.display = "visible";
+    //  }
+    set_units();
+    clear_input();
+
   }
 
-  function is_empty(str) {
-    return str.replace(/^\s+|\s+$/gm,'').length === 0;
-  }
 
 </script>
-
-
-
 
 
 <body onload="initialize();">
@@ -921,16 +916,18 @@
           <label for="units">Input Units: </label>
         </div>
         <div class="flex-label">
-          <label>
-            <input id="english_units" type="radio" name="english_units" tabindex="1" value="english" checked=""
-                   onclick="units_changed();">&nbsp;English<br>
-            <span class="measures legend">inches&nbsp;/ pounds</span></label>
+
+            <input id="english_units" type="radio" name="units" tabindex="1" value="english" checked
+                   onclick="units_changed();">English<br>
+            <span class="measures legend">inches&nbsp;/ pounds</span>
+          <label for id="english_units"></label>
         </div>
         <div class="flex-label">
-          <label>
-            <input id="metric_units" type="radio" tabindex="2" name="metric_units" value="metric"
-                   onclick="units_changed();">&nbsp;Metric<br><span
-              class="measures legend">millimeters&nbsp;/ kilograms</span></label>
+
+            <input id="metric_units" type="radio" tabindex="2" name="units" value="metric"
+                   onclick="units_changed();">Metric<br><span
+              class="measures legend">millimeters&nbsp;/ kilograms</span>
+          <label for id="metric_units"></label>
         </div>
         <div class="flex-status">
           <div id="status_msg"></div>
@@ -1045,9 +1042,11 @@
           </tr>
 
         </table>
-        <button class="btn-primary cta-brand cta-submit" type="button" onclick="find_matches();" tabindex="8" accesskey="c"
+        <button id="cta-submit" class="btn-primary cta-brand cta-submit" type="button" onclick="find_matches();" tabindex="8" accesskey="c"
                 style="margin:1rem 0 4rem;"><strong><u>C</u></strong>alculate
         </button>
+        <button id="try-now"  class="btn btn-refresh hide brand-cta-white fade-in" type="button" onclick="refresh_page()">
+          <i class="fa fa-refresh fa-spin-hover"></i>&nbsp;Try Again!</button>
 
       </div> <!-- /end 12 col -->
 
@@ -1077,7 +1076,7 @@
 
         <table id="results_display" width="100%"></table>
 
-        <button class="btn  btn-refresh hide" type="button"
+        <button class="btn btn-refresh hide" type="button"
                 onClick="refresh_page()"><i class="fa fa-refresh fa-spin-hover"></i>&nbsp;Try Again!</button>
 
       </div>

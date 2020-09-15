@@ -26,11 +26,9 @@
   flex: auto;
   justify-content: space-around;
   margin-bottom: 1rem;
-  legend {
-
-  }
 }
-.flex-label {
+input[name='units'] {
+  margin-right: 0.5rem;
 }
 
 @media screen and (min-width: 991px) {
@@ -91,13 +89,8 @@
   background-color: $gray;
 
 }
-.btn-refresh {
-  color: $grayer;
-  &:hover .fa-spin-hover {
-    animation: fa-spin 2s infinite linear;
-    color: $brand-primary;
-  }
-}
+// moved .btn-refresh to _buttons.scss
+
 /**
  This dimmer section is a page background and size added to a div before .wrap element
  It covers form, elements, disables actions to the form and draws focus to the results panel
