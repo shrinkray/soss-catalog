@@ -709,8 +709,8 @@ function display_solution_matches(matches) {
 
 
 
-        let explore_btn = `<span class="big">Coming Soon</span><br>
-<span class="">Product Family</span>`;
+        let explore_btn = `<span class="big">Explore the ${solution_value}</span>
+        <span class="">Product Family</span>`;
         let see_hinge_btn = `<span class="big">See Hinge</span>
 <span class="">Details</span>`;
 
@@ -739,9 +739,9 @@ function display_solution_matches(matches) {
  We recommend <strong>${number_of_hinges}</strong> of the ${solution_value} Invisible Hinge.
   <span class='description'>${learn_pitch} </span>
 </div>
-<div class="family cta-disabled btn" title="Coming Soon: See finishes, forms and variations!" ><div class="">
+<a href="${family_url}" class="family cta-brand cta-disabled btn" title="See finishes, forms and variations!" >
        ${explore_btn}
-</div></div>
+</a>
 
 
 <a href="${product_url}" class=" product cta-brand btn" title="Request a referral for this ${solution_value} model now!" >
