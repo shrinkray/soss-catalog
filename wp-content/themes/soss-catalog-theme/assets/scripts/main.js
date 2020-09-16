@@ -86,7 +86,7 @@
 
       // Background Image for Diagonal Rows
         $(".cta-diagonal").css('background', function () {
-          let bg = ('url(' + $(this).data("image-src") + ') no-repeat 60% center');
+          let bg = ('url(' + $(this).data("image-src") + ') no-repeat 100% center');
           // console.log ( bg );
           return bg;
         });
