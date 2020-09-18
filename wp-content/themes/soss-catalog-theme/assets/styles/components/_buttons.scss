@@ -176,7 +176,7 @@
   box-shadow: none;
   font-size: 1.2rem;
   font-weight: 500;
-  color: white !important;
+  color: $brand-primary-hover;
   padding: .4rem 1.6rem .4rem 1.5rem;
   &:after {
     margin-left: .5rem;
@@ -186,7 +186,7 @@
   }
   &:hover {
     transition: background-color 0.5s ease;
-    background-color: darken($gray, 15%) !important;
+    background-color: #9e9e9e !important;
     color: white !important;
     > .fa-spin-hover {
       animation: fa-spin 2s infinite linear;
