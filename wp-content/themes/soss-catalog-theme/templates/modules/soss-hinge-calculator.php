@@ -709,8 +709,8 @@ function display_solution_matches(matches) {
 
 
 
-        let explore_btn = `<span class="big">Explore </span>`;
-        let see_hinge_btn = `<span class="big">Details</span>`;
+        let explore_btn = `<span class="big">Explore Product</span>`;
+        let see_hinge_btn = `<span class="big">Product Details</span>`;
 
         let use_solution = "";
 

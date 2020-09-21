@@ -189,7 +189,7 @@ input[name='units'] {
     border-radius: 2px;
     font-weight: 300;
     margin: unset;
-    padding: .5em 1.5em;
+    padding: .5em 1.3em;
     transition: all 0.5s;
     justify-self: center;
 
@@ -226,10 +226,10 @@ input[name='units'] {
 @media only screen and (max-width: 460px) {
   .form-results {
     grid-template-areas:
-        "image image image "
-        " info info info"
-        "family family family"
-        "product product product";
+      "image image image "
+      " info info info"
+      "product product product"
+      "family family family";
     .results-image {
       justify-self: center;
     }
@@ -244,10 +244,10 @@ input[name='units'] {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .form-results {
     grid-template-areas:
-        "image image image "
-        " info info info"
-        "family family family"
-        "product product product";
+      "image image image "
+      " info info info"
+      "product product product"
+      "family family family";
     .results-image {
       justify-self: center;
     }
