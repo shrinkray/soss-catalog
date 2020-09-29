@@ -1,4 +1,4 @@
-var data =
+const data =
 {
     "Code": "soss",
     "Description": "Invinsible Hinge",
@@ -10,23 +10,69 @@ var data =
 
 
 //Menu building variables
-var canvas = document.getElementById('builderCanvas');
+const canvas = document.getElementById('builderCanvas');
+
+
 
 //********************* BABYLON ENGINE INITIALIZATION *****************
 
-var engine = new BABYLON.Engine(canvas, true, { premultipliedAlpha: false, preserveDrawingBuffer: true, stencil: true });
-var scene = new BABYLON.Scene(engine);
-var hinge;
-var baseNormals = [new BABYLON.Texture("", scene), new BABYLON.Texture("", scene), new BABYLON.Texture("", scene), new BABYLON.Texture("", scene), new BABYLON.Texture("", scene), new BABYLON.Texture("", scene)];
-var animationGroup;
-var skyboxPath = data.Skybox;
+const engine = new BABYLON.Engine(canvas, true, { premultipliedAlpha: false, preserveDrawingBuffer: true, stencil: true });
+const scene = new BABYLON.Scene(engine);
+let hinge;
+let baseNormals = [new BABYLON.Texture("", scene), new BABYLON.Texture("", scene), new BABYLON.Texture("", scene), new BABYLON.Texture("", scene), new BABYLON.Texture("", scene), new BABYLON.Texture("", scene)];
+let animationGroup;
+const skyboxPath = data.Skybox;
 //Initial Parameters
-var isOpen = true;
-var isWoodBlock = true;
-var hingeMaterial = "Chrome";
+let isOpen = true;
+let isWoodBlock = true;
+let hingeMaterial = "Chrome";
+const WP_ASSETS_DIR = '/wp-content/models/518';
+const currentBlockState = document.querySelector("#woodState");
+const displayWoodLabel = document.querySelector(".show-wood > .display-label");
+const displayOpenLabel = document.querySelector(".hinge-action > .display-label");
+const openState = document.querySelector("#openState");
+const acc = document.getElementsByClassName("accordion");
+
+for ( i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+        this.classList.toggle("view");
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+
+// This grabs the click action, toggles checked state and based on that state, renders inner HTML
+
+currentBlockState.addEventListener("click", function () {
+    currentBlockState.toggleAttribute("checked");
+
+    if (woodState.checked) {
+        displayWoodLabel.innerHTML = "Showing enclosure";
+        isWoodBlock = true;
+    } else {
+        displayWoodLabel.innerHTML = "Wood removed";
+        isWoodBlock = false;
+    }
+});
+
+// This grabs the click action, toggles checked state and based on that state, renders inner HTML
+
+openState.addEventListener("click", function () {
+    openState.toggleAttribute("checked");
+
+    if (openState.checked) {
+        displayOpenLabel.innerHTML = "Hinge Opened";
+    } else {
+        displayOpenLabel.innerHTML = "Hinge closed";
+    }
+});
 
 //Root path setup
-var root;
+let root;
 if (window.location.hostname != "localhost") {
     root = window.location.href.replace("index.html", "");    
     if (root.includes("#")) {
@@ -34,28 +80,33 @@ if (window.location.hostname != "localhost") {
     }
 }
 else {
-    root = window.location.origin;;
+    root = window.location.origin;
 }
 //Background setup
-scene.clearColor = new BABYLON.Color3(1, 1, 1); //Background color
+//scene.clearColor = new BABYLON.Color3(1, 1, 1); //Background color (white)
+scene.clearColor = new BABYLON.Color3(0.9, 0.9, 0.9); // light grey background
+
 
 
  //Prototypes
 BABYLON.ArcRotateCamera.prototype.spinTo = function (whichprop, targetval, speed) {
-    var ease = new BABYLON.CubicEase();
+    let ease = new BABYLON.CubicEase();
     ease.setEasingMode(BABYLON.EasingFunction.EASINGMODE_EASEINOUT);
     BABYLON.Animation.CreateAndStartAnimation('at4', this, whichprop, speed, 120, this[whichprop], targetval, 0, ease);
 }
 
 //Scene creation
-var createScene = function () {
+let createScene = function () {
 
     // Assets loader
-   var path = root + data.ModelPath;
-   var model = data.Model;  
+
+   let path = root + WP_ASSETS_DIR + data.ModelPath;
+   let model = data.Model;
+   console.log(`path: ${path}`);
+
 
     //Adding an Arc Rotate Camera
-    var camera = new BABYLON.ArcRotateCamera("Camera", (Math.PI * 1.1), (7.5 * Math.PI / 16), 4, new BABYLON.Vector3(0, 0, 0), scene);
+    let camera = new BABYLON.ArcRotateCamera("Camera", (Math.PI * 1.1), (7.5 * Math.PI / 16), 4, new BABYLON.Vector3(0, 0, 0), scene);
     camera.attachControl(canvas, false);
     camera.lowerRadiusLimit = 2.3;
     camera.upperRadiusLimit = 6;
@@ -63,14 +114,14 @@ var createScene = function () {
     camera.wheelPrecision = 100;
 
     //Adding an hemispheric light
-    var light = new BABYLON.HemisphericLight("omni", new BABYLON.Vector3(0, 2, 0), scene);
+    let light = new BABYLON.HemisphericLight("omni", new BABYLON.Vector3(0, 2, 0), scene);
     light.intensity = 0;
 
     BABYLON.SceneLoader.ShowLoadingScreen = false;
     BABYLON.SceneLoader.Append(path, model, scene,
         onSuccess = function (meshes) {
             hinge = meshes;
-            var preloadedImages = new BABYLON.Texture("", scene);
+            let preloadedImages = new BABYLON.Texture("", scene);
             for (meshes = 1; hinge.meshes.length > meshes; meshes++) {
                 hinge.meshes[meshes].actionManager = new BABYLON.ActionManager(scene); // Pointer behavior on model hover                       
                 hinge.meshes[meshes].actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPointerOverTrigger, function (ev) {
@@ -132,7 +183,7 @@ var createScene = function () {
                 $("#playAnimation").css("background", " #CD3327");
             });            
             //Environemnt
-            var hdrTexture = new BABYLON.CubeTexture.CreateFromPrefilteredData(skyboxPath, scene);
+            let hdrTexture = new BABYLON.CubeTexture.CreateFromPrefilteredData(skyboxPath, scene);
             scene.environmentTexture = hdrTexture;
             $("#loadingScreen").fadeOut(4000);
 
@@ -141,8 +192,8 @@ var createScene = function () {
             //On progress function
 
             if (evt.lengthComputable) {
-                var loadingPercentage = (evt.loaded * 100 / evt.total).toFixed();
-                console.log("Loading, please wait..." + loadingPercentage + "%");
+                let loadingPercentage = (evt.loaded * 100 / evt.total).toFixed();
+                console.log("Loading, please wait ... " + loadingPercentage + "%");
                 $("#loadingText").text("Loading, please wait..." + loadingPercentage + "%");
                 $("#loadingBar").css("width", `${loadingPercentage}%`);
                
@@ -152,7 +203,7 @@ var createScene = function () {
             else {
 
                 dlCount = evt.loaded / (1024 * 1024);
-                console.log("Loading, please wait..." + Math.floor(dlCount * 100.0) / 100.0 + " MB already loaded.");
+                console.log("Loading, please wait ... " + Math.floor(dlCount * 100.0) / 100.0 + " MB already loaded.");
 
             }
         }
@@ -163,12 +214,12 @@ var createScene = function () {
 
 
 // call the createScene function
-var scene = createScene();
+const newScene = createScene();
 
 // run the render loop
 engine.runRenderLoop(function () {
     window.addEventListener("resize", function () { engine.resize(); });
-    scene.render();
+    newScene.render();
 });
 
 
@@ -205,8 +256,8 @@ function woodBlockState() {
         }
 
 
-        $("#woodState").text(`${isWoodBlock ? "Show" : "Hide"} Wood Blocks`);
-        $("#woodImage").attr("src", `./assets/layout/${isWoodBlock ? "show" : "hide"}.png`);
+        // $("#woodState").text(`${isWoodBlock ? "Show" : "Hide"} Wood Blocks`);
+        // $("#woodState").attr("checked", `${isWoodBlock ? true : false}`);
 
     }
         
@@ -221,7 +272,7 @@ function woodBlockState() {
 }
 
 function materialChange(material) {
-    var colorCode;
+    let colorCode;
     //Change title & code
     switch (material) {
         case "chrome":
@@ -243,9 +294,27 @@ function materialChange(material) {
     }
 
     if (material != hingeMaterial) {
-        $(`#${material}`).detach().prependTo("#materialChange");
-        $(`#${material}`).css("display", "inline-block");
-        
+        //  This creates an array of buttons from finish-selector class holders
+        let buttons = Array.from(document.querySelectorAll(".finish-selector"));
+
+        // handleClick gets which items have the active class and removes from node
+        const handleClick = (e) => {
+            e.preventDefault();
+
+            buttons.forEach((node) => {
+                node.classList.remove("apply");
+            });
+
+            // For current target, add active class
+            e.currentTarget.classList.add("apply");
+        };
+
+        // call the click event
+        buttons.forEach((node) => {
+            node.addEventListener("click", handleClick);
+        });
+
+// this bit of code is from ServexUS using jQuery
         for (meshes = 1; hinge.meshes.length > meshes; meshes++) {
             
             if (!hinge.meshes[meshes].name.includes("Wood") && !(hinge.meshes[meshes].name.includes("Background")) && !hinge.meshes[meshes].name.includes("hdrSkyBox")) {                 
