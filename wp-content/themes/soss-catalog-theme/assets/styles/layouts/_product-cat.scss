@@ -7,6 +7,11 @@
     font-size: 1.2rem;
   }
 }
+@media screen and (max-width: 765px) {
+  h2 {
+    margin-top: 1rem !important;
+  }
+}
 .hero-cat {
   justify-content: center;
   align-items: center;
@@ -77,6 +82,8 @@
 
     }
   }
+
+
   .catch-phrase {
     align-self: start;
     text-align: center;
