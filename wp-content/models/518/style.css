@@ -18,16 +18,6 @@ body {
     align-items: center;
 }
 
-#loadingImage img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 60vh;
-    width:auto;
-    margin-top: 15vh;
-    
-}
-
 #loadingBarContainer {
     background-color: #000;
     display: flex;
@@ -42,27 +32,20 @@ body {
 #loadingBar {
     width: 100%;
     height: 5px;
-}
-
-#loadingBar {
     background-color: var(--brand-primary);
 }
 
 #loadingTextContainer {
     width: 100%;
     height: 100%;
-    display: inline-block;    
-    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
     color: #ffffff;
+    font-family: sans-serif;
 }
-#loadingTextContainer p {
-    display: inline-block;
-}
-#loadingTextContainer img {
-    display: inline-block;
-    width: 70px;
-    height: 70px;
-}
+
 
 #container {
     position: fixed;
@@ -81,9 +64,32 @@ canvas {
 
 
 /* toolbox area */
+.collapse-menu-button {
+    background-color: var(--whitesmoke);
+    color: var(--brand-primary);
+    position: fixed;
+    bottom: 16px;
+    left: 30px;
+    z-index: 5;
+    display: flex;
+    width: 100px;
+    padding: .5rem 0;
+    border-radius: 0 0 1em 1em;
+    font-size: 1rem;
+    border: 0;
+    justify-content: center;
+    font-family: sans-serif;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.collapse-menu-button:hover {
+    color: var(--whitesmoke);
+    background-color: var(--brand-primary);
+}
 #toolsContainer {
     position: fixed;
-    bottom: 50px;
+    bottom: 60px;
     left: 30px;
     display: -webkit-box;
     display: flex;
@@ -92,6 +98,11 @@ canvas {
     flex-direction: column;
     width: 240px;
     background: transparent;
+    overflow: hidden;
+}
+
+.box-rotate {
+    transform: rotate(-180deg);
 }
 
 .button-group {
@@ -101,6 +112,11 @@ canvas {
     -webkit-box-direction: normal;
     flex-direction: column;
     padding: 10px 0;
+}
+.model-buttons {
+    transition: transform 1s ease-in-out;
+    transform-origin: bottom left;
+    transform-style: preserve-3D;
 }
 .button-group.next {
     border: none;

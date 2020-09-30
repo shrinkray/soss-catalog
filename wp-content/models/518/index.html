@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >-->
 </head>
 <body>
     <div id="loadingScreen">
@@ -22,68 +21,72 @@
         <canvas id="builderCanvas"></canvas>
     </div>
     <div id="toolsContainer">
-        <div class="button-group" id="materialChange">
-            <button class="accordion">Change the Finish</button>
+        <div class="model-buttons">
+            <div class="button-group" id="materialChange">
+                <button class="accordion">Change the Finish</button>
 
-            <div class="panel">
-                <div class="the-finish" id="chrome">
-                    <a href="#" class="finish-selector apply" onclick="materialChange(`chrome`)">
-                        <div class="finish-label">
-                            <div class="sc swatch round"></div>Satin Chrome
-                        </div>
-                    </a>
-                </div>
-                <div class="the-finish" id="brass">
-                    <a href="#" class="finish-selector" onclick="materialChange(`brass`)">
-                        <div class="finish-label">
-                            <div class="swatch sb"></div>Satin Brass
-                        </div>
-                    </a>
-                </div>
-                <div class="the-finish" id="nickel">
-                    <a href="#" class="finish-selector" onclick="materialChange(`nickel`)">
-                        <div class="finish-label">
-                            <div class="swatch sn"></div>Satin Nickel
-                        </div>
-                    </a>
-                </div>
-                <div class="the-finish" id="black">
-                    <a href="#" class="finish-selector" onclick="materialChange(`black`)">
-                        <div class="finish-label">
-                            <div class="swatch tb"></div>Black E-Coat
-                        </div>
-                    </a>
+                <div class="panel">
+                    <div class="the-finish" id="chrome">
+                        <a href="#" class="finish-selector apply" onclick="materialChange(`chrome`)">
+                            <div class="finish-label">
+                                <div class="sc swatch round"></div>Satin Chrome
+                            </div>
+                        </a>
+                    </div>
+                    <div class="the-finish" id="brass">
+                        <a href="#" class="finish-selector" onclick="materialChange(`brass`)">
+                            <div class="finish-label">
+                                <div class="swatch sb"></div>Satin Brass
+                            </div>
+                        </a>
+                    </div>
+                    <div class="the-finish" id="nickel">
+                        <a href="#" class="finish-selector" onclick="materialChange(`nickel`)">
+                            <div class="finish-label">
+                                <div class="swatch sn"></div>Satin Nickel
+                            </div>
+                        </a>
+                    </div>
+                    <div class="the-finish" id="black">
+                        <a href="#" class="finish-selector" onclick="materialChange(`black`)">
+                            <div class="finish-label">
+                                <div class="swatch tb"></div>Black E-Coat
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="button-group next">
+            <div class="button-group next">
 
-            <div class="show-wood">
+                <div class="show-wood">
 
-                <label class="switch" for="woodState">
-                    <input type="checkbox" id="woodState" checked onclick="woodBlockState()">
-                    <span class="slider round"></span>
-                </label> <span class="display-label">Wood enclosure</span>
+                    <label class="switch" for="woodState">
+                        <input type="checkbox" id="woodState" checked onclick="woodBlockState()">
+                        <span class="slider round"></span>
+                    </label> <span class="display-label">Wood enclosure</span>
 
-            </div>
-
-        </div>
-        <div class="button-group next">
-
-            <div class="hinge-action">
-
-                <label class="openness" for="openState">
-                    <input type="checkbox" id="openState" checked onclick="playAnimation()">
-                    <span class="slider round"></span>
-                </label> <span class="display-label">Hinge Opened</span>
+                </div>
 
             </div>
+            <div class="button-group next">
 
+                <div class="hinge-action">
+
+                    <label class="openness" for="openState">
+                        <input type="checkbox" id="openState" checked onclick="playAnimation()">
+                        <span class="slider round"></span>
+                    </label> <span class="display-label">Hinge Opened</span>
+
+                </div>
+
+            </div>
         </div>
     </div>
 
+    <div class="collapse-menu-button">- Hide</div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+
+    <script src="scripts/jquery-3.5.1.min.js" ></script>
     <script src="babylon/dist/babylon.js"></script>
     <script src="babylon/dist/loaders/babylonjs.loaders.min.js"></script>
     <script src="scripts/bundle.js"></script>

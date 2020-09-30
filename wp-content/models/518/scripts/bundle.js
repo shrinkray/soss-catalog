@@ -32,6 +32,26 @@ const displayWoodLabel = document.querySelector(".show-wood > .display-label");
 const displayOpenLabel = document.querySelector(".hinge-action > .display-label");
 const openState = document.querySelector("#openState");
 const acc = document.getElementsByClassName("accordion");
+const toolsContainer = document.querySelector('#toolsContainer');
+const menuToggle = document.querySelector('.collapse-menu-button');
+const hideToggle = document.querySelector('.hide-it');
+const modelButtons = document.querySelector('.model-buttons');
+
+
+menuToggle.addEventListener("click", function() {
+
+    modelButtons.classList.toggle("box-rotate");
+    
+    if ( modelButtons.classList.contains("box-rotate") ) {
+        menuToggle.innerHTML = "+ Show";
+    } else {
+        menuToggle.innerHTML = "- Hide";
+    }
+
+});
+
+
+
 
 for ( i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
@@ -193,8 +213,8 @@ let createScene = function () {
 
             if (evt.lengthComputable) {
                 let loadingPercentage = (evt.loaded * 100 / evt.total).toFixed();
-                console.log("Loading, please wait ... " + loadingPercentage + "%");
-                $("#loadingText").text("Loading, please wait..." + loadingPercentage + "%");
+                console.log("Loading, please wait ..." + loadingPercentage + "%");
+                $("#loadingText").text("Loading, please wait ..." + loadingPercentage + "%");
                 $("#loadingBar").css("width", `${loadingPercentage}%`);
                
                 if (loadingPercentage >= 100) { }          
@@ -255,10 +275,6 @@ function woodBlockState() {
             hinge.meshes[meshes].material.ambientTexture.wAng = -Math.PI;
         }
 
-
-        // $("#woodState").text(`${isWoodBlock ? "Show" : "Hide"} Wood Blocks`);
-        // $("#woodState").attr("checked", `${isWoodBlock ? true : false}`);
-
     }
         
     if (isWoodBlock && isOpen) {
@@ -266,9 +282,6 @@ function woodBlockState() {
         scene.activeCamera.spinTo("beta", (7.5 * Math.PI / 16), 60);
         scene.activeCamera.spinTo("radius", 4, 60);
     }
-
-    
-            
 }
 
 function materialChange(material) {
@@ -313,6 +326,8 @@ function materialChange(material) {
         buttons.forEach((node) => {
             node.addEventListener("click", handleClick);
         });
+
+
 
 // this bit of code is from ServexUS using jQuery
         for (meshes = 1; hinge.meshes.length > meshes; meshes++) {
