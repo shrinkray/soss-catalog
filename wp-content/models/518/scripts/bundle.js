@@ -2,12 +2,12 @@ const data =
 {
     "Code": "soss",
     "Description": "Invinsible Hinge",
-    "ModelPath": "/assets/models/",
+    "ModelPath": "assets/models/",
     "Model": "hinge.glb",
-    "Skybox": "./assets/env/CathedralEnvHDR.dds",
-    "Background": "assets/environment/background.jpg",
+    "Skybox": "assets/env/cathedralEnvHDR.dds",
+    "Background": "/assets/environment/background.jpg",
 }
-
+const WP_ASSETS_DIR = '/wp-content/models/518/';
 
 //Menu building variables
 const canvas = document.getElementById('builderCanvas');
@@ -21,12 +21,12 @@ const scene = new BABYLON.Scene(engine);
 let hinge;
 let baseNormals = [new BABYLON.Texture("", scene), new BABYLON.Texture("", scene), new BABYLON.Texture("", scene), new BABYLON.Texture("", scene), new BABYLON.Texture("", scene), new BABYLON.Texture("", scene)];
 let animationGroup;
-const skyboxPath = data.Skybox;
+
 //Initial Parameters
 let isOpen = true;
 let isWoodBlock = true;
 let hingeMaterial = "Chrome";
-const WP_ASSETS_DIR = '/wp-content/models/518';
+
 const currentBlockState = document.querySelector("#woodState");
 const displayWoodLabel = document.querySelector(".show-wood > .display-label");
 const displayOpenLabel = document.querySelector(".hinge-action > .display-label");
@@ -37,6 +37,29 @@ const menuToggle = document.querySelector('.collapse-menu-button');
 const hideToggle = document.querySelector('.hide-it');
 const modelButtons = document.querySelector('.model-buttons');
 
+//Root path setup
+let root;
+let fix; // For lack of a better variable name, this is meant to fix path strings set in working in different build environments
+if (window.location.hostname !== "localhost") {
+    root = window.location.href.replace("index.html", "");
+    //console.log(`1. root: ${root}`)
+    if (root.includes("#")) {
+        root = root.replace("#", "");
+        fix = ""
+        //console.log(`2. root: ${root}`)
+    }
+}
+else {
+    root = window.location.origin + WP_ASSETS_DIR;
+    fix = WP_ASSETS_DIR;
+    console.log(`3. root: ${root}`)
+}
+
+// To set a path with the fix var determined by the root conditional
+const skyboxPath = root + data.Skybox;
+//console.log(`skyboxPath: ${skyboxPath}`)
+
+//********************* NAVIGATION PANEL *****************
 
 menuToggle.addEventListener("click", function() {
 
@@ -50,9 +73,7 @@ menuToggle.addEventListener("click", function() {
 
 });
 
-
-
-
+// Setup the Accordion menu
 for ( i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function () {
         this.classList.toggle("view");
@@ -91,19 +112,8 @@ openState.addEventListener("click", function () {
     }
 });
 
-//Root path setup
-let root;
-if (window.location.hostname != "localhost") {
-    root = window.location.href.replace("index.html", "");    
-    if (root.includes("#")) {
-        root = root.replace("#", "");
-    }
-}
-else {
-    root = window.location.origin;
-}
+
 //Background setup
-//scene.clearColor = new BABYLON.Color3(1, 1, 1); //Background color (white)
 scene.clearColor = new BABYLON.Color3(0.9, 0.9, 0.9); // light grey background
 
 
@@ -120,9 +130,9 @@ let createScene = function () {
 
     // Assets loader
 
-   let path = root + WP_ASSETS_DIR + data.ModelPath;
+   let path = root + data.ModelPath;
    let model = data.Model;
-   console.log(`path: ${path}`);
+   //console.log(`root + ModelPath: ${path}`);
 
 
     //Adding an Arc Rotate Camera
