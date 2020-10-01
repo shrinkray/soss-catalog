@@ -1,7 +1,8 @@
 <?php
 /**
- * Archive Product Above and Below Loop
+ * Archive Product Above Loop
  * 03/20/2020 GRM
+ * 09/30/2020
  */
   $term = get_queried_object();
  if ( have_rows( 'category_landing_page', $term  ) ): ?>
