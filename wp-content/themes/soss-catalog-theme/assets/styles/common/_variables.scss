@@ -262,16 +262,16 @@ $grid-gutter-widths: (
 // Font, line-height, and color for body text, headings, and more.
 @import '~font-awesome/css/font-awesome.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,700&display=swap');
-// Don't have all the fonts embedded
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/dist/css/Montserrat-Light.woff2') format('woff2'); /* Super Modern Browsers */
-  src: url('/dist/css/Montserrat-BoldItalic.woff2') format('woff2');
-  src: url('/dist/css/Montserrat-Italic.woff2') format('woff2');
-  src: url('/dist/css/Montserrat-Medium.woff2') format('woff2');
-  src: url('/dist/css/Montserrat-MediumItalic.woff2') format('woff2');
-  src: url('/dist/css/Montserrat-Regular.woff2') format('woff2');
-}
+// TODO: FIX URLS
+//@font-face {
+//  font-family: 'Montserrat';
+//  src: url('../../dist/css/Montserrat-Light.woff2') format('woff2'); /* Super Modern Browsers */
+//  src: url('../../dist/css/Montserrat-BoldItalic.woff2') format('woff2');
+//  src: url('../dist/css/Montserrat-Italic.woff2') format('woff2');
+//  src: url('../../dist/css/Montserrat-Medium.woff2') format('woff2');
+//  src: url('../../dist/css/Montserrat-MediumItalic.woff2') format('woff2');
+//  src: url('../../dist/css/Montserrat-Regular.woff2') format('woff2');
+//}
 $font-family-icon: "FontAwesome";
 $font-family-sans-serif: "Montserrat", sans-serif;
 $font-family-base:       $font-family-sans-serif;
