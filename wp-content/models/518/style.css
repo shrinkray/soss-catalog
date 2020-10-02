@@ -228,12 +228,12 @@ canvas {
 
 /* Plus */
 .accordion:after {
-    content: "\002B";
+    content: "\21E7";
 }
 
 /* Minus */
 .view:after {
-    content: "\2212";
+    content: "\21E9";
 }
 
 /* contains the finish options */
