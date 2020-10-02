@@ -52,7 +52,7 @@ if (window.location.hostname !== "localhost") {
 else {
     root = window.location.origin + WP_ASSETS_DIR;
     fix = WP_ASSETS_DIR;
-    console.log(`3. root: ${root}`)
+    // console.log(`3. root: ${root}`)
 }
 
 // To set a path with the fix var determined by the root conditional
@@ -66,9 +66,9 @@ menuToggle.addEventListener("click", function() {
     modelButtons.classList.toggle("box-rotate");
     
     if ( modelButtons.classList.contains("box-rotate") ) {
-        menuToggle.innerHTML = "+ Show";
+        menuToggle.innerHTML = "Show";
     } else {
-        menuToggle.innerHTML = "- Hide";
+        menuToggle.innerHTML = "Hide";
     }
 
 });
@@ -147,7 +147,7 @@ let createScene = function () {
     let light = new BABYLON.HemisphericLight("omni", new BABYLON.Vector3(0, 2, 0), scene);
     light.intensity = 0;
 
-    BABYLON.SceneLoader.ShowLoadingScreen = false;
+    BABYLON.SceneLoader.ShowLoadingScreen = true;
     BABYLON.SceneLoader.Append(path, model, scene,
         onSuccess = function (meshes) {
             hinge = meshes;
@@ -206,16 +206,16 @@ let createScene = function () {
                             hinge.meshes[meshes].material.ambientTexture.wAng = -Math.PI;
                         }
                     }
-                }, isOpen ? 4000 : 0);
+                }, isOpen ? 3500 : 0);
             });
 
             animationGroup.onAnimationEndObservable.add(function () {                
-                $("#playAnimation").css("background", " #CD3327");
+                $("#playAnimation").css("background", " #CD3327"); // this is a redish color
             });            
             //Environemnt
             let hdrTexture = new BABYLON.CubeTexture.CreateFromPrefilteredData(skyboxPath, scene);
             scene.environmentTexture = hdrTexture;
-            $("#loadingScreen").fadeOut(4000);
+            $("#loadingScreen").fadeOut(2500);
 
         },
         onProgress = function (evt) {
@@ -223,17 +223,19 @@ let createScene = function () {
 
             if (evt.lengthComputable) {
                 let loadingPercentage = (evt.loaded * 100 / evt.total).toFixed();
-                console.log("Loading, please wait ..." + loadingPercentage + "%");
+                console.log("loadingPercentage ..." + loadingPercentage + "%");
                 $("#loadingText").text("Loading, please wait ..." + loadingPercentage + "%");
                 $("#loadingBar").css("width", `${loadingPercentage}%`);
                
-                if (loadingPercentage >= 100) { }          
+                if (loadingPercentage >= 100) {
+                   console.log(`loaded full: ${loadingPercentage}`);
+                }
                     
             }
             else {
 
                 dlCount = evt.loaded / (1024 * 1024);
-                console.log("Loading, please wait ... " + Math.floor(dlCount * 100.0) / 100.0 + " MB already loaded.");
+                console.log(" ... " + Math.floor(dlCount * 100.0) / 100.0 + " MB loaded.");
 
             }
         }
@@ -255,7 +257,7 @@ engine.runRenderLoop(function () {
 
 function playAnimation() {
     if (!animationGroup.isPlaying) {
-        $("#playAnimation").css("background", "#DFDFDF");
+        $("#playAnimation").css("background", "#DFDFDF"); // light grey
         if (isOpen) {
             //Play Animation Forward
             animationGroup.start(false, -1, 4, 0);            
@@ -323,16 +325,16 @@ function materialChange(material) {
         // handleClick gets which items have the active class and removes from node
         const handleClick = (e) => {
             e.preventDefault();
-
+            // using apply class intead of active which is commonly used
             buttons.forEach((node) => {
                 node.classList.remove("apply");
             });
 
-            // For current target, add active class
+            // For current target, add active class, apply
             e.currentTarget.classList.add("apply");
         };
 
-        // call the click event
+        // call the click event to set which material is active
         buttons.forEach((node) => {
             node.addEventListener("click", handleClick);
         });
