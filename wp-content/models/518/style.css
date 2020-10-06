@@ -225,15 +225,40 @@ canvas {
     color: white;
     border: none;
 }
-
+.accordion .material-arrow {
+    fill: #CD3327;
+}
+.accordion:hover .material-arrow {
+    fill: #FFF;
+}
+.view .material-arrow {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    fill: #FFF;
+    position: relative;
+    top: -2px;
+}
 /* Plus */
 .accordion:after {
-    content: "\21E7";
+    /*content: "\27A4";*/
+    /*-webkit-transform: rotate(-90deg);*/
+    /*-moz-transform: rotate(-90deg);*/
+    /*-o-transform: rotate(-90deg);*/
+    /*-ms-transform: rotate(-90deg);*/
+    /*transform: rotate(-90deg);*/
 }
 
 /* Minus */
 .view:after {
-    content: "\21E9";
+    /*content: "\27A4";*/
+    /*-webkit-transform: rotate(90deg);*/
+    /*-moz-transform: rotate(90deg);*/
+    /*-o-transform: rotate(90deg);*/
+    /*-ms-transform: rotate(90deg);*/
+    /*transform: rotate(90deg);*/
 }
 
 /* contains the finish options */

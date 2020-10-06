@@ -92,10 +92,10 @@ currentBlockState.addEventListener("click", function () {
     currentBlockState.toggleAttribute("checked");
 
     if (woodState.checked) {
-        displayWoodLabel.innerHTML = "Showing enclosure";
+        displayWoodLabel.innerHTML = "Showing Enclosure";
         isWoodBlock = true;
     } else {
-        displayWoodLabel.innerHTML = "Wood removed";
+        displayWoodLabel.innerHTML = "Wood Removed";
         isWoodBlock = false;
     }
 });
@@ -108,7 +108,7 @@ openState.addEventListener("click", function () {
     if (openState.checked) {
         displayOpenLabel.innerHTML = "Hinge Opened";
     } else {
-        displayOpenLabel.innerHTML = "Hinge closed";
+        displayOpenLabel.innerHTML = "Hinge Closed";
     }
 });
 
@@ -147,7 +147,7 @@ let createScene = function () {
     let light = new BABYLON.HemisphericLight("omni", new BABYLON.Vector3(0, 2, 0), scene);
     light.intensity = 0;
 
-    BABYLON.SceneLoader.ShowLoadingScreen = true;
+    BABYLON.SceneLoader.ShowLoadingScreen = false;
     BABYLON.SceneLoader.Append(path, model, scene,
         onSuccess = function (meshes) {
             hinge = meshes;
