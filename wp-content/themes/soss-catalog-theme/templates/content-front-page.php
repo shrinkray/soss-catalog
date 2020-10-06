@@ -11,7 +11,8 @@
 
         } else {
 
-          echo 'removed slider while working local, apply changes to content-front-page.php' ;
+
+          //echo 'removed slider while working local, apply changes to content-front-page.php' ;
 
         }
       ?>

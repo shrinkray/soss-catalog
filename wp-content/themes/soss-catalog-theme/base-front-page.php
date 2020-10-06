@@ -28,6 +28,13 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
       do_action('after_header');
     ?>
+    <div class="wrap container-fluid" role="graphics-document">
+      <?php
+
+        include('templates/partials/content-slider.php');
+
+      ?>
+    </div>
     <div class="wrap container" role="document">
       <div class="content row">
         <main class="main mt-0" >
@@ -49,5 +56,9 @@ use Roots\Sage\Wrapper;
       do_action('after_footer');
       wp_footer();
     ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
+
   </body>
 </html>

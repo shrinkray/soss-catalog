@@ -108,6 +108,63 @@
         // JavaScript to be fired on the home page
 
 
+        const tl = new TimelineMax();
+        const pointer = document.querySelector(".down-angle");
+        const container = document.querySelector(".container");
+// For mobile we're targeting the div height
+        let sliderOffsetHeight = (document.querySelector(".revslider").offsetHeight += 50);
+
+//Scrolldown function
+        function scrollDown() {
+          let sliderWindowCoords = sliderOffsetHeight; //document.documentElement.clientHeight;
+
+          (function scroll() {
+            if (window.pageYOffset < sliderWindowCoords) {
+              // Using the scroll plugin
+              tl.to(
+                window,
+                1.5,
+                {
+                  scrollTo: { y: sliderWindowCoords, ease: "expo.out" }
+                },
+                "-=0.2"
+              );
+            }
+
+            if (window.pageYOffset > sliderWindowCoords) {
+              window.scrollTo(0, sliderWindowCoords);
+            }
+          })();
+        }
+
+        pointer.addEventListener("click", scrollDown);
+
+        tl.set(".open-up, .dont-settle, .cta, .down-angle", { opacity: 0 })
+          .set(".hinge", { scale: 0.6, opacity: 0 })
+          .fromTo(".open-up", 1, { x: -200, opacity: 0 }, { x: 0, opacity: 1 })
+          .fromTo(
+            ".dont-settle",
+            0.5,
+            { opacity: 0, x: 300 },
+            { x: 0, opacity: 1 },
+            "-=.2"
+          )
+          .fromTo(
+            ".cta",
+            0.5,
+            { opacity: 0, scale: 0.6 },
+            { opacity: 1, scale: 1, ease: Power4.easeOut }
+          )
+          .fromTo(
+            ".down-angle",
+            1,
+            { opacity: 0, y: -100 },
+            { opacity: 1, y: 0, ease: Elastic.easeOut.config(2, 0.4) },
+            "+=0.8"
+          )
+          .to(".hinge", 1, { opacity: 1, scale: 1.0 }, "-=1.5");
+
+
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
