@@ -92,7 +92,7 @@ currentBlockState.addEventListener("click", function () {
     currentBlockState.toggleAttribute("checked");
 
     if (woodState.checked) {
-        displayWoodLabel.innerHTML = "Showing Enclosure";
+        displayWoodLabel.innerHTML = "Wood Enclosure";
         isWoodBlock = true;
     } else {
         displayWoodLabel.innerHTML = "Wood Removed";
@@ -106,9 +106,9 @@ openState.addEventListener("click", function () {
     openState.toggleAttribute("checked");
 
     if (openState.checked) {
-        displayOpenLabel.innerHTML = "Hinge Opened";
+        displayOpenLabel.innerHTML = "Open";
     } else {
-        displayOpenLabel.innerHTML = "Hinge Closed";
+        displayOpenLabel.innerHTML = "Close";
     }
 });
 
