@@ -41,7 +41,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #ffffff;
     font-family: sans-serif;
 }
@@ -75,7 +75,7 @@ canvas {
     width: 100px;
     padding: .5rem 0;
     border-radius: 0 0 1em 1em;
-    font-size: 1rem;
+    font-size: 0.9rem;
     border: 0;
     justify-content: center;
     font-family: sans-serif;
@@ -96,7 +96,7 @@ canvas {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    width: 240px;
+    width: 195px;
     background: transparent;
     overflow: hidden;
 }
@@ -120,7 +120,7 @@ canvas {
 }
 .button-group.next {
     border: none;
-    background: var(--whitesmoke);
+    background-color: rgba(245, 245, 245, 0.6);
 }
 .button-group:last-of-type {
     margin-top: 10px;
@@ -136,8 +136,9 @@ canvas {
     padding: 0 0.5rem;
     -webkit-box-align: center;
     align-items: center;
-    font-size: 1rem;
-    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    line-height: 0.9rem;
 }
 
 .finish-selector > .finish-label {
@@ -156,16 +157,15 @@ canvas {
 /*
 * Custom colors
 */
-.accordion,
-.display-label,
-.finish-selector {
-    font-family: sans-serif;
-    font-size: 1rem;
+.accordion {
+    font-size: 0.9rem;
     text-decoration: none;
 }
 .accordion,
 .finish-selector {
     color: var(--brand-primary);
+    font-family: sans-serif;
+    text-decoration: none;
 }
 .finish-selector {
     border-top: 1px solid var(--whitesmoke);
@@ -204,6 +204,7 @@ canvas {
 
 /* Set the finish menu to an accorion functionality */
 .accordion {
+   align-items: center;
     background-color: white;
     cursor: pointer;
     display: -webkit-box;
@@ -241,25 +242,6 @@ canvas {
     position: relative;
     top: -2px;
 }
-/* Plus */
-.accordion:after {
-    /*content: "\27A4";*/
-    /*-webkit-transform: rotate(-90deg);*/
-    /*-moz-transform: rotate(-90deg);*/
-    /*-o-transform: rotate(-90deg);*/
-    /*-ms-transform: rotate(-90deg);*/
-    /*transform: rotate(-90deg);*/
-}
-
-/* Minus */
-.view:after {
-    /*content: "\27A4";*/
-    /*-webkit-transform: rotate(90deg);*/
-    /*-moz-transform: rotate(90deg);*/
-    /*-o-transform: rotate(90deg);*/
-    /*-ms-transform: rotate(90deg);*/
-    /*transform: rotate(90deg);*/
-}
 
 /* contains the finish options */
 .panel {
@@ -269,7 +251,7 @@ canvas {
     transition: max-height 0.2s ease-in-out;
     border: none;
     border-top: 0;
-    background-color: var(--whitesmoke);
+    background-color: rgba(245, 245, 245, 0.6);
 }
 
 /* The switch - the box around the slider */
@@ -335,6 +317,7 @@ input:checked + .slider:before {
 input:checked + .slider.round {
     border-radius: 0 34px 34px 0;
     background-color: var(--brand-primary);
+    width: 60px;
 }
 
 /* Inner slider ball when activated */
