@@ -111,7 +111,7 @@ canvas {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    padding: 10px 0;
+    padding: 4px 0;
 }
 .model-buttons {
     transition: transform 1s ease-in-out;
@@ -123,7 +123,7 @@ canvas {
     background-color: rgba(245, 245, 245, 0.6);
 }
 .button-group:last-of-type {
-    margin-top: 10px;
+    margin-top: 4px;
 }
 
 .finish-selector,
@@ -137,7 +137,7 @@ canvas {
     -webkit-box-align: center;
     align-items: center;
     font-family: sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 0.9rem;
 }
 
@@ -157,10 +157,6 @@ canvas {
 /*
 * Custom colors
 */
-.accordion {
-    font-size: 0.9rem;
-    text-decoration: none;
-}
 .accordion,
 .finish-selector {
     color: var(--brand-primary);
@@ -202,22 +198,24 @@ canvas {
     transform: rotate(90deg);
 }
 
-/* Set the finish menu to an accorion functionality */
+/* Set the finish menu to an accordion functionality */
 .accordion {
-   align-items: center;
+    align-items: center;
     background-color: white;
+    border-radius: 1rem 1rem 0 0;
+    border: 0;
     cursor: pointer;
     display: -webkit-box;
     display: flex;
+    font-size: 0.9rem;
+    text-decoration: none;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    padding: 18px;
+    padding: 10px;
     width: 100%;
     outline: none;
     -webkit-transition: 0.8s;
     transition: 0.8s;
-    border-radius: 1rem 1rem 0 0;
-    border: 0;
 }
 
 .view,
@@ -336,8 +334,24 @@ Gradient colors used in Change the Finish section
     /* Old browsers */
     /* FF3.6-15 */
     /* Chrome10-25,Safari5.1-6 */
-    background: -webkit-gradient(linear, left top, left bottom, from(#bea97a), color-stop(5%, #d9c7a1), color-stop(8%, #e3d4b3), color-stop(13%, #faf5e1), color-stop(15%, #fffeef), color-stop(18%, #fefef2), color-stop(23%, #f8f6e9), color-stop(26%, #f3f0dd), color-stop(28%, #e6e2c9), color-stop(31%, #d3caad), color-stop(33%, #c5b896), color-stop(38%, #a7986f), color-stop(46%, #8c7c58), color-stop(49%, #8c7c58), color-stop(51%, #90805c), color-stop(62%, #aa9a76), color-stop(82%, #baaa86), color-stop(87%, #b7a783), color-stop(95%, #ad9d79), to(#aa9a76));
-    background: linear-gradient(to bottom, #bea97a 0%, #d9c7a1 5%, #e3d4b3 8%, #faf5e1 13%, #fffeef 15%, #fefef2 18%, #f8f6e9 23%, #f3f0dd 26%, #e6e2c9 28%, #d3caad 31%, #c5b896 33%, #a7986f 38%, #8c7c58 46%, #8c7c58 49%, #90805c 51%, #aa9a76 62%, #baaa86 82%, #b7a783 87%, #ad9d79 95%, #aa9a76 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#bea97a),
+    color-stop(5%, #d9c7a1),
+    color-stop(8%, #e3d4b3), color-stop(13%, #faf5e1),
+    color-stop(15%, #fffeef),
+    color-stop(18%, #fefef2),
+    color-stop(23%, #f8f6e9),
+    color-stop(26%, #f3f0dd), color-stop(28%, #e6e2c9),
+    color-stop(31%, #d3caad),
+    color-stop(33%, #c5b896),
+    color-stop(38%, #a7986f), color-stop(46%, #8c7c58),
+    color-stop(49%, #8c7c58), color-stop(51%, #90805c),
+    color-stop(62%, #aa9a76),
+    color-stop(82%, #baaa86),
+    color-stop(87%, #b7a783),
+    color-stop(95%, #ad9d79), to(#aa9a76));
+    background: linear-gradient(to bottom, #bea97a 0%, #d9c7a1 5%, #e3d4b3 8%, #faf5e1 13%, #fffeef 15%,
+    #fefef2 18%, #f8f6e9 23%, #f3f0dd 26%, #e6e2c9 28%, #d3caad 31%, #c5b896 33%, #a7986f 38%, #8c7c58 46%,
+    #8c7c58 49%, #90805c 51%, #aa9a76 62%, #baaa86 82%, #b7a783 87%, #ad9d79 95%, #aa9a76 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bea97a', endColorstr='#aa9a76',GradientType=0 );
     /* IE6-9 */
@@ -349,8 +363,53 @@ Gradient colors used in Change the Finish section
     /* Old browsers */
     /* FF3.6-15 */
     /* Chrome10-25,Safari5.1-6 */
-    background: -webkit-gradient(linear, left top, left bottom, from(#292927), color-stop(3%, #3c3c3a), color-stop(5%, #2e2e2c), color-stop(8%, #3a3a38), color-stop(10%, #565654), color-stop(15%, #525250), color-stop(18%, #565654), color-stop(21%, #4a4a48), color-stop(23%, #525250), color-stop(26%, #474745), color-stop(28%, #595957), color-stop(31%, #3b3b39), color-stop(33%, #30302e), color-stop(36%, #2d2d2b), color-stop(38%, #2f2f2d), color-stop(41%, #252523), color-stop(46%, #1f1f1d), color-stop(51%, #1c1c1a), color-stop(59%, #1f1f1d), color-stop(62%, #1c1c1a), color-stop(79%, #222220), color-stop(90%, #20201e), to(#191917));
-    background: linear-gradient(to bottom, #292927 0%, #3c3c3a 3%, #2e2e2c 5%, #3a3a38 8%, #565654 10%, #525250 15%, #565654 18%, #4a4a48 21%, #525250 23%, #474745 26%, #595957 28%, #3b3b39 31%, #30302e 33%, #2d2d2b 36%, #2f2f2d 38%, #252523 41%, #1f1f1d 46%, #1c1c1a 51%, #1f1f1d 59%, #1c1c1a 62%, #222220 79%, #20201e 90%, #191917 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#292927),
+
+    color-stop(3%, #3c3c3a),
+
+    color-stop(5%, #2e2e2c),
+
+    color-stop(8%, #3a3a38),
+
+    color-stop(10%, #565654),
+
+    color-stop(15%, #525250),
+
+    color-stop(18%, #565654),
+
+    color-stop(21%, #4a4a48),
+
+    color-stop(23%, #525250),
+
+    color-stop(26%, #474745),
+
+    color-stop(28%, #595957),
+
+    color-stop(31%, #3b3b39),
+
+    color-stop(33%, #30302e),
+
+    color-stop(36%, #2d2d2b),
+
+    color-stop(38%, #2f2f2d),
+
+    color-stop(41%, #252523),
+
+    color-stop(46%, #1f1f1d),
+
+    color-stop(51%, #1c1c1a),
+
+    color-stop(59%, #1f1f1d),
+
+    color-stop(62%, #1c1c1a),
+
+    color-stop(79%, #222220),
+
+    color-stop(90%, #20201e), to(#191917));
+    background: linear-gradient(to bottom, #292927 0%, #3c3c3a 3%, #2e2e2c 5%, #3a3a38 8%, #565654 10%,
+    #525250 15%, #565654 18%, #4a4a48 21%, #525250 23%, #474745 26%, #595957 28%, #3b3b39 31%, #30302e 33%,
+    #2d2d2b 36%, #2f2f2d 38%, #252523 41%, #1f1f1d 46%, #1c1c1a 51%, #1f1f1d 59%, #1c1c1a 62%, #222220 79%,
+    #20201e 90%, #191917 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#292927', endColorstr='#191917',GradientType=0 );
     /* IE6-9 */
@@ -362,8 +421,26 @@ Gradient colors used in Change the Finish section
     /* Old browsers */
     /* FF3.6-15 */
     /* Chrome10-25,Safari5.1-6 */
-    background: -webkit-gradient(linear, left top, left bottom, from(#a5a5a5), color-stop(10%, #e3e3e3), color-stop(21%, #fefefe), color-stop(23%, #fcfcfc), color-stop(26%, #f1f1f1), color-stop(36%, #a7a7a7), color-stop(41%, #8c8c8a), color-stop(44%, #868782), color-stop(46%, #7c7d78), color-stop(49%, #767772), color-stop(51%, #767772), color-stop(59%, #8d8c87), color-stop(67%, #9c9992), color-stop(77%, #a6a299), color-stop(82%, #a9a6a1), color-stop(87%, #a6a5a0), color-stop(90%, #a3a29d), to(#92918c));
-    background: linear-gradient(to bottom, #a5a5a5 0%, #e3e3e3 10%, #fefefe 21%, #fcfcfc 23%, #f1f1f1 26%, #a7a7a7 36%, #8c8c8a 41%, #868782 44%, #7c7d78 46%, #767772 49%, #767772 51%, #8d8c87 59%, #9c9992 67%, #a6a299 77%, #a9a6a1 82%, #a6a5a0 87%, #a3a29d 90%, #92918c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#a5a5a5),
+    color-stop(10%, #e3e3e3),
+    color-stop(21%, #fefefe),
+    color-stop(23%, #fcfcfc),
+    color-stop(26%, #f1f1f1),
+    color-stop(36%, #a7a7a7),
+    color-stop(41%, #8c8c8a),
+    color-stop(44%, #868782),
+    color-stop(46%, #7c7d78),
+    color-stop(49%, #767772),
+    color-stop(51%, #767772),
+    color-stop(59%, #8d8c87),
+    color-stop(67%, #9c9992),
+    color-stop(77%, #a6a299),
+    color-stop(82%, #a9a6a1),
+    color-stop(87%, #a6a5a0),
+    color-stop(90%, #a3a29d), to(#92918c));
+    background: linear-gradient(to bottom, #a5a5a5 0%, #e3e3e3 10%, #fefefe 21%, #fcfcfc 23%,
+    #f1f1f1 26%, #a7a7a7 36%, #8c8c8a 41%, #868782 44%, #7c7d78 46%, #767772 49%, #767772 51%,
+    #8d8c87 59%, #9c9992 67%, #a6a299 77%, #a9a6a1 82%, #a6a5a0 87%, #a3a29d 90%, #92918c 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a5a5a5', endColorstr='#92918c',GradientType=0 );
     /* IE6-9 */
@@ -375,8 +452,29 @@ Gradient colors used in Change the Finish section
     /* Old browsers */
     /* FF3.6-15 */
     /* Chrome10-25,Safari5.1-6 */
-    background: -webkit-gradient(linear, left top, left bottom, from(#978f7c), color-stop(3%, #a49c89), color-stop(10%, #d6cfbd), color-stop(13%, #e2dbc9), color-stop(15%, #e7e0d0), color-stop(18%, #e7e0d0), color-stop(21%, #e2dccc), color-stop(23%, #cfc9b9), color-stop(26%, #c0baac), color-stop(28%, #b5afa1), color-stop(33%, #8f8c7d), color-stop(36%, #827e72), color-stop(38%, #787468), color-stop(46%, #676153), color-stop(49%, #6a6456), color-stop(59%, #8a846e), color-stop(69%, #9c917d), color-stop(79%, #a59989), color-stop(85%, #a39a89), color-stop(95%, #928978), to(#8e8574));
-    background: linear-gradient(to bottom, #978f7c 0%, #a49c89 3%, #d6cfbd 10%, #e2dbc9 13%, #e7e0d0 15%, #e7e0d0 18%, #e2dccc 21%, #cfc9b9 23%, #c0baac 26%, #b5afa1 28%, #8f8c7d 33%, #827e72 36%, #787468 38%, #676153 46%, #6a6456 49%, #8a846e 59%, #9c917d 69%, #a59989 79%, #a39a89 85%, #928978 95%, #8e8574 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#978f7c),
+    color-stop(3%, #a49c89),
+    color-stop(10%, #d6cfbd),
+    color-stop(13%, #e2dbc9),
+    color-stop(15%, #e7e0d0),
+    color-stop(18%, #e7e0d0),
+    color-stop(21%, #e2dccc),
+    color-stop(23%, #cfc9b9),
+    color-stop(26%, #c0baac),
+    color-stop(28%, #b5afa1),
+    color-stop(33%, #8f8c7d),
+    color-stop(36%, #827e72),
+    color-stop(38%, #787468),
+    color-stop(46%, #676153),
+    color-stop(49%, #6a6456),
+    color-stop(59%, #8a846e),
+    color-stop(69%, #9c917d),
+    color-stop(79%, #a59989),
+    color-stop(85%, #a39a89),
+    color-stop(95%, #928978), to(#8e8574));
+    background: linear-gradient(to bottom, #978f7c 0%, #a49c89 3%, #d6cfbd 10%, #e2dbc9 13%, #e7e0d0 15%,
+    #e7e0d0 18%, #e2dccc 21%, #cfc9b9 23%, #c0baac 26%, #b5afa1 28%, #8f8c7d 33%, #827e72 36%, #787468 38%,
+    #676153 46%, #6a6456 49%, #8a846e 59%, #9c917d 69%, #a59989 79%, #a39a89 85%, #928978 95%, #8e8574 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#978f7c', endColorstr='#8e8574',GradientType=0 );
     /* IE6-9 */
