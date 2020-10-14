@@ -8,21 +8,8 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-
-// https://github.com/liady/webpack-node-externals/issues/17
-// removal of nodeExternals recommended to end issue of 'require is not defined'
-//const nodeExternals = require('webpack-node-externals');
-
-//const HtmlWebpackPlugin = require('html-webpack-plugin');
-//const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-//const GenerateJsonPlugin = require('generate-json-webpack-plugin');
-//const SourceMapDevToolPlugin = require('source-map-loader');
-
-
-
 
 
 module.exports = {
@@ -33,8 +20,8 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-  // filename: './js/index.min.[hash].js',
-    filename: './js/index.min.js'
+  filename: './js/index.min.[hash].js',
+  //  filename: './js/index.min.js'
    // filename: './index.min.js'
   },
   watch: true,
