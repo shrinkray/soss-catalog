@@ -112,7 +112,7 @@
         const pointer = document.querySelector(".down-angle");
         const container = document.querySelector(".container");
 // For mobile we're targeting the div height
-        let sliderOffsetHeight = (document.querySelector(".revslider").offsetHeight += 50);
+        const sliderOffsetHeight = document.querySelector(".new-revslider").offsetHeight + 50;
 
 //Scrolldown function
         function scrollDown() {
@@ -123,9 +123,8 @@
               // Using the scroll plugin
               tl.to(
                 window,
-                1.5,
                 {
-                  scrollTo: { y: sliderWindowCoords, ease: "expo.out" }
+                  scrollTo: { duration: 1.5, y: sliderWindowCoords + 100, ease: "expo.out" }
                 },
                 "-=0.2"
               );
@@ -141,30 +140,25 @@
 
         tl.set(".open-up, .dont-settle, .cta, .down-angle", { opacity: 0 })
           .set(".hinge", { scale: 0.6, opacity: 0 })
-          .fromTo(".open-up", 1, { x: -200, opacity: 0 }, { x: 0, opacity: 1 })
+          .fromTo(".open-up", { x: -200, opacity: 0, duration: 1 }, { x: 0, opacity: 1 })
           .fromTo(
             ".dont-settle",
-            0.5,
-            { opacity: 0, x: 300 },
+            { opacity: 0, x: 300, duration: 0.5 },
             { x: 0, opacity: 1 },
             "-=.2"
           )
           .fromTo(
             ".cta",
-            0.5,
-            { opacity: 0, scale: 0.6 },
-            { opacity: 1, scale: 1, ease: Power4.easeOut }
+            { opacity: 0, scale: 0.4, rotation: -35, duration: 0.5 },
+            { opacity: 1, scale: 1, rotation: 0, ease: "circ" }
           )
           .fromTo(
             ".down-angle",
-            1,
-            { opacity: 0, y: -100 },
-            { opacity: 1, y: 0, ease: Elastic.easeOut.config(2, 0.4) },
+            { opacity: 0, y: -100, duration: 1 },
+            { opacity: 1, y: 0, ease: "elastic" },
             "+=0.8"
           )
           .to(".hinge", 1, { opacity: 1, scale: 1.0 }, "-=1.5");
-
-
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

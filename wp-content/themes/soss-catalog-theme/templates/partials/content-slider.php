@@ -1,6 +1,6 @@
 <?php ?>
 
-<div class="revslider">
+<div class="new-revslider">
   <div class="animated-text">
     <h1 class="open-up">Open up to a better way</h1>
     <h2 class="dont-settle">Don't settle for what's conventional</h2>

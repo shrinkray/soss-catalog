@@ -28,12 +28,18 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
       do_action('after_header');
     ?>
-    <div class="wrap container-fluid" role="graphics-document">
-      <?php
+    <div class="wrap container-fluid soss-red" role="graphics-document">
+      <div class="container">
+        <div class="row">
+          <div class="col ">
+            <?php
 
-        include('templates/partials/content-slider.php');
+              include('templates/partials/content-slider.php');
 
-      ?>
+            ?>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="wrap container" role="document">
       <div class="content row">

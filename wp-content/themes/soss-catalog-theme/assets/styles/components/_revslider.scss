@@ -1,0 +1,109 @@
+.wrap {
+  &.soss-red {
+    background-color: #600001;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0; // disable default setting (global.css)
+  }
+}
+
+
+
+.new-revslider {
+  display: grid;
+  min-height: 15rem;
+  grid-template-columns: 1fr 1fr  100px 1fr 1fr;
+  grid-template-rows: 1fr 3em;
+  grid-template-areas:
+    "text text text image image"
+    ". . pointer . .";
+  justify-content: center;
+  margin: 1rem auto;
+    .animated-text {
+      align-self: center;
+      grid-area: text;
+      max-width: 100%;
+      grid-area: text;
+      grid-auto-columns: 2fr;
+      //justify-self: center;
+      //display: flex;
+      //flex-direction: column;
+      //justify-content: center;
+      h1, h2 {
+        align-self: flex-start;
+        text-align: left;
+        color: white;
+      }
+      .cta {
+        grid-area: cta;
+        margin-top: 20px;
+        background: linear-gradient(to bottom, #cecece 0%, #e5e4e4 50%, #cecece 100%);
+        color: $brand-primary;
+        font-size: 1.2rem;
+        border: 0;
+        border-radius: .3rem;
+        padding: 1rem 3rem;
+        transition: all 0.5s;
+        &:hover {
+          cursor: pointer;
+          color: white;
+          background: $brand-primary;
+        }
+      }
+    }
+    .image {
+      grid-area: image;
+      display: flex;
+      width: 100%;
+      .hinge {
+        margin: auto;
+      }
+    }
+    .down-angle {
+      grid-area: pointer;
+      align-self: end;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+  .new-revslider {
+
+    .animated-text {
+      text-align: center;
+      h1, h2 {
+        align-self: center;
+        text-align: center;
+      }
+      .cta {
+
+      }
+    }
+    align-items: center;
+    .image {
+      justify-content: center;
+      width: 100%;
+    }
+    .down-angle {
+      justify-self: center;
+      align-self: center;
+    }
+  }
+
+}
+@media screen and (max-width: 567px) {
+  .new-revslider {
+   // grid: 3 / 1fr 1fr 1fr;
+    justify-content: center;
+    margin: 1rem auto;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr 1fr 3em;
+    grid-template-areas:
+    " text "
+    " image "
+    "pointer ";
+  }
+}
