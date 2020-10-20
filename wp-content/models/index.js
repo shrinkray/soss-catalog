@@ -20,7 +20,7 @@ function MyLoadingScreen() {}
 
 MyLoadingScreen.prototype.displayLoadingUI = function () {
   var bar = document.getElementById('loadingBar')
-  //var elem = document.getElementById("loadingLabel");
+  var elem = document.getElementById("loadingLabel");
   bar.style.width = 0 + '%'
   //elem.innerHTML = 0 + '%';
 }
