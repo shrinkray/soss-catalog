@@ -96,7 +96,7 @@ canvas {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    width: 195px;
+    width: 175px;
     background: transparent;
     overflow: hidden;
 }

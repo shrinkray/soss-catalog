@@ -92,10 +92,10 @@ currentBlockState.addEventListener("click", function () {
     currentBlockState.toggleAttribute("checked");
 
     if (woodState.checked) {
-        displayWoodLabel.innerHTML = "Wood Enclosure";
+        displayWoodLabel.innerHTML = "Installed";
         isWoodBlock = true;
     } else {
-        displayWoodLabel.innerHTML = "Wood Removed";
+        displayWoodLabel.innerHTML = "Uninstalled";
         isWoodBlock = false;
     }
 });
@@ -108,7 +108,7 @@ openState.addEventListener("click", function () {
     if (openState.checked) {
         displayOpenLabel.innerHTML = "Open";
     } else {
-        displayOpenLabel.innerHTML = "Close";
+        displayOpenLabel.innerHTML = "Closed";
     }
 });
 
