@@ -139,7 +139,7 @@
         pointer.addEventListener("click", scrollDown);
 
         tl.set(".open-up, .dont-settle, .cta, .down-angle", { opacity: 0 })
-          .set(".hinge", { scale: 0.6, opacity: 0 })
+          .set(".my-hinge", { scale: 0.6, opacity: 0, rotation: 105 })
           .fromTo(".open-up", { x: -200, opacity: 0, duration: 1 }, { x: 0, opacity: 1 })
           .fromTo(
             ".dont-settle",
@@ -158,7 +158,7 @@
             { opacity: 1, y: 0, ease: "elastic" },
             "+=0.8"
           )
-          .to(".hinge", 1, { opacity: 1, scale: 1.0 }, "-=1.5");
+          .to(".my-hinge", { opacity: 1, scale: 1.0,  duration: 1, rotation: 0 }, "-=1.5");
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
