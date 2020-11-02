@@ -446,17 +446,6 @@ article {
   background: $gray-lightest;
 }
 
-.cat {
-  // see .card-block for .cat : margin-bottom: 1.2rem;
-  //&:before {
-  //  font-family: $font-family-icon;
-  //  content: "\f0c1"; // link
-  //  color: $gray-light;
-  //  margin-right: .4em;
-  //  font-size: .7rem;
-  //}
-}
-
 .fa-tag { // tag
   text-transform: lowercase;
   color: $gray-light;
@@ -472,6 +461,7 @@ article {
     text-decoration: none;
   }
 
+  // check on _buttons.scss line 150
   &:after {
     font-family: $font-family-icon;
     content: "\f105"; // angle-right
@@ -498,23 +488,15 @@ article {
 
 
   &:before {
-    content: '\f10d';
+    content: '\f10d'; //  fa-quote-left
+    // REPLACE FA WITH THIS AS BACKGROUND IMAGE
+    //<svg width="20" height="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path fill="gainsboro" d="M832 960v384q0 80-56 136t-136 56h-384q-80 0-136-56t-56-136v-704q0-104 40.5-198.5t109.5-163.5 163.5-109.5 198.5-40.5h64q26 0 45 19t19 45v128q0 26-19 45t-45 19h-64q-106 0-181 75t-75 181v32q0 40 28 68t68 28h224q80 0 136 56t56 136zm896 0v384q0 80-56 136t-136 56h-384q-80 0-136-56t-56-136v-704q0-104 40.5-198.5t109.5-163.5 163.5-109.5 198.5-40.5h64q26 0 45 19t19 45v128q0 26-19 45t-45 19h-64q-106 0-181 75t-75 181v32q0 40 28 68t68 28h224q80 0 136 56t56 136z"/></svg>
     font-family: $font-family-icon;
     font-size: 4rem;
     align-self: flex-start;
     color: rgba(227, 227, 227, 0.5);
     line-height: 0;
   }
-
-  // Disable right side of quotation marks
-  //&:after {
-  //  content: '\f10e';
-  //  font-family: $font-family-icon;
-  //  align-self: flex-end;
-  //  font-size: 4rem;
-  //  color: rgba(227, 227, 227, 0.5);
-  //  line-height: 0;
-  //}
 
   blockquote {
     font-size: 1.6rem;

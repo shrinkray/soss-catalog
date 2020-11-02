@@ -20,8 +20,8 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-  filename: './js/index.min.[hash].js',
-  //  filename: './js/index.min.js'
+    filename: './js/index.min.[hash].js',
+   // filename: './js/index.min.js'
    // filename: './index.min.js'
   },
   watch: true,
@@ -40,6 +40,7 @@ module.exports = {
           }
         }
       },
+
       {
         test: /\.css$/,
         use: [
@@ -64,20 +65,20 @@ module.exports = {
             options: {sourceMap: true},
           }
         ]
-      },
-
-      // fonts
-      //  Note: Refactored for outputPath, and in Plugins, miniCssExtractPlugin and in setup.php to correct enqueue path. GM 9/2/2019
-      {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-          outputPath: './'
-           }
-        }]
       }
+// fonts
+      //  Note: Refactored for outputPath, and in Plugins, miniCssExtractPlugin and in setup.php to correct enqueue path. GM 9/2/2019
+      // {
+      //   test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      //   use: [{
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: '[name].[ext]',
+      //       outputPath: './fonts/'
+      //     }
+      //   }]
+      // },
+
     ]
   },
   plugins: [
@@ -94,12 +95,12 @@ module.exports = {
 
     // extract css into dedicated file
     new MiniCssExtractPlugin({
-    //  filename: './main.min.[hash].css'
-     filename: './css/main.min.css'
+      filename: './css/main.min.[hash].css'
+     // filename: './css/main.min.css'
 
     }),
       new CopyWebpackPlugin([
-        { from: 'assets/fonts', to: 'css/' },
+        { from: 'assets/fonts', to: 'fonts/' },
         { from: 'assets/images/' },
         { from: 'assets/scripts/admin-scripts.js', to: 'admin-scripts.js' },
       ]),
