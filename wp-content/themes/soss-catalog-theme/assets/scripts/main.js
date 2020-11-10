@@ -106,41 +106,36 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
+        gsap.registerPlugin(CSSPlugin, ScrollToPlugin, CustomEase, CustomWiggle);
 
+        const tl = gsap.timeline({ paused: false });
+        const pointer = document.querySelector('.down-angle');
 
-        const tl = new TimelineMax();
-        const pointer = document.querySelector(".down-angle");
-        const container = document.querySelector(".container");
 // For mobile we're targeting the div height
-        const sliderOffsetHeight = document.querySelector(".new-revslider").offsetHeight + 50;
-
+        const sliderOffsetHeight = document.querySelector(".new-revslider").offsetHeight;
+        const windowHeight = window.innerHeight;
+        console.log(`windowHeight: ${windowHeight} & sliderOffsetHeight: ${sliderOffsetHeight}`);
+        const scrollDist = ( windowHeight + 100 ) - sliderOffsetHeight;
+console.log(`scrollDist: ${scrollDist} & sliderOffsetHeight: ${sliderOffsetHeight}`);
 //Scrolldown function
-        function scrollDown() {
-          let sliderWindowCoords = sliderOffsetHeight; //document.documentElement.clientHeight;
+//         function scrollDown() {
+//           console.log(`clicked`);
+//           gsap.to( window, { duration: 2, scrollTo: 400; } );
+//           };
+//
+//         pointer.addEventListener("click", scrollDown);
+        document.querySelector('.down-angle').addEventListener("click", () => {
+          console.log(`clicked`);
+            tl.to(window, {duration: 1, scrollTo: 500 });
+          });
 
-          (function scroll() {
-            if (window.pageYOffset < sliderWindowCoords) {
-              // Using the scroll plugin
-              tl.to(
-                window,
-                {
-                  scrollTo: { duration: 1.5, y: sliderWindowCoords + 100, ease: "expo.out" }
-                },
-                "-=0.2"
-              );
-            }
 
-            if (window.pageYOffset > sliderWindowCoords) {
-              window.scrollTo(0, sliderWindowCoords);
-            }
-          })();
-        }
-
-        pointer.addEventListener("click", scrollDown);
-
-        tl.set(".open-up, .dont-settle, .cta, .down-angle", { opacity: 0 })
-          .set(".my-hinge", { scale: 0.6, opacity: 0, rotation: 105 })
-          .fromTo(".open-up", { x: -200, opacity: 0, duration: 1 }, { x: 0, opacity: 1 })
+        tl
+          .set(
+          ".open-up, .dont-settle, .cta, .down-angle", { opacity: 0, delay: 1 }
+          )
+          .fromTo( ".open-up", { x: -200, opacity: 0, duration: 1 }, { x: 0, opacity: 1 }
+          )
           .fromTo(
             ".dont-settle",
             { opacity: 0, x: 300, duration: 0.5 },
@@ -149,17 +144,24 @@
           )
           .fromTo(
             ".cta",
-            { opacity: 0, scale: 0.4, rotation: -35, duration: 0.5 },
-            { opacity: 1, scale: 1, rotation: 0, ease: "circ" }
+            { opacity: 0, scale: 1, force3D: true, transformPerspective:400, rotationY: 100},
+            { opacity: 1, scale: 1, rotationY: 360, duration: 1.1, ease: "elastic" },
+            "-=1.0"
+          )
+          .fromTo(
+            ".my-hinge",
+            { scale: 0.6, opacity: 0, rotation: 60 },
+            { opacity: 1, scale: 1.0,  duration: 1, rotation: 0 },
+            "-=0.1"
           )
           .fromTo(
             ".down-angle",
-            { opacity: 0, y: -100, duration: 1 },
-            { opacity: 1, y: 0, ease: "elastic" },
-            "+=0.8"
-          )
-          .to(".my-hinge", { opacity: 1, scale: 1.0,  duration: 1, rotation: 0 }, "-=1.5");
-      },
+            { opacity: 0, y: 300  },
+            { opacity: 1, y: 0, duration: 2, ease: "elastic" },
+            "+=0.1"
+          );
+
+      }, // end init funtion
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
       }

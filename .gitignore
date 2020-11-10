@@ -104,6 +104,7 @@ wp-content/mysql.sql
 /wp-content/themes/soss-catalog-theme/bitbucket-pipelines.yml
 /wp-content/themes/soss-catalog-theme/dist/
 /wp-content/themes/soss-catalog-theme/yarn.lock
+/wp-content/themes/soss-catalog-theme/package-lock.json 
 
 
 # large/disallowed file types
