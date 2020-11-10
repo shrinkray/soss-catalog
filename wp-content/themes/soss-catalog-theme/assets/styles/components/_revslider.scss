@@ -44,6 +44,7 @@
         border-radius: .3rem;
         padding: 1rem 3rem;
         transition: all 0.5s;
+        backface-visibility: hidden;
         &:hover {
           cursor: pointer;
           color: white;
@@ -55,6 +56,8 @@
       grid-area: image;
       display: flex;
       width: 100%;
+      justify-content: center;
+      align-items: center;
       .hinge {
         margin: auto;
       }
@@ -85,6 +88,7 @@
     align-items: center;
     .image {
       justify-content: center;
+      align-items: center;
       width: 100%;
     }
     .down-angle {
@@ -98,6 +102,7 @@
   .new-revslider {
    // grid: 3 / 1fr 1fr 1fr;
     justify-content: center;
+    align-items: center;
     margin: 1rem auto;
     grid-template-columns: 1fr ;
     grid-template-rows: 1fr 1fr 3em;
