@@ -4,7 +4,7 @@
   <div class="animated-text">
     <h1 class="open-up">Open up to a better way</h1>
     <h2 class="dont-settle">Don't settle for what's conventional</h2>
-    <button class="cta">Browse Soss</button>
+    <button onclick="window.location.href='/browse/'" type="button" class="cta">Browse Soss</button>
   </div>
 
   <div class="image">

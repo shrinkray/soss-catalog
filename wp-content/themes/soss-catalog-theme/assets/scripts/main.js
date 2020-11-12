@@ -10,9 +10,17 @@
  * always reference jQuery with $, even when in .noConflict() mode.
  * ======================================================================== */
 
+
 // Added for later (Note: this is drawing from node_modules, very cool)
 // import { TweenMax, ScrollToPlugin } from "gsap/TweenMax";
+// Setup GSAP for website
+import { gsap } from "gsap";
+import { CSSPlugin } from "gsap/CSSPlugin.js";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin.js";
+import { CustomEase } from "gsap/CustomEase.js";
+// import { CustomWiggle } from "gsap/CustomWiggle.js";
 
+gsap.registerPlugin(CSSPlugin, ScrollToPlugin, CustomEase);
 
 (function($) {
 
@@ -29,14 +37,14 @@
 
         // Background Image Break Box
 
-        $(".break-block").css('background', function () {
-          let bgBreak = (
-              'linear-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.2) 70%, rgba(255,255,255,1)) 100%, ' +
-           //   'linear-gradient(rgba(247,247,247,0.2) 0%, rgba(247,247,247,0.2)  100%, ' +
-          'url(' + $(this).data("image-src") + ') rgba(237,237,237,0.8) repeat center center'
-          );
-          return bgBreak;
-        });
+        // $(".break-block").css('background', function () {
+        //   let bgBreak = (
+        //       'linear-gradient(rgba(255,255,255,1) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.2) 70%, rgba(255,255,255,1)) 100%, ' +
+        //    //   'linear-gradient(rgba(247,247,247,0.2) 0%, rgba(247,247,247,0.2)  100%, ' +
+        //   'url(' + $(this).data("image-src") + ') rgba(237,237,237,0.8) repeat center center'
+        //   );
+        //   return bgBreak;
+        // });
 
 
 
@@ -106,33 +114,25 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
-        gsap.registerPlugin(CSSPlugin, ScrollToPlugin, CustomEase, CustomWiggle);
+
 
         const tl = gsap.timeline({ paused: false });
         const pointer = document.querySelector('.down-angle');
-
-// For mobile we're targeting the div height
-        const sliderOffsetHeight = document.querySelector(".new-revslider").offsetHeight;
+        const slider = document.querySelector(".new-revslider");
+        const sliderHeight = slider.offsetHeight;
         const windowHeight = window.innerHeight;
-        console.log(`windowHeight: ${windowHeight} & sliderOffsetHeight: ${sliderOffsetHeight}`);
-        const scrollDist = ( windowHeight + 100 ) - sliderOffsetHeight;
-console.log(`scrollDist: ${scrollDist} & sliderOffsetHeight: ${sliderOffsetHeight}`);
-//Scrolldown function
-//         function scrollDown() {
-//           console.log(`clicked`);
-//           gsap.to( window, { duration: 2, scrollTo: 400; } );
-//           };
-//
-//         pointer.addEventListener("click", scrollDown);
-        document.querySelector('.down-angle').addEventListener("click", () => {
-          console.log(`clicked`);
-            tl.to(window, {duration: 1, scrollTo: 500 });
-          });
+        const windowDiff = windowHeight - sliderHeight;
 
+    // TODO: create a function to add and remove class wobble to the pointer target
+
+        // Scrolldown function
+        pointer.addEventListener("click", () => {
+            tl.to(window, { duration: 2, scrollTo: sliderHeight, ease: 'power4.out' });
+          });
 
         tl
           .set(
-          ".open-up, .dont-settle, .cta, .down-angle", { opacity: 0, delay: 1 }
+          ".open-up, .dont-settle, .cta, .down-angle", { opacity: 0 }
           )
           .fromTo( ".open-up", { x: -200, opacity: 0, duration: 1 }, { x: 0, opacity: 1 }
           )
@@ -159,7 +159,14 @@ console.log(`scrollDist: ${scrollDist} & sliderOffsetHeight: ${sliderOffsetHeigh
             { opacity: 0, y: 300  },
             { opacity: 1, y: 0, duration: 2, ease: "elastic" },
             "+=0.1"
-          );
+          ).fromTo(
+          ".down-angle",
+          { delay: 0.5, scale: 1, force3D: true, transformPerspective:300 },
+          { rotationY: 180, duration: 2, ease: "power4.in" },
+          "+=1"
+        );
+
+
 
       }, // end init funtion
       finalize: function() {
