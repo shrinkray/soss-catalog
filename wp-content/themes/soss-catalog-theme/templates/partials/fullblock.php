@@ -48,7 +48,7 @@ if ( $full_row  == 'media' ) { ?>
 
   <div class="row align-items-center">
     <div class="col">
-      <div class="break-block block" data-image-src="<?= get_template_directory_uri(); ?>/dist/<?= $bg_image ?>.png">
+      <div class="break-block block" data-image-src="">
 
         <blockquote class="text-center"><?php echo $break_block; ?></blockquote>
 

@@ -11,7 +11,7 @@ function docs_post_type() {
       "name" => __( "Soss Docs", "sage" ),
       "singular_name" => __( "Soss Doc", "sage" ),
     ];
-    $path = get_template_directory_uri();
+    // Removed custom icon and am using a dash-icon (They are better now)
 
     $args = [
       "label" => __( "Soss Docs", "sage" ),
@@ -35,7 +35,7 @@ function docs_post_type() {
       "hierarchical" => false,
       "rewrite" => [ "slug" => "docs", "with_front" => true ],
       "query_var" => true,
-      "menu_icon" => $path . "/dist/adobe.png",
+      "menu_icon" => "dashicons-clipboard",
       "taxonomies" => [ "category" ],
       "supports" => [ "title", "editor", "excerpt", "custom-fields", "page-attributes", "post-formats" ],
     ];
