@@ -15,12 +15,13 @@
 // import { TweenMax, ScrollToPlugin } from "gsap/TweenMax";
 // Setup GSAP for website
 import { gsap } from "gsap";
-import { CSSPlugin } from "gsap/CSSPlugin.js";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin.js";
-import { CustomEase } from "gsap/CustomEase.js";
-// import { CustomWiggle } from "gsap/CustomWiggle.js";
+import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { CustomEase } from "gsap/CustomEase";
+import { Flip } from "gsap/Flip";
 
-gsap.registerPlugin(CSSPlugin, ScrollToPlugin, CustomEase);
+gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
+
 
 (function($) {
 
