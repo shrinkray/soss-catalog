@@ -1,104 +1,43 @@
-# master gigignore file for WordPress Root
+
+# .gitignore file for WordPress. Ignores everything except theme and plugins.
+# Located in the root folder
+# based on https://gist.github.com/jdbartlett/444295
+
+# Broad capture
+/*
+
 *~
-.DS_Store
+**.DS_Store*
 .idea*
 .history*
-.svn
-.cvs
-*.bak
-*.swp
-Thumbs.db
 
-# wordpress specific
-#wp-config.php
-temp-write-test-*
-wp-content/uploads/
-wp-content/plugins/
-wp-content/mu-plugins/
-wp-content/revslider/
-wp-content/updraft/
-#wp-content/mu-plugins/
+# Host and php files
+*wp-*.php
+**_wpeprivate/*
+**.wpe*
+**.*
 
-wp-content/blogs.dir/
-wp-content/wp-rocket-config
-wp-content/upgrade/*
-wp-content/backup-db/*
-wp-content/advanced-cache.php
-wp-content/wp-cache-config.php
-wp-content/cache/*
-wp-content/cache/supercache/*
-wp-content/uploads/wp-migrate-db/*
+# Public Root
+!.gitignore
+**favicon.ico
 
+# Target wp-content
+!wp-content
+wp-content/*
 
+# Plugins
+**wp-content/mu-plugins
+wp-content/plugins/*
+!wp-content/plugins/my-plugin
+!wp-content/models/**
 
-#host specific
-.ftpquota
-.well-known
-.htaccess
-
-# cache
-wp-content/object-cache.php
-
-
-# plugins not required to track versions for theme
-
-
-
-# presence of database
-wp-content/mysql.sql
-
-
-# wp core (as of 4.9.5)
-/db-config.php
-/index.php
-/license.txt
-/readme.html
-/wp-activate.php
-/wp-app.php
-/wp-atom.php
-/wp-blog-header.php
-/wp-comments-post.php
-/wp-commentsrss2.php
-/wp-config-sample.php
-/wp-cron.php
-/wp-feed.php
-/wp-links-opml.php
-/wp-load.php
-/wp-login.php
-/wp-mail.php
-/wp-rdf.php
-/wp-rss.php
-/wp-rss2.php
-/wp-pass.php
-/wp-register.php
-/wp-settings.php
-/wp-signup.php
-/wp-trackback.php
-/xmlrpc.php
-/wp-admin
-/wp-includes
-/wp-content/index.php
-/wp-content/db.php
-/wp-content/upgrade
-/wp-content/themes/twentyten
-/wp-content/themes/twentyeleven
-/wp-content/themes/twentytwelve
-/wp-content/themes/twentythirteen
-/wp-content/themes/twentyfourteen
-/wp-content/themes/twentyfifteen
-/wp-content/themes/twentysixteen
-/wp-content/themes/twentyseventeen
-/wp-content/themes/twentyeighteen
-/wp-content/themes/twentynineteen
-/wp-content/themes/twentytwenty
-/wp-content/themes/wordpress-blank/
-/wp-content/themes/storefront/
-
-
-/wp-content/themes/index.php
-
-/wp-content/plugins/akismet/
-
+# Theme
+!wp-content/themes
+wp-content/themes/*
+!wp-content/themes/soss-catalog-theme
+wp-content/themes/soss-catalog-theme/node_modules/*
+wp-content/themes/soss-catalog-theme/dist/*
+wp-content/themes/soss-catalog-theme/assets/build/*
 
 **/node_modules
 /wp-content/themes/soss-catalog-theme/bitbucket-pipelines.yml

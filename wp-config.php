@@ -27,46 +27,45 @@ define( 'DB_NAME', 'local' );
 define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'root' );
+define('DB_PASSWORD', 'root');
+	
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+	
+	/** Database Charset to use in creating database tables. */
+	define('DB_CHARSET', 'utf8');
+	
+	/** The Database Collate type. Don't change this if in doubt. */
+	define('DB_COLLATE', '');
+// This enables debugging.
+	define('WP_DEBUG', true);
+	
+	/**
+	 * Authentication Unique Keys and Salts.
+	 *
+	 * Change these to different unique phrases!
+	 * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+	 * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+	 *
+	 * @since 2.6.0
+	 */
+	define('AUTH_KEY', '{6kojdr<6eJO|.0XoLFatX[_RPS,Pa8Fg??7xZ!nzy(2[gwq|=/*V2a,;C{#T0+A');
+	define('SECURE_AUTH_KEY', 'no4Y,Sv]I<-1_j=9^U[1<$H;}Wn}E/q qZUO+-`I*|yrQ =Z_<!/%!WAGB?BaMyL');
+	define('LOGGED_IN_KEY', '=&0BAddQs pt[drQ)+n7uz`vx8q d4#|6Uus$;mI&lE-#DhUz!Pz~wqUMtX1M3cE');
+	define('NONCE_KEY', '|Ze:$i?cW_D~v|@(/O<PD!D*{6[F~,m1LNA:ye-Q_,|jbe0V#JocqKeE7=7TWj!d');
+	define('AUTH_SALT', ']}&Br.Z_c9f,:Dx7gER|0x{V G,mN$k+8FotCY5zVA0a0g+?oc:f|/{B_t85!I|V');
+	define('SECURE_AUTH_SALT', '<O-(=an&fjqrdYI!Fm_pfZ#oy~=jgI/M=[qWS&-^UoDXtNsUrjk$|feiX`rT&R81');
+	define('LOGGED_IN_SALT', '~vzcz(,vX2e :1<5x]0yE-Y;T~v;A7]K+4BM:-rC.D2/Dx<;/z1o+{dYz5lV#F$;');
+	define('NONCE_SALT', 'A/o?ty]J/J5Rs&nj[Oh6p%v:WP^@oE7b7)oRRR9+K~e$zglbG4)}|(7RcV$G8Y:N');
+	
+	/**
+	 * WordPress Database Table prefix.
+	 *
+	 * You can have multiple installations in one database if you give each
+	 * a unique prefix. Only numbers, letters, and underscores please!
+	 */
+	$table_prefix = 'wp_';
 
-/** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
-
-/** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8' );
-
-/** The Database Collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
-
-/**
- * Authentication Unique Keys and Salts.
- *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
- *
- * @since 2.6.0
- */
-define('AUTH_KEY',         '6D1cRThRpi42qRLiegL/+rHNsTyeBUvgeF/WlewlpcANbS4PoxsByTu24rOnuz977ISaJndbj1t7lrlFQTv2xw==');
-define('SECURE_AUTH_KEY',  'CeJiYaOXMvWYdpQHWqnAl0Ztr9p835sWJUUGY57NeSpnoRTFxktgG2qzipqEMFxXsmyqycjjrYYy7b5jzgo4IA==');
-define('LOGGED_IN_KEY',    '2LKOlu6+C5DRcIhCKILt+fKNsD57tnHddixTKnZPqHPvaH18a7hwnqOy52tUrNA8Lgmj40htW2LMF1y/w2N9nw==');
-define('NONCE_KEY',        'OLurNTI1c3jFV+sR2YNS/nHvnBlEUfEAjQFT180ljPz041u7Uv1Dt6KF4bJWfQzIW49KM4TiY3lxjENX+vAtuw==');
-define('AUTH_SALT',        'Dqevd6DWbqvCUnogNK9TaM6LZ/Jz61p8ghGUHxFZFzOSC37Kaeb34ZXAff93nWyg0SE9UP+MdHXBwkSI2vUSRg==');
-define('SECURE_AUTH_SALT', 'Rgh+bjjx61YFWYIR21n0vyO5p9zBRaMTlfuetbVix6Blh4mSUF+kukKwc19QbnIaurihiwXeeoBpOWbzOgDZGg==');
-define('LOGGED_IN_SALT',   'mC8r/sKWEOgiHa5FWOllzeS/SqVvW7grbmPoPek7VvO4NoE4fF07qqS3kXHbsSQWWg6LDpzpAQWzItUpMU2MEg==');
-define('NONCE_SALT',       'PA3jtAPYt571wSrkj97fWvhkQbX+wzFJIbtX/s2bJ0b0kFgTiqUF6BZdYH7cDtPBTYbB6OiuyHR55NaLfPrc8Q==');
-
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each
- * a unique prefix. Only numbers, letters, and underscores please!
- */
-$table_prefix = 'wp_';
-
-
-
-define('WP_DEBUG', false);
 
 /* Query Monitor vars
  *  - Enable dark mode for Query Monitor's interface.
