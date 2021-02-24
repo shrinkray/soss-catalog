@@ -78,12 +78,6 @@ function my_woocommerce_catalog_orderby( $orderby ) {
 add_filter( "woocommerce_catalog_orderby", "my_woocommerce_catalog_orderby", 20 );
 
 
-
-
-
-
-
-
 /**
  * This section added from Ultralatch theme for customized templates
  * GRM 3/23/2018
