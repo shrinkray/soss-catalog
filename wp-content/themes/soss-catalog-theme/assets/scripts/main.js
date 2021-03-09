@@ -175,22 +175,7 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
       }
     },
 
-     // Overview page
-    'invisible_hinge_product_overview': {
 
-      init: function() {
-        // JavaScript to be fired on the Overview page
-
-
-      },
-      finalize: function() {
-        // JavaScript to be fired on the Overview page, after the init JS
-        document.ready(function() {
-
-
-        });
-      }
-    },
 
     //WooCommerce
     'woocommerce': {
