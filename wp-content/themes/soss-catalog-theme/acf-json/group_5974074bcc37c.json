@@ -215,7 +215,8 @@
                                     "max_width": "",
                                     "max_height": "",
                                     "max_size": "",
-                                    "mime_types": ""
+                                    "mime_types": "",
+                                    "crop_type": "aspect_ratio"
                                 },
                                 {
                                     "key": "field_5aff17f4ea735",
@@ -735,7 +736,8 @@
                             "max_width": "",
                             "max_height": "",
                             "max_size": "",
-                            "mime_types": ""
+                            "mime_types": "",
+                            "crop_type": "aspect_ratio"
                         },
                         {
                             "key": "field_5a8729d303224",
@@ -830,7 +832,8 @@
                             "max_width": "",
                             "max_height": "",
                             "max_size": "",
-                            "mime_types": ""
+                            "mime_types": "",
+                            "crop_type": "aspect_ratio"
                         }
                     ],
                     "min": "",
@@ -1652,13 +1655,6 @@
                 "operator": "==",
                 "value": "template-secondary-full.php"
             }
-        ],
-        [
-            {
-                "param": "page",
-                "operator": "==",
-                "value": "1235"
-            }
         ]
     ],
     "menu_order": 0,
@@ -1680,7 +1676,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "Layouts for the Home and Sidebar pages",
-    "modified": 1571074112
+    "modified": 1619190501
 }
