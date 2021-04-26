@@ -35,6 +35,10 @@ wp-content/plugins/*
 !wp-content/themes
 wp-content/themes/*
 !wp-content/themes/soss-catalog-theme
+!wp-content/themes/soss-catalog-theme/.babelrc
+!wp-content/themes/soss-catalog-theme/mix.manifest.json
+!wp-content/themes/soss-catalog-theme/webpack.mix.js
+
 wp-content/themes/soss-catalog-theme/node_modules/*
 wp-content/themes/soss-catalog-theme/dist/*
 wp-content/themes/soss-catalog-theme/assets/build/*
@@ -42,8 +46,8 @@ wp-content/themes/soss-catalog-theme/assets/build/*
 **/node_modules
 /wp-content/themes/soss-catalog-theme/bitbucket-pipelines.yml
 /wp-content/themes/soss-catalog-theme/dist/
-/wp-content/themes/soss-catalog-theme/yarn.lock
-/wp-content/themes/soss-catalog-theme/package-lock.json
+# /wp-content/themes/soss-catalog-theme/yarn.lock
+# /wp-content/themes/soss-catalog-theme/package-lock.json
 
 
 # large/disallowed file types
