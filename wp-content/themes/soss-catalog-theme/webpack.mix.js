@@ -9,53 +9,57 @@
 
 const mix = require('laravel-mix');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+//const { CopyPlugin } = require("copy-webpack-plugin");
 
 require('laravel-mix-postcss-config');
 mix
-  .disableNotifications()
-  .js([ 'assets/scripts/slick.min.js', 'assets/scripts/main.js' ], 'dist/js/main.js')
-  .sass('assets/styles/main.scss', 'assets/build/main.css')
+ // .disableNotifications()
+  .js('assets/scripts/main.js', 'dist/js/main.js')
+  .sass('assets/styles/main.scss', 'dist/css/main.css')
   .options({
-    processCssUrls: false,
-    terser: {},
-    purifyCss: false,
-    // purifyCss: {},
-    postCss: [require('autoprefixer')],
-    clearConsole: false,
-    cssNano: {
-      // discardComments: {removeAll: true},
-    }
+    processCssUrls: false
+    // terser: {},
+    // purifyCss: false,
+    // // purifyCss: {},
+    // postCss: [require('autoprefixer')],
+    // clearConsole: false,
+    // cssNano: {
+    //   // discardComments: {removeAll: true},
+    // }
   })
-  .postCss('assets/build/main.css', 'dist/css/app.css', [
-    require('postcss-custom-properties'),
-    require('postcss-sorting')({
-      'properties-order': 'alphabetical'
-    }),
-    require('postcss-url')({
-      // Seeking options that work with Mix
-    }),
-    require('cssnano')
-  ])
+  // .postCss('assets/build/main.css', 'dist/css/app.css', [
+  //   require('postcss-custom-properties'),
+  //   require('postcss-sorting')({
+  //     'properties-order': 'alphabetical'
+  //   }),
+  //   require('postcss-url')({
+  //     // Seeking options that work with Mix
+  //   }),
+  //   require('cssnano')
+  // ])
 
   .copyDirectory(
     'assets/images', 'dist/images/'
   )
-  // .copyDirectory(
-  //   'assets/fonts', 'dist/fonts/'
-  // )
+  .copyDirectory(
+    'assets/fonts', 'dist/fonts/'
+  )
+  .copyDirectory(
+    'assets/scripts/admin-scripts.js', 'dist/admin-scripts.js'
+  )
 
-  .browserSync({proxy: 'http://localhost:10068/'})
+  .browserSync({proxy: 'http://localhost:10063/'})
   .webpackConfig({
       plugins: [
         new CleanWebpackPlugin({
           // Simulate the removal of files
           // default: false
-          dry: false,
+          dry: true,
 
           // Write Logs to Console
           // (Always enabled when dry is true)
           // default: false
-          verbose: false,
+          verbose: true,
 
           // Automatically remove all unused webpack assets on rebuild
           // default: true
@@ -65,7 +69,12 @@ mix
           // default: true
           protectWebpackAssets: true,
           cleanOnceBeforeBuildPatterns: ['dist/*', '!static-files*'],
-        })
+        }),
+        // new CopyPlugin([
+        //   { from: 'assets/fonts', to: 'fonts/' },
+        //   { from: 'assets/images/' },
+        //   { from: 'assets/scripts/admin-scripts.js', to: 'admin-scripts.js' },
+        // ]),
       ]
     }
   );
