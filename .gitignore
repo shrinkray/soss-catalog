@@ -42,6 +42,7 @@ wp-content/themes/*
 wp-content/themes/soss-catalog-theme/node_modules/*
 wp-content/themes/soss-catalog-theme/dist/*
 !wp-content/themes/soss-catalog-theme/assets/*
+wp-content/themes/soss-catalog-theme/assets/.DS_Store
 wp-content/themes/soss-catalog-theme/assets/scripts/gsap-bonus.tgz
 
 
