@@ -13,30 +13,30 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 //require('laravel-mix-postcss-config');
 mix
- // .disableNotifications()
+  .disableNotifications()
   .js('assets/scripts/main.js', 'dist/js/main.js')
-  .sass('assets/styles/main.scss', 'dist/css/main.css')
+  .sass('assets/styles/main.scss', 'assets/build/main.css')
   .options({
-    processCssUrls: false
-    // terser: {},
-    // purifyCss: false,
-    // // purifyCss: {},
-    // postCss: [require('autoprefixer')],
-    // clearConsole: false,
-    // cssNano: {
-    //   // discardComments: {removeAll: true},
-    // }
+    processCssUrls: false,
+    terser: {},
+    purifyCss: false,
+    // purifyCss: {},
+    postCss: [require('autoprefixer')],
+    clearConsole: false,
+    cssNano: {
+      // discardComments: {removeAll: true},
+    }
   })
-  // .postCss('assets/build/main.css', 'dist/css/app.css', [
-  //   require('postcss-custom-properties'),
-  //   require('postcss-sorting')({
-  //     'properties-order': 'alphabetical'
-  //   }),
-  //   require('postcss-url')({
-  //     // Seeking options that work with Mix
-  //   }),
-  //   require('cssnano')
-  // ])
+  .postCss('assets/build/main.css', 'dist/css/app.css', [
+    require('postcss-custom-properties'),
+    require('postcss-sorting')({
+      'properties-order': 'alphabetical'
+    }),
+    require('postcss-url')({
+      // Seeking options that work with Mix
+    }),
+    require('cssnano')
+  ])
 
   .copyDirectory(
     'assets/images', 'dist/images/'
@@ -70,11 +70,6 @@ mix
           protectWebpackAssets: true,
           cleanOnceBeforeBuildPatterns: ['dist/*', '!static-files*'],
         }),
-        // new CopyPlugin([
-        //   { from: 'assets/fonts', to: 'fonts/' },
-        //   { from: 'assets/images/' },
-        //   { from: 'assets/scripts/admin-scripts.js', to: 'admin-scripts.js' },
-        // ]),
       ]
     }
   );
