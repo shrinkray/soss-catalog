@@ -41,13 +41,12 @@ wp-content/themes/*
 
 wp-content/themes/soss-catalog-theme/node_modules/*
 wp-content/themes/soss-catalog-theme/dist/*
-wp-content/themes/soss-catalog-theme/assets/build/*
+!wp-content/themes/soss-catalog-theme/assets/*
+
 
 **/node_modules
 /wp-content/themes/soss-catalog-theme/bitbucket-pipelines.yml
 /wp-content/themes/soss-catalog-theme/dist/
-# /wp-content/themes/soss-catalog-theme/yarn.lock
-# /wp-content/themes/soss-catalog-theme/package-lock.json
 
 
 # large/disallowed file types
