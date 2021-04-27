@@ -11,8 +11,12 @@
  * ======================================================================== */
 
 
+
+import 'jquery/dist/jquery';
+import 'bootstrap/js/dist/tooltip';
+import 'popper.js/dist/popper.js';
+import "core-js/stable";
 // Added for later (Note: this is drawing from node_modules, very cool)
-// import { TweenMax, ScrollToPlugin } from "gsap/TweenMax";
 // Setup GSAP for website
 import { gsap } from "gsap";
 import { CSSRulePlugin } from "gsap/CSSRulePlugin";
@@ -66,18 +70,21 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
 
         // show or hide the sticky 'return to top' button
         $(window).scroll(function () {
-          if ($(this).scrollTop() > 200) {
-            $('.go-top').fadeIn(200);
+          let setTop = 200;
+          if ($(this).scrollTop() > setTop ) {
+            $('.go-top').fadeIn( setTop );
           } else {
-            $('.go-top').fadeOut(200);
+            $('.go-top').fadeOut( setTop );
           }
         });
 
         // Animate to scroll to top
+
         $('.go-top').click(function (event) {
           event.preventDefault();
+          let setTop = 400;
 
-          $('html, body').animate({scrollTop: 0}, 400);
+          $('html, body').animate({scrollTop: 0}, setTop);
         });
 
         // Product Overview Calculator Button
@@ -86,7 +93,7 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
 
           $('#show_calc_form').click(function (event) {
             event.preventDefault();
-            var accPos = $( '#show_calc_form').offset().top;
+            let accPos = $( '#show_calc_form').offset().top;
 
             $('html, body').animate({ scrollTop:  accPos }, 1000);
 
@@ -94,7 +101,7 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
 
 
       // Background Image for Diagonal Rows
-        $(".cta-diagonal").css('background', function () {
+        $(".cta-diagonal").css('background', function() {
           let bg = ('url(' + $(this).data("image-src") + ') no-repeat 100% center');
           // console.log ( bg );
           return bg;
@@ -192,6 +199,24 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
           // when the button is selected, call animation and active scripts
           $(".jump-to-tab").click( function(e) {
 
+            function myAnimate( elem ) {
+              // myAnimate moves page up after brief delay.
+              // Tab classes are assigned based on focus.
+              let offset = $( elem ).offset();
+              $( 'body, html' ).delay(300).animate({
+                scrollTop: offset.top -100
+              }, 1000);
+              $( 'li.active' ).removeClass( 'active' );
+              $( elem ).addClass( 'active' );
+            }
+
+            function activeTab( el ) {
+              // activateTab sets visibility of panel section of Woocommerce
+              // Tabs section
+              $( '.woocommerce-Tabs-panel' ).attr('style', 'display:none;');
+              $( el ).attr('style', 'display:block;');
+            }
+
             let id = $(this).attr('href'),
                 // Tabs
                 overview = "#tab-title-description",
@@ -207,9 +232,6 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
                 docsWc = "#tab-documents",
                 vidsWc = "#tab-video",
                 specsWc = "#tab-specs";
-
-            //console.log(`id: ${id}`);
-
 
 // Runs animate and active tabs based on value of clicked tab
 // TODO: Refactor and simplify
@@ -247,26 +269,6 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
             e.preventDefault();
           });
 
-          function myAnimate( elem ) {
-
-            // myAnimate moves page up after brief delay. Tab classes are assigned based on focus.
-
-            let offset = $( elem ).offset();
-
-            $( 'body, html' ).delay(300).animate({
-              scrollTop: offset.top -100
-            }, 1000);
-            $( 'li.active' ).removeClass( 'active' );
-            $( elem ).addClass( 'active' );
-          }
-
-          function activeTab( el ) {
-
-            // activateTab sets visibility of panel section of Woocommerce Tabs section
-
-            $( '.woocommerce-Tabs-panel' ).attr('style', 'display:none;');
-            $( el ).attr('style', 'display:block;');
-          }
         });
 
 
