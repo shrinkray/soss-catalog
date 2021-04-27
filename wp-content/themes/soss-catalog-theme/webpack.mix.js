@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 //const { CopyPlugin } = require("copy-webpack-plugin");
 
-require('laravel-mix-postcss-config');
+//require('laravel-mix-postcss-config');
 mix
  // .disableNotifications()
   .js('assets/scripts/main.js', 'dist/js/main.js')
