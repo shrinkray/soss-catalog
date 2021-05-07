@@ -2,7 +2,9 @@
   /* ACF Styles
   * Helps to visually separate ACF blocks out when there's a lot of them.
   */
-
+  #wpwrap {
+  background-color: #c6bfd2;
+}
   .acf-postbox h2.hndle {
     background: #ebebeb;
     color: #424242;
