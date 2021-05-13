@@ -11,6 +11,17 @@
   echo $filename;
 ?>
 
-
-
-<?php
+<?php if ( have_rows( 'add_hero_media' ) ) : ?>
+  <?php while ( have_rows( 'add_hero_media' ) ) : the_row(); ?>
+    <?php the_sub_field( 'value_proposition' ); ?>
+    <?php the_sub_field( 'call_to_action_label' ); ?>
+    <?php the_sub_field( 'link_title_text' ); ?>
+    <?php $hero_page_link = get_sub_field( 'hero_page_link' ); ?>
+    <?php if ( $hero_page_link ) : ?>
+      <a href="<?php echo esc_url( $hero_page_link); ?>"><?php echo esc_html( $hero_page_link ); ?></a>
+    <?php endif; ?>
+    <?php the_sub_field( 'media_link' ); ?>
+  <?php endwhile; ?>
+<?php else : ?>
+  <?php // no rows found ?>
+<?php endif; // end Hero have_rows

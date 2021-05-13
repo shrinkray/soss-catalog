@@ -14,4 +14,5 @@
 <?php the_sub_field( 'select_from_list_of_properties' ); ?>
 <?php the_sub_field( 'add_follow_words' ); ?>
 
-<?php
+<?php // end Row Layout
+
