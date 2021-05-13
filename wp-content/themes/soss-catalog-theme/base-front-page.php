@@ -1,5 +1,5 @@
 <?php
-
+  declare( strict_types=1 );
 use Roots\Sage\Setup;
 use Roots\Sage\Wrapper;
 //use Roots\Sage\Controllers\Jumbotron\Jumbotron;
@@ -14,33 +14,24 @@ use Roots\Sage\Wrapper;
 //?>
 
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> lang="en">
   <?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
-    <!--[if IE]>
-      <div class="alert alert-warning">
-        <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>
-      </div>
-    <![endif]-->
+
     <?php
       acf_form_head();
       do_action('get_header');
       get_template_part('templates/header');
       do_action('after_header');
     ?>
-    <div class="wrap container-fluid soss-red" role="graphics-document">
-      <div class="container">
-        <div class="row">
-          <div class="col ">
-            <?php
+    <?php
+      /**
+       * Replacement for RevSlider animation
+       * @gsap
+       */
+      // include('templates/partials/content-slider.php');
 
-              include('templates/partials/content-slider.php');
-
-            ?>
-          </div>
-        </div>
-      </div>
-    </div>
+    ?>
     <div class="wrap container" role="document">
       <div class="content row">
         <main class="main mt-0" >
@@ -50,7 +41,7 @@ use Roots\Sage\Wrapper;
 
           <?php if (Setup\display_sidebar()) : ?>
             <aside class="sidebar">
-              <?php include Wrapper\sidebar_path(); ?>
+              <?php  include Wrapper\sidebar_path(); ?>
             </aside><!-- /.sidebar -->
           <?php endif;
         ?>
