@@ -2,4 +2,32 @@
   .main {
     margin-top: 0;
   }
+  .content-info {
+    padding: 0;
+  }
+  .push {
+    .fa {
+      margin-right: 0.3em;
+    }
+    .btn {
+      margin-left: 2rem;
+      font-weight: 700;
+      &:hover {
+        background-color: darken($brand-primary, 15%) !important;
+        border: 1px solid white !important;
+        transition: all 0.5s;
+      }
+    }
+    .property {
+      font-size: 1.3rem;
+    }
+  }
+}
+.break-out {
+  background: $brand-primary-dark;
+  color: rgba(255, 255, 255, 1.0);
+  left: calc(-1 * (100vw - 100% ) / 2);
+  margin: 0 auto;
+  position: relative;
+  width: 100vw;
 }

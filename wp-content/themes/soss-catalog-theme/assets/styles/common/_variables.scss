@@ -115,6 +115,7 @@ $gray-lightest:             #f7f7f9;
 // Reassign color vars to semantic color scheme
 $brand-primary:             $red;
 $brand-primary-hover:       darken($brand-primary, 5%);
+$brand-primary-dark:       darken($brand-primary, 10%);
 $brand-success:             $red; //$green;
 $brand-info:                $blue;
 $brand-warning:             $orange;

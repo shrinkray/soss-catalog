@@ -41,7 +41,7 @@
   transition: all 0.5s;
   border-radius: 0.3rem !important;
   color: $gray-lightest !important;
-  font-weight: 300 !important;
+  font-weight: 300 ;
   padding: .5em 1em;
   margin: 0 auto; // inherit is 2rem auto 0;  this was to compensate for WooCommerce, now testing new settings.
   &:hover {
