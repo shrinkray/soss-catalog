@@ -123,58 +123,7 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
       init: function() {
         // JavaScript to be fired on the home page
 
-
-        const tl = gsap.timeline({ paused: false });
-        const pointer = document.querySelector('.down-angle');
-        const slider = document.querySelector(".new-revslider");
-        const sliderHeight = slider.offsetHeight;
-        const windowHeight = window.innerHeight;
-        const windowDiff = windowHeight - sliderHeight;
-
-    // TODO: create a function to add and remove class wobble to the pointer target
-
-        // Scrolldown function
-        pointer.addEventListener("click", () => {
-            tl.to(window, { duration: 2, scrollTo: sliderHeight, ease: 'power4.out' });
-          });
-
-        tl
-          .set(
-          ".open-up, .dont-settle, .cta, .down-angle", { opacity: 0 }
-          )
-          .fromTo( ".open-up", { x: -200, opacity: 0, duration: 1 }, { x: 0, opacity: 1 }
-          )
-          .fromTo(
-            ".dont-settle",
-            { opacity: 0, x: 300, duration: 0.5 },
-            { x: 0, opacity: 1 },
-            "-=.2"
-          )
-          .fromTo(
-            ".cta",
-            { opacity: 0, scale: 1, force3D: true, transformPerspective:400, rotationY: 100},
-            { opacity: 1, scale: 1, rotationY: 360, duration: 1.1, ease: "elastic" },
-            "-=1.0"
-          )
-          .fromTo(
-            ".my-hinge",
-            { scale: 0.6, opacity: 0, rotation: 60 },
-            { opacity: 1, scale: 1.0,  duration: 1, rotation: 0 },
-            "-=0.1"
-          )
-          .fromTo(
-            ".down-angle",
-            { opacity: 0, y: 300  },
-            { opacity: 1, y: 0, duration: 2, ease: "elastic" },
-            "+=0.1"
-          ).fromTo(
-          ".down-angle",
-          { delay: 0.5, scale: 1, force3D: true, transformPerspective:300 },
-          { rotationY: 180, duration: 2, ease: "power4.in" },
-          "+=1"
-        );
-
-
+        // Removed JS for Home page GSAP slider
 
       }, // end init funtion
       finalize: function() {
