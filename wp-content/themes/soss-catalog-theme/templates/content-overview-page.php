@@ -8,8 +8,10 @@
 
  $video =  get_field('add_a_video');
 
+ // TODO: REMOVE this script?
+  // <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 ?>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <?php if ( $video )  : ?>
 <div class="row row-break justify-content-center no-gutter">
   <div class="col-12 col-md-8 px-0">
@@ -76,8 +78,8 @@
        $section = get_sub_field( 'section_heading' );
        $image_p = get_sub_field( 'add_portrait' );
        $image_l = get_sub_field( 'add_landscape' );
-       $pic_p = wp_get_attachment_image($image_p, 'overview_portrait', false, $attr = array('class' => 'align-self-center'));
-       $pic_l = wp_get_attachment_image($image_l, 'overview_landscape', false, $attr = array('class' => 'align-self-center'));
+       $pic_p = wp_get_attachment_image($image_p, 'overview_portrait', false, $attr = ['class' => 'align-self-center']);
+       $pic_l = wp_get_attachment_image($image_l, 'overview_landscape', false, $attr = ['class' => 'align-self-center']);
 
 ?>
 <div class="row row-break">
