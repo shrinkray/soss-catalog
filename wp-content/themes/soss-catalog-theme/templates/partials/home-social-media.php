@@ -15,7 +15,7 @@
   $t_prop = '@SOSSDoors';
 
 ?>
-<div class="break-out">
+<div class="break-out promote-social-prop">
   <div class="container">
   <div class="row">
     <div class="col d-flex justify-content-center my-3">
