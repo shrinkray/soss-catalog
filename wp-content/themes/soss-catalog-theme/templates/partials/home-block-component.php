@@ -15,36 +15,58 @@
 ?>
 
 <?php the_sub_field( 'block_row_heading' ); ?>
+
+    <div class="row category-ctas-block my-5 d-flex justify-content-center break-out">
+      <ul class="category-ctas">
+
+
 <?php if ( have_rows( 'block_builder' ) ) : ?>
-  <?php while ( have_rows( 'block_builder' ) ) : the_row(); ?>
-    <?php
-    $image_id = get_sub_field('background_image');
-    $size = 'full';
-    $bg_image = wp_get_attachment_image($image_id, $size, false, $attr = ['class' => 'img-fluid  align-self-center']);
 
-// https://codepen.io/shrinkray/pen/LgNKXY?editors=1100
-     if ( $bg_image ) : ?>
+    <?php while ( have_rows( 'block_builder' ) ) : the_row(); ?>
+    <li>
+      <?php if ( have_rows( 'image_info' ) ) : // Image Group ?>
+        <?php while ( have_rows( 'image_info' ) ) : the_row();
 
-       <?php echo  $bg_image ?>
+        $image_id = get_sub_field('background_image');
+        $size = 'full';
+        $image_alt = get_sub_field('image_alt_desc');
+        $bg_image = wp_get_attachment_image($image_id, $size, false, $attr = ['class' => 'img-fluid  align-self-center', 'alt' => $image_alt ]);
 
-    <?php endif; ?>
+        // Present image in Button Group
+        ?>
+        <?php endwhile; ?>
+      <?php endif; ?>
 
-    <?php if ( have_rows( 'button' ) ) :
-
-      while ( have_rows( 'button' ) ) : the_row();
-
+      <?php if ( have_rows( 'button' ) ) : // Button Group ?>
+        <?php while ( have_rows( 'button' ) ) : the_row();
         $box_title = get_sub_field('title');
         $box_link = get_sub_field('link');
 
-        if ( $box_link ) : ?>
-          <a href="<?php echo esc_url( $box_link); ?>"><?= $box_title ?></a>
-        <?php endif; ?>
+          if ( $box_link ) : ?>
 
-      <?php endwhile; ?>
+            <a href="<?php echo esc_url( $box_link ); ?>">
 
-    <?php endif; ?>
+              <?php  if ( $bg_image ) : ?>
 
-  <?php endwhile; ?>
+                <?php echo  $bg_image ?>
+
+              <?php endif; ?>
+              <span class="cta-title"><?= $box_title ?></span>
+            </a>
+          <?php endif; ?>
+        <?php endwhile; ?>
+      </li>
+      <?php endif; ?>
+    <?php endwhile; ?>
+
+
+
+
 <?php else :
  // no rows found ?>
 <?php endif; // end Block Row Layout
+?>
+      </ul>
+    </div>
+
+<?php
