@@ -6,6 +6,9 @@
    * @author gmiller
    * @date: 5/13/2021
    */
+
+  declare( strict_types=1 );
+
   $filename = '';
   $filename = basename($_SERVER["SCRIPT_FILENAME"], '.php');
   echo $filename;
