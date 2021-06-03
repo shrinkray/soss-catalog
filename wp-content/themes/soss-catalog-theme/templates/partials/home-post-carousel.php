@@ -69,7 +69,7 @@ if ( $post_type ) {
 
           <?php if ( $featured ) {
             if(has_post_thumbnail()) : ?>
-              <a class="card" href="<?php the_permalink() ?>"><?php the_post_thumbnail('medium', array('class' => 'mx-auto')); ?></a>
+              <a class="card" href="<?php the_permalink() ?>"><?php the_post_thumbnail('medium', ['class' => 'mx-auto']); ?></a>
             <?php else : ?>
 
             <?php endif;
@@ -97,7 +97,7 @@ if ( $post_type ) {
                     get_template_part('templates/partials/entry-meta-date-cat');
                     break;
                 }
-              } else {
+              // } else {
                 // no meta to display on post
               } ?>
             </header>
@@ -162,7 +162,7 @@ if ( $post_type ) {
           <article <?php post_class(); ?>>
             <?php if ( $featured ) {
               if(has_post_thumbnail()) : ?>
-                <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('medium', array('class' => 'mx-auto')); ?></a>
+                <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('medium', ['class' => 'mx-auto']); ?></a>
               <?php else : ?>
 
               <?php endif;
@@ -189,7 +189,7 @@ if ( $post_type ) {
                       get_template_part('templates/partials/entry-meta-date-cat');
                       break;
                   }
-                } else {
+               // } else {
                   // no meta to display on post
                 } ?>
               </header>
@@ -255,7 +255,7 @@ if ( $post_type ) {
   // reset post data (important!)
   wp_reset_postdata();
   ?>
-  </div> <!-- .row -->
+<!--  </div>  .row -->
 
   <?php
 } // close post_type ?>
