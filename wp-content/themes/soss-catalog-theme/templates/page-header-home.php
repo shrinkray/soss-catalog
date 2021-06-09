@@ -1,5 +1,5 @@
-<?php use Roots\Sage\Titles; ?>
+<?php
+  declare( strict_types=1 );
 
-<!--<div class="page-header">-->
-<!--  <h1 class="mb-5">--><?//= Titles\title(); ?><!--</h1>-->
-<!--</div>-->
+
+
