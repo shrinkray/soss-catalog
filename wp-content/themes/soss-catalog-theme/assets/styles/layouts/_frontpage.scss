@@ -28,19 +28,43 @@
   }
 
 //  Block
-  .category-ctas-block {
 
+  // Mobile Stacked
+  @media (max-width: 630px) {
+    .category-ctas > li {
+      height: 100px;
+      overflow: hidden;
+      width: 100vw;
+      a {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        position: relative;
+        width: 100%;
+        img {
+          width: auto;
+        }
+      }
+    }
   }
-  .category-ctas {
-    display: flex;
+// flexbox gap not compatible on IE-11 (support ends June 2022)
+
+  .emulated-flex-gap > * {
+    margin: 12px 0 0 1rem;
+  }
+  .emulated-flex-gap {
+    align-items: center;
+    display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    margin: -1rem 0 0 -1rem;
+    width: calc(100% + 1rem);
+  }
+  .category-ctas {
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 1rem;
 
     li {
 list-style: none;
@@ -86,10 +110,21 @@ list-style: none;
   }
 
 }
-.break-out {
-  color: rgba(255, 255, 255, 1.0);
-  left: calc(-1 * (100vw - 100% ) / 2);
-  margin: 0 auto;
-  position: relative;
-  width: 100vw;
+
+@media screen and (min-width: 1563px) {
+
+  .break-out {
+    color: rgba(255, 255, 255, 1.0);
+    left: calc(-1 * (100vw - 100% ) / 2);
+    margin: 0 auto;
+    position: relative;
+    width: 100vw;
+  }
 }
+@media screen and (max-width: 1562px) {
+  .break-out.block-button {
+    left: auto;
+    width: auto;
+  }
+}
+
