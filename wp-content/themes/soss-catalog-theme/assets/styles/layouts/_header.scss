@@ -46,6 +46,10 @@
   flex-direction: row;
   width: 100%;
 
+  .request-quote-wrapper > * {
+    font-size: 0.8rem;
+    font-weight: bolder;
+  }
   .request-quote {
     margin: 0; // over-rides .cta-brand
   }

@@ -98,8 +98,12 @@
 
             </div>
 
-            <div class="col-lg-4 col-md-12 d-flex justify-content-end  mb-3 mb-lg-0">
-              <a type="button" class="cta-brand request-quote nowrap align-self-center" href="<?= $request_quote; ?>">Request a Quote</a>
+            <div class="col-lg-4 col-md-12 d-flex justify-content-end  mb-2 mb-lg-0">
+              <div class="request-quote-wrapper d-flex flex-column align-self-center">
+                <a type="button" class="cta-brand request-quote nowrap" href="<?= $request_quote; ?>">Request a Quote</a>
+                <div class="or-call align-self-center nowrap">or call: <a href="tel:+14197372324" class="nowrap">419-737-2324</a></div>
+              </div>
+
             </div>
           </div>
 
