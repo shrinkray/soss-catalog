@@ -17,64 +17,60 @@
 ?>
 <div class="break-out promote-social-prop">
   <div class="container">
-  <div class="row">
-    <div class="col d-flex justify-content-center my-3">
-      <div class="push d-flex  align-items-center">
+    <div class="row">
+      <div class="col d-flex justify-content-center my-3">
+        <div class="push d-flex  align-items-center text-white">
 
-<?php
+  <?php
 
-  switch ( $select_property ) {
-    case 'insta':
-      ?>
+    switch ( $select_property ) {
+      case 'insta':
+        ?>
 
-        <i class="fa fa-instagram fa-2x"></i>
-        <span class="property "><?= $i_prop; ?></span>
-        <a href="" class="btn btn-primary cta-brand" title="" target="_blank"><?=  $follow_label; ?></a>
+          <i class="fa fa-instagram fa-2x"></i>
+          <span class="property "><?= $i_prop; ?></span>
+          <a href="" class="btn btn-primary cta-brand" title="" target="_blank"><?=  $follow_label; ?></a>
 
-      <?php
-      break;
-    case 'face':
-      ?>
+        <?php
+        break;
+      case 'face':
+        ?>
 
-        <i class="fa fa-facebook-square fa-2x"></i>
-        <span class="$font-size-base"><?= $f_prop; ?></span>
-        <a href="https://www.facebook.com/SOSS-Door-Hardware-254546971278920/"
-           class="btn btn-primary cta-brand" title="" target="_blank" ><?= $follow_label; ?></a>
+          <i class="fa fa-facebook-square fa-2x"></i>
+          <span class="$font-size-base"><?= $f_prop; ?></span>
+          <a href="https://www.facebook.com/SOSS-Door-Hardware-254546971278920/"
+             class="btn btn-primary cta-brand" title="" target="_blank" ><?= $follow_label; ?></a>
 
-      <?php
-      break;
-    case 'link':
-      ?>
-      <i class="fa fa-linkedin-square fa-2x"></i>
-      <span class="$font-size-base"><?= $l_prop; ?></span>
-      <a href="https://www.linkedin.com/company/soss-door-hardware/"
-         class="btn btn-primary cta-brand" title="" target="_blank"><?= $follow_label; ?></a>
-
-
-      <?php
-      break;
-    case 'tweet':
-      ?>
-      <i class="fa fa-twitter-square fa-2x"></i>
-      <span class="$font-size-base"><?= $t_prop; ?></span>
-      <a href="https://twitter.com/SOSSDoors"
-         class="btn btn-primary cta-brand" title="" target="_blank"><?= $follow_label; ?></a>
+        <?php
+        break;
+      case 'link':
+        ?>
+        <i class="fa fa-linkedin-square fa-2x"></i>
+        <span class="$font-size-base"><?= $l_prop; ?></span>
+        <a href="https://www.linkedin.com/company/soss-door-hardware/"
+           class="btn btn-primary cta-brand" title="" target="_blank"><?= $follow_label; ?></a>
 
 
-      <?php
-      break;
-  }
-?>
+        <?php
+        break;
+      case 'tweet':
+        ?>
+        <i class="fa fa-twitter-square fa-2x"></i>
+        <span class="$font-size-base"><?= $t_prop; ?></span>
+        <a href="https://twitter.com/SOSSDoors"
+           class="btn btn-primary cta-brand" title="" target="_blank"><?= $follow_label; ?></a>
+
+
+        <?php
+        break;
+    }
+  ?>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </div>
 
 <?php
-?>
-
-
-
-<?php // end Row Layout
+ // end Row Layout
 
