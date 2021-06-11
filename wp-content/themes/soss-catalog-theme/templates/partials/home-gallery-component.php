@@ -9,12 +9,17 @@ declare(strict_types=1);
    * @date: Jun/09/2021
    */
 
+?>
+
+  <div class="row gallery-strip-block my-5 d-flex justify-content-center break-out">
+
+<?php
    $create_gallery_ids = get_sub_field( 'create_gallery' );
    $size = 'thumbnail'; ?>
 
 <?php if ( $create_gallery_ids ) :  ?>
 
-  <ul class="gallery-strip">
+  <ul class="gallery-strip d-flex justify-content-between nowrap">
   <?php foreach ( $create_gallery_ids as $create_gallery_id ):
 
     $image_alt = '';
@@ -28,4 +33,5 @@ declare(strict_types=1);
 
   <?php endforeach; ?>
   </ul>
+  </div>
 <?php endif;
