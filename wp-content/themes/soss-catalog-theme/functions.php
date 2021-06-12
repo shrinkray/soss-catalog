@@ -1,5 +1,6 @@
 <?php
-/**
+  declare( strict_types=1 );
+  /**
  * Sage includes
  *
  * The $sage_includes array determines the code library included in your theme.
@@ -76,7 +77,6 @@ function custom_theme_setup() {
   add_theme_support( 'advanced-image-compression' );
 }
 add_action( 'after_setup_theme', 'custom_theme_setup' );
-
 /**
  *  Add new image sizes
  */
@@ -109,7 +109,7 @@ function my_register_fields() { include_once('acf-image-crop/acf-image-crop.php'
  */
 if( function_exists('acf_add_options_page') ) {
 
-  acf_add_options_page(array(
+  acf_add_options_page( [
       'page_title' 	=> 'Theme General Settings',
       'menu_title'	=> 'Theme Settings',
       'menu_slug' 	=> 'theme-general-settings',
@@ -117,7 +117,7 @@ if( function_exists('acf_add_options_page') ) {
       'position'    => 58,
       'icon_url'    => false,
       //'redirect'		=> false
-  ));
+  ] );
 
 }
 
@@ -176,7 +176,7 @@ function soss_latest_sticky() {
   $sticky = array_slice( $sticky, 0, 5 );
 
   /* Query sticky posts */
-  $the_query = new WP_Query( array( 'post__in' => $sticky, 'ignore_sticky_posts' => 1 ) );
+  $the_query = new WP_Query( ['post__in' => $sticky, 'ignore_sticky_posts' => 1 ] );
   // The Loop
   if ( $the_query->have_posts() ) {
     $return = '<ul>';
@@ -186,9 +186,6 @@ function soss_latest_sticky() {
 
     }
     $return = '</ul>';
-
-  } else {
-    // no posts found
   }
   /* Restore original Post Data */
   wp_reset_postdata();
@@ -221,14 +218,14 @@ add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
 
 function my_page_columns($columns) {
 
-  $columns = array(
+  $columns = [
       'cb'	 	          => '<input type="checkbox" />',
       'title' 	        => 'Videos',
       'featured_video' 	=> 'Featured',
       'categories'	    => 'Categories',
       'tags'            => 'Tags',
       'date'		        => 'Date'
-  );
+  ];
   return $columns;
 }
 
@@ -344,11 +341,11 @@ add_action( 'template_redirect', 'wpb_change_search_url' );
  */
 add_filter('upload_mimes','add_custom_mime_types');
 function add_custom_mime_types($mimes){
-  return array_merge($mimes,array (
+  return array_merge($mimes, [
       'dwg' => 'application/acad',
       'dxf' => 'image/vnd.dxf',
       'svg' => 'image/svg+xml'
-  ));
+  ] );
 }
 
 /**
@@ -366,12 +363,11 @@ function pagination_bar() {
   if ($total_pages > 1){
     $current_page = max(1, get_query_var('paged'));
 
-    echo paginate_links(array(
-        'base' => get_pagenum_link(1) . '%_%',
-        'format' => '/page/%#%',
-        'current' => $current_page,
-        'total' => $total_pages,
-    ));
+    echo paginate_links( ['base' => get_pagenum_link(1) . '%_%',
+      'format' => '/page/%#%',
+      'current' => $current_page,
+      'total' => $total_pages,
+      ]);
   }
 }
 
@@ -398,21 +394,21 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='')
     }
   }
 
-  $pagination_args = array(
-      'base' => get_pagenum_link(1) . '%_%',
-      'format' => 'page/%#%',
-      'total' => $numpages,
-      'current' => $paged,
-      'show_all' => False,
-      'end_size' => 1,
-      'mid_size' => $pagerange,
-      'prev_next' => True,
-      'prev_text' => __('&laquo;'),
-      'next_text' => __('&raquo;'),
-      'type' => 'plain',
-      'add_args' => false,
-      'add_fragment' => ''
-  );
+  $pagination_args = [
+    'base' => get_pagenum_link(1) . '%_%',
+    'format' => 'page/%#%',
+    'total' => $numpages,
+    'current' => $paged,
+    'show_all' => False,
+    'end_size' => 1,
+    'mid_size' => $pagerange,
+    'prev_next' => True,
+    'prev_text' => __('&laquo;'),
+    'next_text' => __('&raquo;'),
+    'type' => 'plain',
+    'add_args' => false,
+    'add_fragment' => ''
+  ];
 
   $paginate_links = paginate_links($pagination_args);
 
