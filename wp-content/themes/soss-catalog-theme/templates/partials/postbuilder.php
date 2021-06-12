@@ -1,5 +1,6 @@
 <?php
-/**
+  declare( strict_types=1 );
+  /**
  * Created by PhpStorm.
  * User: gmiller
  * Date: 2/26/18
