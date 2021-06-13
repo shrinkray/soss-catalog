@@ -1,3 +1,5 @@
+// noinspection AnonymousFunctionJS,JSJQueryEfficiency,MagicNumberJS,UnnecessaryLocalVariableJS,NestedFunctionJS,AssignmentToFunctionParameterJS,ConditionalExpressionJS,ConstantOnRightSideOfComparisonJS,XHTMLIncompatabilitiesJS,NestedFunctionCallJS
+
 /* ========================================================================
  * DOM-based Routing
  * Based on http://goo.gl/EUTi53 by Paul Irish
@@ -15,6 +17,7 @@
 import 'jquery/dist/jquery';
 import 'bootstrap/js/dist/tooltip';
 import 'popper.js/dist/popper.js';
+import '@accessible360/accessible-slick';
 import "core-js/stable";
 // Added for later (Note: this is drawing from node_modules, very cool)
 // Setup GSAP for website
@@ -60,8 +63,11 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
         $('.navbar-toggler').click (function(){
           if ($('.mega-menu-toggle').hasClass('mega-menu-open')) {
             $('.mega-menu-toggle').removeClass('mega-menu-open').addClass('mega-menu-close');
-          } else if ($('.mega-menu-toggle').hasClass('mega-menu-close')) {
-            $('.mega-menu-toggle').removeClass('mega-menu-close').addClass('mega-menu-open');
+          }
+           else {
+            if ($('.mega-menu-toggle').hasClass('mega-menu-close')) {
+              $('.mega-menu-toggle').removeClass('mega-menu-close').addClass('mega-menu-open');
+            }
           }
         });
 
@@ -125,7 +131,7 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
 
         // Removed JS for Home page GSAP slider
 
-      }, // end init funtion
+      }, // end init function
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
       }
@@ -157,6 +163,8 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
               }, 1000);
               $( 'li.active' ).removeClass( 'active' );
               $( elem ).addClass( 'active' );
+
+              elem.preventDefault();
             }
 
             function activeTab( el ) {
@@ -166,7 +174,7 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
               $( el ).attr('style', 'display:block;');
             }
 
-            let id = $(this).attr('href'),
+            let tab_id = $(this).attr('href'),
                 // Tabs
                 overview = "#tab-title-description",
                 dimensions = "#tab-title-dimensions",
@@ -184,37 +192,42 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
 
 // Runs animate and active tabs based on value of clicked tab
 // TODO: Refactor and simplify
+              switch (tab_id) {
 
-            if ( id === overview ) {
+                case overview :
+                  myAnimate(overview);
+                  activeTab(viewsWc);
+                  break;
 
-              myAnimate(overview);
-              activeTab(viewsWc);
+                case dimensions :
+                  myAnimate(dimensions);
+                  activeTab(dimsWc);
+                  break;
 
-            } else if ( id === dimensions ) {
+                case drawings :
+                  myAnimate(drawings);
+                  activeTab(drawsWc);
+                  break;
 
-              myAnimate(dimensions);
-              activeTab(dimsWc);
+                case documents :
+                  myAnimate( documents );
+                  activeTab( docsWc );
+                  break;
 
-            } else if ( id === drawings ) {
+                case video :
+                  myAnimate( video ) ;
+                  activeTab( vidsWc );
+                  break;
 
-              myAnimate(drawings);
-              activeTab(drawsWc);
+                case specs :
+                  myAnimate( specs );
+                  activeTab( specsWc );
+                  break;
 
-            } else if ( id === documents ) {
-
-              myAnimate( documents );
-              activeTab( docsWc );
-
-            } else if ( id === video ) {
-
-              myAnimate( video );
-              activeTab( vidsWc );
-
-            } else if ( id === specs ) {
-
-              myAnimate( specs );
-              activeTab( specsWc );
-            }
+                  default:
+                    // fall through
+                  console.log('main.js: Tab buttons default case');
+              }
             e.preventDefault();
           });
 
@@ -250,7 +263,7 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
       let fire,
           namespace = Sage;
       funcname = (funcname === undefined) ? 'init' : funcname;
-      fire = func !== '';
+      fire = func !== "";
       fire = fire && namespace[func];
       fire = fire && typeof namespace[func][funcname] === 'function';
 
