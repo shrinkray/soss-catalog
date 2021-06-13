@@ -1,4 +1,8 @@
 .home {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
   .main {
     margin-top: 0;
   }
@@ -73,7 +77,7 @@
           border-left: 0;
         }
         &:last-child > .border {
-          border-right: 0px;
+          border-right: 0;
         }
         img {
           max-width: 100%;
