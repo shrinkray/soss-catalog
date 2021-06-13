@@ -1,5 +1,6 @@
 <?php
-/**
+  declare( strict_types=1 );
+  /**
  * Load CPT's and taxonomies
  *
  * Please note that missing files will produce a fatal error.
