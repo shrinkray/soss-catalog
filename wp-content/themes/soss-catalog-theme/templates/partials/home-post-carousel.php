@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUndefinedFieldInspection */
   declare( strict_types=1 );
 
 
@@ -23,15 +23,15 @@ $args = [
           $post_query->the_post();
 
       // Collects favorites
-     // if ( is_sticky() ) :
+     // using category = 'Feature'
 
         ?>
 
-        <li class="row panel display-inline-flex">
+        <li class="row panel d-flex">
 
           <?php
 
-            if (has_post_thumbnail($post_query->ID)) :
+            if ( has_post_thumbnail( $post_query->ID ) ) :
 
               ?>
 
