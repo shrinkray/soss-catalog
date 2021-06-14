@@ -1,5 +1,4 @@
-<?php /** @noinspection PhpIncludeInspection */
-  /** @noinspection PhpStrictTypeCheckingInspection */
+<?php
   declare( strict_types=1 );
 
   namespace Roots\Sage\Setup;
@@ -171,7 +170,6 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 999, 1 );
 
 function assets() {
 
-
   /**
    * This influenced me the most how to enqueue hash style files from Webpack build
    * @url: https://css-tricks.com/hashes-in-wordpress-assets-with-enqueue/
@@ -187,36 +185,16 @@ function assets() {
    * GM 9/2/2019
    */
 
-  $dirJS = new \DirectoryIterator(get_stylesheet_directory() . '/dist/js');
-  $dirCSS = new \DirectoryIterator(get_stylesheet_directory() . '/dist/css');
-
-  foreach ($dirJS as $file) {
-
-    if ( pathinfo( $file, PATHINFO_EXTENSION)  === 'js' )  {
-
-      $fullName = basename($file);
-      $name = substr(basename($fullName), 0, strpos(basename($fullName), '.'));
-
-      wp_enqueue_script( $name, Assets\asset_path( 'js/' . $fullName ), ['jquery'], 1.1, true );
-
-    }
-
-  }
-
-  foreach ($dirCSS as $style) {
-
-    if (pathinfo($style, PATHINFO_EXTENSION) === 'css') {
-
-      $fullName = basename($style);
-      $name = substr(basename($fullName), 0, strpos(basename($fullName), '.'));
-
-      wp_enqueue_style( $name, Assets\asset_path( 'css/' . $fullName ), null, null, 'all' );
+  $dirJS = get_template_directory_uri() . '/dist/js';
+  $dirCSS = get_template_directory_uri(). '/dist/css';
 
 
-    } // enqueues the hashed style file
+  wp_enqueue_script( 'main_js', $dirJS . '/main.js',
+    ['jquery'], 1.1, true );
 
-  } // end foreach CSS
-
+  wp_enqueue_style( 'style', get_stylesheet_uri() );
+  wp_enqueue_style( 'main_css', $dirCSS . '/main.css',
+    null, null, 'all' );
 
 
   if ( is_single() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -225,6 +203,7 @@ function assets() {
 
   }
 }
+
 
 /**
  * Admin Styles
