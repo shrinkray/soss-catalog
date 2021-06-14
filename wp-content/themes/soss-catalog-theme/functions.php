@@ -1,4 +1,7 @@
-<?php
+<?php /** @noinspection ALL */
+  /** @noinspection PhpUnusedLocalVariableInspection */
+  /** @noinspection PhpUnusedParameterInspection */
+  /** @noinspection PhpIncludeInspection */
   declare( strict_types=1 );
   /**
  * Sage includes
@@ -154,7 +157,9 @@ function content($limit) {
   $content = preg_replace('/[.+]/','', $content);
   $content = apply_filters('the_content', $content);
   $content = str_replace(']]>', ']]&gt;', $content);
-  return $content;
+  if (isset($content)) {
+    return $content;
+  }
 }
 
 /**
@@ -162,6 +167,7 @@ function content($limit) {
  * Use on blog landing page template
  *
  *  http://www.wpbeginner.com/wp-tutorials/how-to-display-the-latest-sticky-posts-in-wordpress/
+ * @noinspection PhpUnusedLocalVariableInspection
  */
 
 function soss_latest_sticky() {
@@ -226,7 +232,9 @@ function my_page_columns($columns) {
       'tags'            => 'Tags',
       'date'		        => 'Date'
   ];
-  return $columns;
+  if (isset($columns)) {
+    return $columns;
+  }
 }
 
 function my_custom_columns($column) {
@@ -446,7 +454,7 @@ function custom_field_excerpt() {
     $text = strip_shortcodes( $text );
     $text = apply_filters('the_content', $text);
     $text = str_replace(']]&gt;', ']]&gt;', $text);
-    $excerpt_length = 20; // 20 words
+    $excerpt_length = 40; // 20 words
     $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
     $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
   }
