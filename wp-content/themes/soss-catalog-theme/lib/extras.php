@@ -1,6 +1,7 @@
 <?php
+  declare( strict_types=1 );
 
-namespace Roots\Sage\Extras;
+  namespace Roots\Sage\Extras;
 
 use Roots\Sage\Setup;
 
@@ -36,7 +37,8 @@ add_filter( 'excerpt_more', __NAMESPACE__ . '\\excerpt_more' );
 
 // simple pagination
 
-function your_themes_pagination(){
+  /** @noinspection PhpUnusedLocalVariableInspection */
+  function your_themes_pagination(){
   global $wp_query;
   echo paginate_links();
 }
