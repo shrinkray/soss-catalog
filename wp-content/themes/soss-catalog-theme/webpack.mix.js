@@ -27,6 +27,7 @@ mix
       // discardComments: {removeAll: true},
     }
   })
+  // TODO: replace 'nested function call' to imported property
   .postCss('assets/build/main.css', 'dist/css/main.css', [
     require('postcss-custom-properties'),
     require('postcss-sorting')({
