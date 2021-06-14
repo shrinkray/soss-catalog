@@ -1,6 +1,5 @@
-
-
 <?php
+  declare( strict_types=1 );
 // Setting up the $args
 // http://www.wpbeginner.com/wp-themes/how-to-exclude-sticky-posts-from-the-loop-in-wordpress/
 // https://www.billerickson.net/code/wp_query-arguments/
@@ -17,12 +16,12 @@ $limit = get_sub_field( 'excerpt_limit' );
 $excerpt = get_sub_field( 'show_excerpt' );
 $set_length = get_sub_field( 'set_excerpt_length' );
 
-$args = array(
+$args = [
     'order'               => 'DESC',
     'posts_per_page'      =>  6,
     'post_type'            => 'post',
     'no_found_rows'       => 'true',
-);
+];
 
 $the_query = new WP_Query( $args );
 
