@@ -20,10 +20,11 @@ declare(strict_types=1);
 <?php if ( $create_gallery_ids ) :  ?>
 
   <ul class="gallery-strip nowrap clearfix">
-  <?php foreach ( $create_gallery_ids as $create_gallery_id ):
+  <?php foreach ( $create_gallery_ids as $image_id ):
 
-    $image_alt = '';
-    $attach_id = wp_get_attachment_image($create_gallery_id, '$size', false,
+    $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+    $attach_id = wp_get_attachment_image($image_id, '$size', false,
+
       $attr = [ 'class' => 'img-fluid lazyloaded', 'alt' => $image_alt ]);
     ?>
 
