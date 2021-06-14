@@ -27,7 +27,7 @@ mix
       // discardComments: {removeAll: true},
     }
   })
-  .postCss('assets/build/main.css', 'dist/css/app.css', [
+  .postCss('assets/build/main.css', 'dist/css/main.css', [
     require('postcss-custom-properties'),
     require('postcss-sorting')({
       'properties-order': 'alphabetical'
