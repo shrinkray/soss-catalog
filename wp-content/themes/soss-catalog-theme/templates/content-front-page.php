@@ -44,6 +44,12 @@
         endif; // Displays include if T/F is true
         ?>
 
+       <?php // FEATURE CHANNEL ROUTER
+      elseif ( get_row_layout() == 'router-component' ) : ?>
+
+        <?php  include( 'partials/home-router-component.php');
+
+        // FEATURE CHANNEL ROUTER   ?>
 
 
        <?php //FEATURE SOCIAL MEDIA
