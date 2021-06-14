@@ -1,6 +1,8 @@
-<?php
+<?php /** @noinspection PhpIncludeInspection */
+  /** @noinspection PhpStrictTypeCheckingInspection */
+  declare( strict_types=1 );
 
-namespace Roots\Sage\Setup;
+  namespace Roots\Sage\Setup;
 
 use Roots\Sage\Assets;
 
@@ -195,40 +197,27 @@ function assets() {
       $fullName = basename($file);
       $name = substr(basename($fullName), 0, strpos(basename($fullName), '.'));
 
-//      switch( $name ) {
-//        case 'index':
-//          $deps = "['jquery']";
-//          break;
-//
-//        default:
-//          $deps = null;
-//          break;
-//      }
-
-      wp_enqueue_script( 'sage/js', Assets\asset_path( 'js/' . $fullName ), array('jquery'), 1.1, true );
+      wp_enqueue_script( $name, Assets\asset_path( 'js/' . $fullName ), ['jquery'], 1.1, true );
 
     }
 
   }
-
-  /**
-   * We're capturing all the style files, a .map and .css
-   * This foreach gets all the style files; This should enqueue all
-   */
-
 
   foreach ($dirCSS as $style) {
 
     if (pathinfo($style, PATHINFO_EXTENSION) === 'css') {
 
       $fullName = basename($style);
+      $name = substr(basename($fullName), 0, strpos(basename($fullName), '.'));
 
-      wp_enqueue_style( 'sage/css', Assets\asset_path( 'css/' . $fullName ), null, null, 'all' );
+      wp_enqueue_style( $name, Assets\asset_path( 'css/' . $fullName ), null, null, 'all' );
 
 
     } // enqueues the hashed style file
 
   } // end foreach CSS
+
+
 
   if ( is_single() && comments_open() && get_option( 'thread_comments' ) ) {
 
@@ -245,7 +234,7 @@ function assets() {
  */
 function admin_styles() {
   ob_start();
-  include( locate_template( 'templates/modules/admin-styles.php' ) );
+  include_once( locate_template( 'templates/modules/admin-styles.php' ) );
   $output = ob_get_clean();
   echo $output;
 }
@@ -283,16 +272,12 @@ add_filter( 'acf/settings/show_admin', __NAMESPACE__ . '\\acf_admin_control' );
  */
 
 
-if ( ! is_admin() ) {
-  // Runs only if this PHP code is in a file that displays outside the admin panels, like the theme template.
-
-} else {
-  // Runs only if this code is in a file that displays inside the admin panels, like a plugin file.
+if ( is_admin() ) {
+   // Runs only if this code is in a file that displays inside the admin panels, like a plugin file.
 
   function admin_assets() {
     wp_enqueue_script('sage/js', Assets\asset_path( 'admin-scripts.js'), ['jquery'], null, true);
   }
   add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\admin_assets', 9999 );
-
 
 }
