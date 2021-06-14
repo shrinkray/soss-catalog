@@ -2,16 +2,7 @@
   declare( strict_types=1 );
 use Roots\Sage\Setup;
 use Roots\Sage\Wrapper;
-//use Roots\Sage\Controllers\Jumbotron\Jumbotron;
-//use Roots\Sage\Controllers\Slider\Slider;
-
-//$ID = get_the_ID();
-//if ( get_field( 'display_jumbotron' ))
-//  new Jumbotron( $ID );
-//
-//if ( get_field( 'slider_show_slider' ))
-//  new Slider( $ID);
-//?>
+?>
 
 <!doctype html>
 <html <?php language_attributes(); ?> lang="en">
@@ -54,6 +45,7 @@ use Roots\Sage\Wrapper;
       wp_footer();
     ?>
 
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js"></script>
 
   </body>
 </html>
