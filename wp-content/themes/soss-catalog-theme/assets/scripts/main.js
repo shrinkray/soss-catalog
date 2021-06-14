@@ -17,7 +17,6 @@
 import 'jquery/dist/jquery';
 import 'bootstrap/js/dist/tooltip';
 import 'popper.js/dist/popper.js';
-import '@accessible360/accessible-slick';
 import "core-js/stable";
 // Added for later (Note: this is drawing from node_modules, very cool)
 // Setup GSAP for website
@@ -39,6 +38,7 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+
 
         // Add Alt info to to MegaMenu Logo Image
         $('.mega-menu-logo > img:not([alt])').attr('alt', 'SOSS');
@@ -128,6 +128,28 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
+
+
+
+
+
+
+
+        // SLICK SLIDER
+        $('.carousel-panel').slick({
+          arrows: false,
+          adaptiveHeight: true,
+          cssEase: 'linear',
+          dots: true,
+          fade: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 1
+        });
+
+
+
+
 
         // Removed JS for Home page GSAP slider
 
