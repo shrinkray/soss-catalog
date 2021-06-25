@@ -2,6 +2,7 @@
   declare( strict_types=1 );
 
   namespace Roots\Sage\Setup;
+  // use DirectoryIterator;
 
 use Roots\Sage\Assets;
 
@@ -213,7 +214,7 @@ function assets() {
  */
 function admin_styles() {
   ob_start();
-  include_once( locate_template( 'templates/modules/admin-styles.php' ) );
+  include_once locate_template( 'templates/modules/admin-styles.php' );
   $output = ob_get_clean();
   echo $output;
 }
