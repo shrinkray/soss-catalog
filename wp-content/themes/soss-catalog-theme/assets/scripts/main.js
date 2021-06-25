@@ -132,17 +132,36 @@ gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, CustomEase, Flip);
 
 
 
+        // SLICK HERO
 
+        $('.homepage-slider').slick({
+          arrows: false,
+          adaptiveHeight: true,
+          autoplay: false,
+          autoplaySpeed: 5000,
+          controls: false,
+          cssEase: 'linear',
+          dots: true,
+          fade: true,
+          infinite: false,
+          lazyload: 'ondemand',
+          speed: 500,
+          slidesToShow: 1
+        });
 
 
         // SLICK SLIDER
         $('.carousel-panel').slick({
           arrows: false,
           adaptiveHeight: true,
+          autoplay: false,
+          autoplaySpeed: 5000,
+          controls: false,
           cssEase: 'linear',
           dots: true,
           fade: true,
-          infinite: true,
+          infinite: false,
+          lazyload: 'ondemand',
           speed: 500,
           slidesToShow: 1
         });
