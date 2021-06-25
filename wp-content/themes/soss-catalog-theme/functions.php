@@ -85,6 +85,9 @@ add_action( 'after_setup_theme', 'custom_theme_setup' );
  */
 
 add_image_size('feature_block', 300, 255, true);
+add_image_size('gallery_block', 300, 300, true);
+add_image_size('sm_gallery_block', 126, 126, true);
+add_image_size('feature_post', 655, 436, true);
 add_image_size('opt_in', 608, 492, true);
 add_image_size('opt_in_wide', 900, 600, true);
 add_image_size('secondary_image', 800, 450, true);
