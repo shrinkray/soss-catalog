@@ -23,9 +23,9 @@ use Roots\Sage\Wrapper;
       // include('templates/partials/content-slider.php');
 
     ?>
-    <div class="wrap container" role="document">
+    <div class="wrap container-fluid" role="document">
       <div class="content row">
-        <main class="main mt-0" >
+        <main class="main px-0 mt-0" >
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
 
