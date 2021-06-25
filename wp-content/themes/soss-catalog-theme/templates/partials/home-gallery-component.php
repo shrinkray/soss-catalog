@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 ?>
 
-  <div class="row gallery-strip-block my-0 d-flex justify-content-center break-out">
+  <div class="row gallery-strip-block my-0 d-flex justify-content-center">
 
 <?php
    $create_gallery_ids = get_sub_field( 'create_gallery' );
@@ -22,8 +22,9 @@ declare(strict_types=1);
   <ul class="gallery-strip nowrap clearfix">
   <?php foreach ( $create_gallery_ids as $image_id ):
 
-    $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
-    $attach_id = wp_get_attachment_image($image_id, '$size', false,
+
+    $image_alt = get_post_meta($image_id, 'thumb', true);
+    $attach_id = wp_get_attachment_image($image_id, 'gallery_block', false,
 
       $attr = [ 'class' => 'img-fluid lazyloaded', 'alt' => $image_alt ]);
     ?>
