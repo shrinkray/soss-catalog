@@ -38,7 +38,7 @@
     "watch": "mix watch",
     "watch-poll": "mix watch -- --watch-options-poll=1000",
     "hot": "mix watch --hot",
-    "production": "mix --production"
+    "prod": "mix --production"
   },
   "version": "2.0.0",
   "dependencies": {
