@@ -17,13 +17,13 @@
 <?php the_sub_field( 'block_row_heading' ); ?>
 
     <div class="row category-ctas-block my-5 d-flex justify-content-center break-out block-button">
-      <ul class="category-ctas emulated-flex-gap">
+      <ul class="category-ctas no-gutters emulated-flex-gap">
 
 
 <?php if ( have_rows( 'block_builder' ) ) : ?>
 
     <?php while ( have_rows( 'block_builder' ) ) : the_row(); ?>
-    <li>
+    <li class="col-lg-2 col-sm-4 col-xs-12">
       <?php if ( have_rows( 'image_info' ) ) : // Image Group ?>
         <?php while ( have_rows( 'image_info' ) ) : the_row();
 
