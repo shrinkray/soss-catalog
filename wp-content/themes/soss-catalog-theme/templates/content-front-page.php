@@ -23,19 +23,35 @@
 
 
 
-    <?php // FEATURE BLOCK COMPONENT
+      <?php // FEATURE 5X BLOCK COMPONENT
 
-       elseif ( get_row_layout() == 'feature_block_component' ) : ?>
+      elseif ( get_row_layout() == 'feature_block_component' ) : ?>
 
         <?php  include( 'partials/home-block-component.php');
 
- // END 3X BLOCKS ?>
+        // END 5X BLOCKS ?>
+
+      <?php // FEATURE 5X BLOCK COMPONENT
+
+      elseif ( get_row_layout() == 'open_message_component' ) : ?>
+
+        <?php  include( 'partials/home-block-component.php');
+
+        // END 5X BLOCKS ?>
+
+      <?php // FEATURE 5X BLOCK COMPONENT
+
+      elseif ( get_row_layout() == 'router-component' ) : ?>
+
+        <?php  include( 'partials/home-block-component.php');
+
+        // END 5X BLOCKS ?>
 
 
 
-    <?php // FEATURE CAROUSEL COMPONENT
+      <?php // FEATURE CAROUSEL COMPONENT
 
-       elseif ( get_row_layout() == 'feature_carousel_component' ) : ?>
+      elseif ( get_row_layout() == 'feature_carousel_component' ) : ?>
 
         <?php if ( get_sub_field( 'display_carousel' ) == 1 ) :
 
@@ -44,7 +60,7 @@
         endif; // Displays include if T/F is true
         ?>
 
-       <?php // FEATURE CHANNEL ROUTER
+      <?php // FEATURE CHANNEL ROUTER
       elseif ( get_row_layout() == 'router-component' ) : ?>
 
         <?php  include( 'partials/home-router-component.php');
@@ -52,7 +68,7 @@
         // FEATURE CHANNEL ROUTER   ?>
 
 
-       <?php //FEATURE SOCIAL MEDIA
+      <?php //FEATURE SOCIAL MEDIA
       elseif ( get_row_layout() == 'feature_social_media' ) : ?>
 
         <?php  include( 'partials/home-social-media.php');
@@ -61,11 +77,11 @@
 
 
 
-    <?php // FEATURE GALLERY STRIP
+      <?php // FEATURE GALLERY STRIP
 
-       elseif ( get_row_layout() == 'gallery_strip_component' ) : ?>
+      elseif ( get_row_layout() == 'gallery_strip_component' ) : ?>
 
-      <?php include( 'partials/home-gallery-component.php' ); ?>
+        <?php include( 'partials/home-gallery-component.php' ); ?>
 
 
       <?php endif; // Row Layout ?>
