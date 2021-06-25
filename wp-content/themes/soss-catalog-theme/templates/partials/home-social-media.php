@@ -1,4 +1,6 @@
 <?php
+  declare( strict_types=1 );
+
   /**
    * Social Promotion Builder
    * @description: sets one media property from a list. User sets one and label on button. The template applies icon,
@@ -15,8 +17,8 @@
   $t_prop = '@SOSSDoors';
 
 ?>
-<div class="break-out promote-social-prop">
-  <div class="container">
+<div class="promote-social-prop mt-5">
+  <div class="">
     <div class="row">
       <div class="col d-flex justify-content-center my-3">
         <div class="push d-flex  align-items-center text-white">
