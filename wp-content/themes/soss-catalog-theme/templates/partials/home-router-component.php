@@ -1,17 +1,20 @@
 <?php
   declare( strict_types=1 );
   /**
- * Created by PhpStorm.
- * User: gmiller
- * Date: 2/26/18
- * Time: 1:34 PM
- */
+   * Router Component
+   * @description: Hinges or Handles buttons
+   * @author gmiller
+   * @date: 6/21/2021
+   */
 
-$section_title = get_sub_field( 'section_title' ); ?>
+
+
+
+  $section_title = get_sub_field( 'section_title' ); ?>
 
 <?php
 if ( $section_title ) { ?>
-  <div class="row row-break">
+  <div class="row row-break mt-4">
     <div class="col">
 
       <div class="block-title">
@@ -35,7 +38,7 @@ $right_pic = wp_get_attachment_image($right_image, 'router_image', false, $attr 
 $left_pic = wp_get_attachment_image($left_image, 'router_image', false, $attr = ['class' => 'align-self-center left-router']); ?>
 
 
-<div class="router-container block">
+<div class="router-container block mb-4 ">
 
 
   <div class="row">
@@ -73,11 +76,11 @@ $left_pic = wp_get_attachment_image($left_image, 'router_image', false, $attr = 
 
     <div class="col-sm-6">
 
-      <?php if ( !empty( $right_image ) ) {
+      <?php //if ( !empty( $right_image ) ) {
 
 
 
-      } ?>
+    //  } ?>
 
       <div class="image img_item item-2 overflow">
         <?php if ( $right_link ) { ?>
