@@ -13,8 +13,11 @@ $args = [
   $post_query = new WP_Query( $args );
   ?>
 
-  <div class="">
-    <ul class="carousel-panel">
+  <div class="homepage-post-carousel ">
+    <div class="row">
+
+      <div class="col-lg-10 offset-lg-1 col-md-12">
+       <ul class="carousel-panel ">
     <?php
       if ( $post_query->have_posts() ) :
 
@@ -35,18 +38,18 @@ $args = [
 
               ?>
 
-              <div class="col-md-8">
-                <div class="card-body">
+              <div class="col-md-6 order-md-1 order-sm-2 order-xs-2 align-content-md-center">
+                <div class="card-body ">
                   <?php the_title('<h3 class="card-title">', '</h3>'); ?>
                   <?php the_excerpt(); ?>
-                  <a href="<?php echo esc_url(get_the_permalink()); ?>" class="btn btn-primary">
+                  <a href="<?php echo esc_url(get_the_permalink()); ?>" class="button cm-tab-brand">
                     <?php esc_html_e('View More', 'sage'); ?>
                   </a>
                 </div>
               </div>
 
-              <div class="col-md-4">
-                <?php the_post_thumbnail('full', ['class' => 'img-fluid lazyloaded']); ?>
+              <div class="col-md-6 order-md-2 order-sm-1 order-xs-1 d-flex align-items-center">
+                <?php the_post_thumbnail('feature_post', ['class' => 'img-fluid lazyloaded']); ?>
               </div>
 
             <?php endif; ?>
@@ -65,6 +68,8 @@ $args = [
 
     ?>
     </ul>
+      </div>
+    </div>
   </div> <!-- close Carousel -->
 
 
