@@ -10,9 +10,6 @@
 
   declare( strict_types=1 );
 
-  $filename = '';
-  $filename = basename($_SERVER["SCRIPT_FILENAME"], '.php');
-  echo $filename;
 ?>
 <?php if ( have_rows( 'create_a_carousel_panel' ) ) : ?>
   <?php while ( have_rows( 'create_a_carousel_panel' ) ) : the_row(); ?>
