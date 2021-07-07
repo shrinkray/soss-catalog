@@ -50,7 +50,7 @@
     color: $white !important;
   }
   &.btn {
-   // width: 80%; this is causing probs now, WooCommerce may work better
+   // width: 80%; this is causing problems now, WooCommerce may work better
   }
   &.add_to_cart_button {
     background-color: white !important;
@@ -104,7 +104,7 @@
   &:hover {
     background-color: darken($brand-info, 10%);
     border-color: $brand-info;
-    box-shadow: 0 5px 0px 0 darken(darken($brand-info, 10%), 10%);
+    box-shadow: 0 5px 0 0 darken(darken($brand-info, 10%), 10%);
     color: $white;
     text-shadow: 3px 3px 3px rgba($exploreShadow, 0.9);
   }
@@ -124,10 +124,9 @@
   font-size: 1.2rem;
   font-weight: 500;
   color: $brand-primary;
-  padding: .4rem 1.6rem;
+  padding: 0.4rem 1.6rem 0.4rem 2.2rem;
   transition: all 0.5s ease;
   background: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='indianred' d='M560.02 32c-1.96 0-3.98.37-5.96 1.16L384.01 96H384L212 35.28A64.252 64.252 0 0 0 191.76 32c-6.69 0-13.37 1.05-19.81 3.14L20.12 87.95A32.006 32.006 0 0 0 0 117.66v346.32C0 473.17 7.53 480 15.99 480c1.96 0 3.97-.37 5.96-1.16L192 416l172 60.71a63.98 63.98 0 0 0 40.05.15l151.83-52.81A31.996 31.996 0 0 0 576 394.34V48.02c0-9.19-7.53-16.02-15.98-16.02zM224 90.42l128 45.19v285.97l-128-45.19V90.42zM48 418.05V129.07l128-44.53v286.2l-.64.23L48 418.05zm480-35.13l-128 44.53V141.26l.64-.24L528 93.95v288.97z'/%3E%3C/svg%3E") no-repeat 0.5rem 0.5rem $gray;
-  padding-left: 2.2rem;
 
   &:hover {
     border: 2px solid $brand-primary;
@@ -156,7 +155,7 @@
 .brand-cta-red {
   border-radius: 0.3rem;
   border: 2px solid white;
-  background-color: $brand-primary;
+  // background-color: $brand-primary;
   box-shadow: none;
   font-size: 1.2rem;
   font-weight: 500;
@@ -175,7 +174,7 @@
 .brand-cta-gray {
   border-radius: 0.3rem;
   border: 2px solid white;
-  background-color: $gray !important;
+ // background-color: $gray !important;
   box-shadow: none;
   font-size: 1.2rem;
   font-weight: 500;
