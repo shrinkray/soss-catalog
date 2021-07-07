@@ -62,6 +62,20 @@
     }
   }
 }
+.cta-social {
+  background-color: $gray-light !important;
+  transition: all 0.5s;
+  border-color: $brand-primary-dark !important;
+  border-radius: 0.3rem !important;
+  color: $brand-primary !important;
+  text-shadow: 1px 1px 2px #eae7e7;
+  &:hover {
+    background-color: darken($brand-primary, 10%) !important;
+    border-color: $brand-primary !important;
+    color: $white !important;
+    text-shadow: 1px 1px 2px #eae7e700;
+  }
+}
 // Refactor for 404 page button styles
 .btn-outline-success {
   color: $brand-primary;

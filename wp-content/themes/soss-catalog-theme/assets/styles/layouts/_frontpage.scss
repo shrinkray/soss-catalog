@@ -138,6 +138,11 @@
 }
 .carousel-panel {
 padding: 0 15px;
+  .card-body-center { // replaces .card-body class in code to allow vertical-centering
+    min-height: 1px;
+    padding: 1.25rem;
+    max-height: 100%;
+  }
 }
 //  Block
 
