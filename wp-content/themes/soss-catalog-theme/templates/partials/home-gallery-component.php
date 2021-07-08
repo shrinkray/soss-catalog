@@ -19,7 +19,7 @@ declare(strict_types=1);
 
 <?php if ( $create_gallery_ids ) :  ?>
 
-  <ul class="gallery-strip nowrap clearfix">
+  <ul class="gallery-strip nowrap clearfix mt-1">
   <?php foreach ( $create_gallery_ids as $image_id ):
 
 
@@ -30,7 +30,7 @@ declare(strict_types=1);
     ?>
 
     <li>
-      <span class="border">&nbsp;</span>
+      <span class="gallery-border">&nbsp;</span>
       <?php echo $attach_id; ?>
     </li>
 
