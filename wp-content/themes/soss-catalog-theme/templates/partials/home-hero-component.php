@@ -10,6 +10,9 @@
   /**
    *
    */
+
+  // use function Sodium\version_string;
+
   $aws_webm_source = 'https://soss-web-assets.s3.us-east-2.amazonaws.com/soss-hero.webm';// 37.3 mb
   $aws_mp4_source = 'https://soss-web-assets.s3.us-east-2.amazonaws.com/SOSSweb4.mp4'; // 125.8 mb
   $aws_static_source = 'https://soss-web-assets.s3.us-east-2.amazonaws.com/Website_Banner_Soss_Antique_Bronze_Invisible_Hinge.png'; // 125.8 mb
@@ -28,6 +31,7 @@
               $mp4_video = get_sub_field('mp4_video');
               $webm_video = get_sub_field('webm_video');
               $poster_image = get_sub_field('poster_image');
+              $no_bypass = get_sub_field('bypass_video');
 
               $hero_page_link = get_sub_field( 'hero_page_link' ); ?>
 
@@ -36,21 +40,34 @@
 
             <a href="<?php echo esc_url( $hero_page_link); ?>" class="slide-content-main video-slide">
 
-              <div class="video-overlay">&nbsp;</div>
-              <!-- TODO: workout method to capture image dimensions to populate the dimensions -->
-              <video poster="<?php echo $poster_image; ?>" playsinline muted autoplay loop preload="auto"
-                     width="1900" height="814" id="soss_hero_video">
-                <?php if ( $mp4_video ) : ?>
-                  <source src="<?php echo $mp4_video; ?>" type="video/mp4">
-                <?php endif; ?>
-                <?php if ( $webm_video ) : ?>
-                  <source src="<?php echo $webm_video; ?>" type="video/webm">
-                <?php endif; ?>
-                <?php if ( $poster_image ) : // TODO: Fade in background image on load  ?>
-                  <source src="<?php echo $poster_image; ?>" id="soss_poster_image" >
-                <?php endif; ?>
-              </video>
 
+              <!-- TODO: workout method to capture image dimensions to populate the dimensions -->
+              <?php if ( $no_bypass == 1 ) : // if true, show the video options
+                ?>
+
+                <video poster="<?php echo $poster_image; ?>" playsinline muted autoplay loop preload="auto"
+                       width="1900" height="814" id="soss_hero_video">
+                  <?php if ( $mp4_video ) : ?>
+                    <source src="<?php echo $mp4_video; ?>" type="video/mp4">
+                  <?php endif; ?>
+                  <?php if ( $webm_video ) : ?>
+                    <source src="<?php echo $webm_video; ?>" type="video/webm">
+                  <?php endif; ?>
+                  <?php if ( $poster_image ) : // TODO: Fade in background image on load  ?>
+                    <source src="<?php echo $poster_image; ?>" id="soss_poster_image" >
+                  <?php endif; ?>
+                </video>
+
+              <?php else : // if false, show a static option
+                ?>
+
+                <video poster="<?php echo $poster_image; ?>" playsinline muted autoplay loop preload="auto"
+                       width="1900" height="814" id="soss_hero_video">
+                  <source src="<?php echo $aws_static_source; ?>" id="soss_poster_image" >
+
+                </video>
+              <?php endif; // show all video inputs ?>
+              <div class="video-overlay">&nbsp;</div>
               <div class="logo-overlay"></div>
 
               <div class="slide-content">
