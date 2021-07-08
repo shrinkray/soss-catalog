@@ -70,9 +70,9 @@
               <div class="video-overlay">&nbsp;</div>
               <div class="logo-overlay"></div>
 
-              <div class="slide-content">
-                <h2><?php echo $value_prop; ?></h2>
-              </div>
+<!--              <div class="slide-content">-->
+<!--                <h2>--><?php //echo $value_prop; ?><!--</h2>-->
+<!--              </div>-->
             </a>
               <div class="slide-button-content">
                 <a href="<?php echo esc_url( $hero_page_link); ?>" class="btn button red cta-button"><?php echo $cta; ?></a>
