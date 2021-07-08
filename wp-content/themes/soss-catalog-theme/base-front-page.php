@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection ALL */
   declare( strict_types=1 );
 use Roots\Sage\Setup;
 use Roots\Sage\Wrapper;
@@ -25,7 +25,7 @@ use Roots\Sage\Wrapper;
     ?>
     <div class="wrap container-fluid" role="document">
       <div class="content row">
-        <main class="main px-0 mt-0" >
+        <main class="main px-0 mt-0 overflow-hidden" >
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
 
