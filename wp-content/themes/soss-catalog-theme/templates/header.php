@@ -85,7 +85,7 @@
           </div>
 
           <div class="col-9 d-flex flex-lg-nowrap flex-wrap">
-            <div class="col-lg-8 col-md-12 justify-self-md-center align-self-md-center  mt-3 mt-lg-0">
+            <div class="col-lg-6 col-sm-6 col-xs-8 justify-self-sm-center align-self-sm-center  mt-3 mt-lg-0">
 
               <?php
 
@@ -98,10 +98,10 @@
 
             </div>
 
-            <div class="col-lg-4 col-md-12 d-flex justify-content-end  mb-2 mb-lg-0">
+            <div class="col-lg-4 col-sm-6 d-flex justify-content-end  mt-2 mb-lg-0">
               <div class="request-quote-wrapper d-flex flex-column align-self-center">
                 <a type="button" class="cta-brand request-quote nowrap" href="<?= $request_quote; ?>">Request a Quote</a>
-                <div class="or-call align-self-center nowrap">or call: <a href="tel:+14197372324" class="nowrap">419-737-2324</a></div>
+                <div class="or-call align-self-center nowrap mt-1">Call: <a href="tel:+14197372324" class="nowrap">419-737-2324</a></div>
               </div>
 
             </div>

@@ -103,85 +103,8 @@ h4.light {
   font-weight: 300 !important;
 }
 
-// ROUTER
-.router-container {
-  border: 1px solid $gray-light;
-  padding: 1rem 1.2rem;
-  background: $gray-lighter;
-  width: 100%;
+// ROUTER -- Moved to _frontpage
 
-  .image {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .label {
-    margin: 1rem 0 0;
-  }
-  .overflow {
-    overflow: hidden;
-  }
-
-  .overlay {
-    position: relative;
-    overflow: hidden;
-
-    &:hover {
-      .middle {
-        opacity: 1;
-      }
-    }
-
-    .middle {
-      transition: 0.5s ease;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      opacity: .5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: nowrap;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.25);
-
-      .text {
-        color: white;
-        padding: 0.5rem 1rem;
-        background-color: $brand-primary;
-        border-radius: 5rem;
-
-      }
-    }
-  }
-  .grow { transition: all .2s ease-in-out; }
-  .grow:hover { transform: scale(1.1); }
-}
-
-#right_middle ~ .grow {
-
-  transition: all .2s ease-in-out;
-}
-#right_middle:hover ~ .grow {
-  transform: scale(1.1);
-}
-
-@media (max-width: 576px) {
-  .router-container {
-    .overlay {
-      .middle {
-
-        .text {
-          border-radius: 0;
-          width: 100%;
-        }
-      }
-    }
-  }
-}
 
 
 // TESTIMONIALS

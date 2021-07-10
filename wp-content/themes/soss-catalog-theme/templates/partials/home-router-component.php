@@ -41,13 +41,13 @@ $left_pic = wp_get_attachment_image($left_image, 'router_image', false, $attr = 
 <div class="router-container block mb-4 ">
 
 
-  <div class="row">
+  <div class="row">0
 
-    <div class="col-sm-6">
+    <div class="col-sm-6 col-md-4 offset-md-2 mb-3 mb-sm-0">
 
       <div class="image img_item item-2  overflow">
         <?php if ( $left_link ) { ?>
-          <a href="<?php echo $left_link; ?>" class="overlay" >
+          <a href="<?php echo $left_link; ?>" class="overlay img-hover-zoom" >
             <?php if ( !empty( $left_image ) ) {
 
               echo $left_pic;
@@ -56,25 +56,25 @@ $left_pic = wp_get_attachment_image($left_image, 'router_image', false, $attr = 
             } ?>
             <div id="left_middle" class="middle">
               <div class="text">
-                <?php echo $left_label; ?>
+                <?php echo $left_title; ?>
               </div>
             </div>
           </a>
         <?php } ?>
 
-        <div class="label">
-          <?php if ( $left_link ) { ?>
-            <a href="<?php echo $left_link; ?>">
-              <h4><?php echo $left_title; ?></h4>
-            </a>
-          <?php } ?>
-
-        </div>
+<!--        <div class="label">-->
+<!--          --><?php //if ( $left_link ) { ?>
+<!--            <a href="--><?php //echo $left_link; ?><!--">-->
+<!--              <h4>--><?php //echo $left_title; ?><!--</h4>-->
+<!--            </a>-->
+<!--          --><?php //} ?>
+<!---->
+<!--        </div>-->
       </div>
 
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-6 col-md-4">
 
       <?php //if ( !empty( $right_image ) ) {
 
@@ -84,25 +84,25 @@ $left_pic = wp_get_attachment_image($left_image, 'router_image', false, $attr = 
 
       <div class="image img_item item-2 overflow">
         <?php if ( $right_link ) { ?>
-          <a href="<?php echo $right_link; ?>" class="overlay">
+          <a href="<?php echo $right_link; ?>" class="overlay img-hover-zoom">
             <?php echo $right_pic;  ?>
 
             <div id="right_middle" class="middle">
               <div class="text">
-                <?php echo $right_label; ?>
+                <?php echo $right_title; ?>
               </div>
             </div>
           </a>
         <?php } ?>
 
-        <div class="label">
-          <?php if ( $right_link ) { ?>
-            <a href="<?php echo $right_link; ?>">
-              <h4><?php echo $right_title; ?></h4>
-            </a>
-          <?php } ?>
-
-        </div>
+<!--        <div class="label">-->
+<!--          --><?php //if ( $right_link ) { ?>
+<!--            <a href="--><?php //echo $right_link; ?><!--">-->
+<!--              <h4></h4>-->
+<!--            </a>-->
+<!--          --><?php //} ?>
+<!---->
+<!--        </div>-->
       </div>
     </div>
 

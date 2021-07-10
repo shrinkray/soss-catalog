@@ -43,7 +43,7 @@
 
       elseif ( get_row_layout() == 'router-component' ) : ?>
 
-        <?php  include( 'partials/home-block-component.php');
+        <?php  include( 'partials/home-router-component.php');
 
         // END 5X BLOCKS ?>
 
