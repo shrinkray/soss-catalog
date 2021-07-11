@@ -24,8 +24,7 @@ $pattern = get_field('background_pattern', 'option');
   <div class="container" >
     <div class="row">
 
-      <div class="col-12 col-sm-4 col social-nav-wrap mt-3">
-
+      <div class="col-12 col-md-4 social-nav-wrap mt-3">
         <div class="footer-brand">
           <?php include( 'modules/logo.svg.php'); // logo svg file saves http requests ?>
         </div>
@@ -50,51 +49,42 @@ $pattern = get_field('background_pattern', 'option');
 
 
       <?php if (is_active_sidebar('second-2col-footer')): ?>
-        <div class="col-sm-5 footer-widgets mt-3">
+        <div class="col-12 col-md-7  footer-widgets mt-3">
 
           <div class="row">
-            <div class="col-6 col-sm-12 col-md-6">
+            <div class="col  ">
               <?php  dynamic_sidebar('second-2col-footer'); ?>
             </div>
 
-            <div class="col-6 col-sm-12 col-md-6">
-              <h4 class="mb-4">Top Categories</h4>
+            <div class="col">
+              <h4 class="">Top Categories</h4>
               <ul>
                 <?php // shows top five categories in args list
                   wp_list_categories('number=5&show_count=1&orderby=count&order=DESC&title_li=') ?>
               </ul>
             </div>
+
+            <?php if (is_active_sidebar('fourth-2col-footer')): ?>
+              <div class="col footer-widgets mt-3">
+                <?php dynamic_sidebar('fourth-2col-footer'); ?>
+              </div>
+            <?php endif; ?>
+
             </div>
+
           </div>
 
       <?php endif; ?>
 
 
 
-      <?php if (is_active_sidebar('fourth-2col-footer')): ?>
-        <div class="col-12 col-sm-3 footer-widgets mt-3">
-          <?php dynamic_sidebar('fourth-2col-footer'); ?>
-        </div>
-      <?php endif; ?>
 
-      <!--      <div class="col business-info">-->
-      <!--        --><?php //include( locate_template( 'templates/modules/business-info.php' ) ); ?>
-      <!--      </div>-->
 
     </div>
   </div>
 
   <div class="lower-footer">
     <div class="container">
-
-      <!--   May remove this .. adds horizontal nav from primary menu   -->
-      <!--      --><?php //if ( has_nav_menu( 'footer_navigation' ) ) : ?>
-      <!--        <div class="footer-nav-wrap mt-3 mb-3">-->
-      <!--          <nav class="footer-nav" role="navigation">-->
-      <!--            --><?php //wp_nav_menu( $footer_args ); ?>
-      <!--          </nav>-->
-      <!--        </div>-->
-      <!--      --><?php //endif; ?>
 
       <div class="legal d-flex justify-content-between flex-column flex-sm-row py-3">
         <?= BusinessInfo\privacy_policy('small p-2'); ?>

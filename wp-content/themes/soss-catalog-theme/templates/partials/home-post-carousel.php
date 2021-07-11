@@ -35,10 +35,9 @@ $args = [
           <?php
 
             if ( has_post_thumbnail( $post_query->ID ) ) :
-
               ?>
 
-              <div class="col-md-6 d-flex flex-column justify-content-center order-md-1 order-sm-2 order-xs-2">
+              <div class="col-md-6 d-flex flex-column justify-content-center order-md-1 order-2">
                 <div class="card-body-center">
 
                     <?php the_title('<h3 class="card-title">', '</h3>'); ?>
@@ -50,7 +49,7 @@ $args = [
                 </div>
               </div>
 
-              <div class="col-md-6 order-md-2 order-sm-1 order-xs-1 d-flex align-items-center">
+              <div class="col-md-6 order-md-2  order-1 d-flex align-items-center justify-content-center">
                 <?php the_post_thumbnail('feature_post', ['class' => 'img-fluid lazyloaded']); ?>
               </div>
 
@@ -87,6 +86,3 @@ $args = [
       </div>
     </div>
   </div> <!-- close Carousel -->
-
-
-<!--  END CAROUSEL  -->

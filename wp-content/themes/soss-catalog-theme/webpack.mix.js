@@ -13,19 +13,14 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 //require('laravel-mix-postcss-config');
 mix
-  .disableNotifications()
+  //.disableNotifications()
   .js('assets/scripts/main.js', 'dist/js/main.js')
   .sass('assets/styles/main.scss', 'assets/build/main.css')
   .options({
     processCssUrls: false,
     terser: {},
-    purifyCss: false,
-    // purifyCss: {},
     postCss: [require('autoprefixer')],
     clearConsole: false,
-    cssNano: {
-      // discardComments: {removeAll: true},
-    }
   })
   // TODO: replace 'nested function call' to imported property
   .postCss('assets/build/main.css', 'dist/css/main.css', [
@@ -36,7 +31,6 @@ mix
     require('postcss-url')({
       // Seeking options that work with Mix
     }),
-    require('cssnano')
   ])
 
   .copyDirectory(

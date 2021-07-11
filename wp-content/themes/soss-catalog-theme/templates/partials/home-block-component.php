@@ -16,7 +16,7 @@
 
 <?php the_sub_field( 'block_row_heading' ); ?>
 
-    <div class="row category-ctas-block my-5 d-flex justify-content-center break-out block-button">
+    <div class="row category-ctas-block my-5 d-flex justify-content-center block-button">
       <ul class="category-ctas no-gutters emulated-flex-gap">
 
 

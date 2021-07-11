@@ -14,7 +14,7 @@
 
 <?php
 if ( $section_title ) { ?>
-  <div class="row row-break mt-4">
+  <div class="row row-break mt-5">
     <div class="col">
 
       <div class="block-title">
@@ -38,12 +38,12 @@ $right_pic = wp_get_attachment_image($right_image, 'router_image', false, $attr 
 $left_pic = wp_get_attachment_image($left_image, 'router_image', false, $attr = ['class' => 'align-self-center left-router']); ?>
 
 
-<div class="router-container block mb-4 ">
+<div class="router-container block mb-5 ">
 
 
-  <div class="row">0
+  <div class="row">
 
-    <div class="col-sm-6 col-md-4 offset-md-2 mb-3 mb-sm-0">
+    <div class="col col-md-4 offset-md-2 mb-sm-0">
 
       <div class="image img_item item-2  overflow">
         <?php if ( $left_link ) { ?>
@@ -51,7 +51,6 @@ $left_pic = wp_get_attachment_image($left_image, 'router_image', false, $attr = 
             <?php if ( !empty( $left_image ) ) {
 
               echo $left_pic;
-
 
             } ?>
             <div id="left_middle" class="middle">
@@ -62,22 +61,13 @@ $left_pic = wp_get_attachment_image($left_image, 'router_image', false, $attr = 
           </a>
         <?php } ?>
 
-<!--        <div class="label">-->
-<!--          --><?php //if ( $left_link ) { ?>
-<!--            <a href="--><?php //echo $left_link; ?><!--">-->
-<!--              <h4>--><?php //echo $left_title; ?><!--</h4>-->
-<!--            </a>-->
-<!--          --><?php //} ?>
-<!---->
-<!--        </div>-->
       </div>
 
     </div>
 
-    <div class="col-sm-6 col-md-4">
+    <div class="col col-md-4">
 
       <?php //if ( !empty( $right_image ) ) {
-
 
 
     //  } ?>

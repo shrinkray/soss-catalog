@@ -78,14 +78,14 @@
 
       <div class="row">
 
-        <div class="header-group d-inline-flex ">
+        <div class="header-group">
 
           <div class="col-3  logo d-flex justify-self-start">
             <a href="/" title="The most comfortable handle ever!" class="brand-logo" style=""><?php echo $svg; ?></a>
           </div>
 
-          <div class="col-9 d-flex flex-lg-nowrap flex-wrap">
-            <div class="col-lg-6 col-sm-6 col-xs-8 justify-self-sm-center align-self-sm-center  mt-3 mt-lg-0">
+          <div class="col d-flex flex-lg-nowrap flex-wrap">
+            <div class="col-8 col-lg-4 col-sm-4  justify-self-sm-center align-self-sm-center  mt-3 mt-lg-0">
 
               <?php
 
@@ -98,7 +98,7 @@
 
             </div>
 
-            <div class="col-lg-4 col-sm-6 d-flex justify-content-end  mt-2 mb-lg-0">
+            <div class="col-8 col-lg-6 col-sm d-flex justify-content-end  mt-2 mb-lg-0">
               <div class="request-quote-wrapper d-flex flex-column align-self-center">
                 <a type="button" class="cta-brand request-quote nowrap" href="<?= $request_quote; ?>">Request a Quote</a>
                 <div class="or-call align-self-center nowrap mt-1">Call: <a href="tel:+14197372324" class="nowrap">419-737-2324</a></div>
