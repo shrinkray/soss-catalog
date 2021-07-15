@@ -23,29 +23,29 @@
 
 
 
-      <?php // FEATURE 5X Block Component
+      <?php // FEATURE 5X BLOCK COMPONENT
 
       elseif ( get_row_layout() == 'feature_block_component' ) : ?>
 
         <?php  include( 'partials/home-block-component.php');
 
-        // END 5X Blocks ?>
+        // END 5X BLOCKS ?>
 
-      <?php // Open Message
+      <?php // FEATURE 5X BLOCK COMPONENT
 
       elseif ( get_row_layout() == 'open_message_component' ) : ?>
 
         <?php  include( 'partials/home-block-component.php');
 
-        // END Open Message  ?>
+        // END 5X BLOCKS ?>
 
-      <?php // Router
+      <?php // FEATURE 5X BLOCK COMPONENT
 
       elseif ( get_row_layout() == 'router-component' ) : ?>
 
         <?php  include( 'partials/home-router-component.php');
 
-        // END Router  ?>
+        // END 5X BLOCKS ?>
 
 
 
