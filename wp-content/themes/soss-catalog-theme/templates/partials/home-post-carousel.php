@@ -16,7 +16,7 @@ $args = [
   <div class="homepage-post-carousel ">
     <div class="row">
 
-      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12">
+      <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-12">
        <ul class="carousel-panel ">
     <?php
       if ( $post_query->have_posts() ) :

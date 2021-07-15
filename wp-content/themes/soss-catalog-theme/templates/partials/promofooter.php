@@ -116,7 +116,7 @@ if (!($invitation == "3")) { ?>
 
               <?php if ($promo_card) { ?>
 
-                <div class="col-4 col-md-3">
+                <div class="col-12 col-sm-6 col-lg-3">
 
                   <div class="deals" aria-hidden="false">
 

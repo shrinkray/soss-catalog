@@ -18,7 +18,7 @@
   $aws_static_source = 'https://soss-web-assets.s3.us-east-2.amazonaws.com/Website_Banner_Soss_Antique_Bronze_Invisible_Hinge.png'; // 125.8 mb
 ?>
 
-  <div class="homepage-slider-block mb-sm-4 mbs-6">
+  <div class="homepage-slider-block mb-sm-4 mb-lg-5">
     <div class="homepage-slider-container">
       <div class="main-slider-block slider-1">
         <div class="homepage-slider">
