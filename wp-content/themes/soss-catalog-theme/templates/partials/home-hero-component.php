@@ -45,7 +45,7 @@
               <?php if ( $no_bypass == 1 ) : // if true, show the video options
                 ?>
 
-                <video poster="<?php echo $poster_image; ?>" playsinline muted autoplay loop="2" preload="auto"
+                <video poster="<?php echo $poster_image; ?>" playsinline muted autoplay loop preload="auto"
                        width="1900" height="814" id="soss_hero_video">
                   <?php if ( $mp4_video ) : ?>
                     <source src="<?php echo $mp4_video; ?>" type="video/mp4">
