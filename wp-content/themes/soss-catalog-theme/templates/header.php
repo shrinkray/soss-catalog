@@ -84,8 +84,8 @@
             <a href="/" title="The most comfortable handle ever!" class="brand-logo" style=""><?php echo $svg; ?></a>
           </div>
 
-          <div class="col-7 d-flex flex-lg-nowrap flex-wrap justify-content-end">
-            <div class="col-8 col-lg-4 col-sm-4  align-self-sm-center  mt-3 mt-lg-0">
+          <div class="col d-flex flex-lg-nowrap flex-wrap">
+            <div class="col-8 col-lg-4 col-sm-4  justify-self-sm-center align-self-sm-center  mt-3 mt-lg-0">
 
               <?php
 

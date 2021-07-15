@@ -24,7 +24,7 @@ $pattern = get_field('background_pattern', 'option');
   <div class="container" >
     <div class="row">
 
-      <div class="col-10 col-md-4 social-nav-wrap mt-3">
+      <div class="col-12 col-md-4 social-nav-wrap mt-3">
         <div class="footer-brand">
           <?php include( 'modules/logo.svg.php'); // logo svg file saves http requests ?>
         </div>
@@ -49,10 +49,10 @@ $pattern = get_field('background_pattern', 'option');
 
 
       <?php if (is_active_sidebar('second-2col-footer')): ?>
-        <div class="col-10 col-md-7  footer-widgets mt-3">
+        <div class="col-12 col-md-7  footer-widgets mt-3">
 
           <div class="row">
-            <div class="col">
+            <div class="col  ">
               <?php  dynamic_sidebar('second-2col-footer'); ?>
             </div>
 
