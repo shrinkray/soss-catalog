@@ -38,12 +38,12 @@ $right_pic = wp_get_attachment_image($right_image, 'router_image', false, $attr 
 $left_pic = wp_get_attachment_image($left_image, 'router_image', false, $attr = ['class' => 'align-self-center left-router']); ?>
 
 
-<div class="router-container block mb-5 ">
+<div class="router-container block mbs-6">
 
 
   <div class="row">
 
-    <div class="col col-md-4 offset-md-2 mb-sm-0">
+    <div class="col col-md-3 offset-md-3 mb-sm-0">
 
       <div class="image img_item item-2  overflow">
         <?php if ( $left_link ) { ?>
@@ -65,7 +65,7 @@ $left_pic = wp_get_attachment_image($left_image, 'router_image', false, $attr = 
 
     </div>
 
-    <div class="col col-md-4">
+    <div class="col col-md-3">
 
       <?php //if ( !empty( $right_image ) ) {
 
