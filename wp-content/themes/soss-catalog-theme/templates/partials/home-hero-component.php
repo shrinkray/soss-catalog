@@ -69,14 +69,22 @@
               <?php endif; // show all video inputs ?>
               <div class="video-overlay">&nbsp;</div>
               <div class="logo-overlay"></div>
-
-<!--              <div class="slide-content">-->
-<!--                <h2>--><?php //echo $value_prop; ?><!--</h2>-->
-<!--              </div>-->
             </a>
-              <div class="slide-button-content">
-                <a href="<?php echo esc_url( $hero_page_link); ?>" class="btn button red cta-button"><?php echo $cta; ?></a>
-              </div>
+
+              <?php
+
+              // removed slide button content
+
+              // Add overlay message
+              // $show_overlay is defaulted to true.
+              // If visitor switches it to false on backend, our message will not appear.
+
+              $show_overlay = get_sub_field( 'show_overlay_message');
+              $overlay_message = get_sub_field('overlay_message');
+
+            if ( $show_overlay ) : ?>
+              <h2 class="overlay-message"><?php echo $overlay_message; ?></h2>
+              <?php endif; // show overlay  ?>
 
 
             <?php endif; // hero_page_link ?>

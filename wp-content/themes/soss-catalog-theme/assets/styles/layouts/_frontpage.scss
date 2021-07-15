@@ -55,6 +55,16 @@
   .video-overlay {
     display: none;
   }
+  .overlay-message {
+    color: #ffffff8a;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1.5rem;
+    max-width: 600px;
+    padding-right: 2rem;
+  }
+
 
   .logo-overlay {
     z-index: 12;
@@ -108,20 +118,19 @@
       z-index: 5;
     }
 
-    h2 {
-      color: white;
-      margin: 0;
-      font-size: 2rem;
-      text-transform: uppercase;
-
-    }
-
     .cta-button {
       position: absolute;
       bottom: 20%;
       z-index: 12;
     }
   }
+}
+@media handheld, screen and (max-width: 765px) {
+.home {
+  .overlay-message {
+    font-size: 1rem;
+  }
+}
 }
 @media handheld, screen and (max-width: 1000px) {
   .home {
