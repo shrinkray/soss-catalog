@@ -31,7 +31,7 @@
 
           <i class="fa fa-instagram fa-2x"></i>
           <span class="property "><?= $i_prop; ?></span>
-          <a href="" class="btn btn-primary brand-cta cta-social" title="" target="_blank"><?=  $follow_label; ?></a>
+          <a href="https://www.instagram.com/sossdoorhardware/" class="btn btn-primary brand-cta cta-social" title="" target="_blank"><?=  $follow_label; ?></a>
 
         <?php
         break;

@@ -56,12 +56,12 @@
     display: none;
   }
   .overlay-message {
-    color: #ffffff8a;
+    color: hsla(0, 0%, 100%, 0.9);
     position: absolute;
     top: 2rem;
     left: 2rem;
-    font-size: 1.5rem;
-    max-width: 600px;
+    font-size: 1.0rem;
+    max-width: 360px;
     padding-right: 2rem;
   }
 
